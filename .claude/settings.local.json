@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(hugo version *)",
+      "Bash(npm -v)",
+      "Bash(git --version)",
+      "Bash(hugo new *)",
+      "Bash(npm init *)",
+      "Bash(npm install *)",
+      "Bash(hugo --gc --minify)"
+    ]
+  }
+}

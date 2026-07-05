@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Space+Grotesk:wght@400;500;600;700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Archivo:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,300;1,400&display=swap');
+@import "tailwindcss";
+
+/* ============================================================
+   BAYGLASS DESIGN TOKENS — mapped onto Tailwind's theme.
+   Source: Bayglass Design System handoff (tokens/*.css).
+   ============================================================ */
+@theme {
+  /* --- Fonts --- */
+  --font-logo: 'Michroma', sans-serif;
+  --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
+  --font-body: 'Work Sans', 'Segoe UI', sans-serif;
+
+  /* Cinema-ad hero carousel only — from the Bay Glass Cinema Ads deck */
+  --font-cinema-display: 'Archivo', 'Segoe UI', sans-serif;
+  --font-cinema-serif: 'Cormorant Garamond', Georgia, serif;
+  --color-cinema-bg: #0e1518;
+  --color-cinema-gold: #FFB703;
+  --color-cinema-cream: #f4f1ea;
+
+  /* --- Brand swatches (cool -> warm) --- */
+  --color-navy: #023047;
+  --color-accent: #fb8500;
+
+  /* --- Cool ramp (blues), namespaced "marine" to avoid clashing with Tailwind's built-in blue/sky/teal --- */
+  --color-marine-50: #eef8fc;
+  --color-marine-100: #d6eef7;
+  --color-marine-200: #a9dcee;
+  --color-marine-300: #8ecae6;
+  --color-marine-400: #4fb3d1;
+  --color-marine-500: #219ebc;
+  --color-marine-600: #1a7f97;
+  --color-marine-700: #126782;
+  --color-marine-800: #0b435a;
+  --color-marine-900: #023047;
+
+  /* --- Warm ramp (gold -> orange), namespaced "gold" --- */
+  --color-gold-300: #ffd35e;
+  --color-gold-400: #ffb703;
+  --color-gold-500: #fd9e02;
+  --color-gold-600: #fb8500;
+  --color-gold-700: #d66f00;
+
+  /* --- Neutrals (navy-tinted grays), namespaced "ink" --- */
+  --color-ink-0: #ffffff;
+  --color-ink-50: #f6f8f9;
+  --color-ink-100: #eef1f3;
+  --color-ink-200: #dde3e7;
+  --color-ink-300: #c2ccd2;
+  --color-ink-400: #8a9aa3;
+  --color-ink-500: #5f717b;
+  --color-ink-600: #435661;
+  --color-ink-700: #2b3d47;
+  --color-ink-800: #16262f;
+  --color-ink-900: #0a1a22;
+
+  /* --- Semantic aliases --- */
+  --color-primary: var(--color-marine-500);
+  --color-primary-hover: var(--color-marine-600);
+  --color-primary-strong: var(--color-marine-700);
+  --color-accent-hover: var(--color-gold-700);
+  --color-accent-soft: var(--color-gold-400);
+
+  --color-heading: var(--color-navy);
+  --color-body: #3a4c56;
+  --color-on-dark: #eaf3f7;
+
+  --color-surface-page: var(--color-ink-50);
+  --color-surface-card: var(--color-ink-0);
+  --color-surface-dark: var(--color-navy);
+  --color-surface-dark-2: #06344a;
+
+  --color-hairline: var(--color-ink-200);
+
+  /* Soft navy tints used by secondary/outline buttons — swapped for a light
+     tint in dark mode, see the [data-theme="dark"] block below. */
+  --color-tint-bg: rgba(2, 48, 71, 0.06);
+  --color-tint-border: rgba(2, 48, 71, 0.18);
+
+  /* --- Type scale --- */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.5rem;
+  --text-5xl: 3.5rem;
+  --text-6xl: 4.75rem;
+  --text-7xl: 6rem;
+
+  --leading-tight: 0.95;
+  --leading-snug: 1.15;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+
+  --tracking-tight: -0.03em;
+  --tracking-wide: 0.02em;
+  --tracking-eyebrow: 0.12em;
+
+  /* --- Radii --- */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+
+  /* --- Shadows (navy-tinted, ambient) --- */
+  --shadow-xs: 0 1px 2px rgba(2, 48, 71, 0.06);
+  --shadow-sm: 0 1px 3px rgba(2, 48, 71, 0.08), 0 1px 2px rgba(2, 48, 71, 0.04);
+  --shadow-md: 0 10px 24px -6px rgba(2, 48, 71, 0.12);
+  --shadow-lg: 0 24px 50px -12px rgba(2, 48, 71, 0.22);
+
+  /* --- Motion --- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ============================================================
+   Shared component-level utilities that don't map cleanly onto
+   single Tailwind tokens (multi-stop gradient, fixed-width column).
+   ============================================================ */
+@utility container-page {
+  width: 100%;
+  max-width: 76rem; /* 1216px */
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+@utility gradient-radiant {
+  background: linear-gradient(135deg,
+    #8ecae6 30%, #57b6d3 44%, #219ebc 66%,
+    #6aa8a0 100%);
+}
+
+@utility gradient-radiant-soft {
+  background: linear-gradient(135deg,
+    #dbeff5 0%, #cfeaf4 40%, #ffe9c2 72%, #ffd9a8 100%);
+}
+
+@utility shadow-ring {
+  box-shadow: inset 0 0 0 1px rgba(2, 48, 71, 0.08);
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-surface-card);
+  color: var(--color-body);
+}
+
+/* ============================================================
+   Sticky site header — transparent over the hero, frosted once
+   scrolled. Text/logo colour tracks --nav-fg so every element
+   just references it instead of branching per page/state.
+   ============================================================ */
+#site-header[data-variant="dark"] {
+  --nav-fg: var(--color-cinema-cream);
+}
+#site-header[data-variant="light"] {
+  --nav-fg: var(--color-heading);
+}
+#site-header {
+  background-color: transparent;
+  transition: background-color 300ms var(--ease-out), border-color 300ms var(--ease-out);
+}
+#site-header.is-scrolled {
+  --nav-fg: var(--color-heading);
+  background-color: rgba(255, 255, 255, 0.72);
+  border-bottom: 1px solid var(--color-hairline);
+}
+
+/* ============================================================
+   Dark mode — overriding the neutral tokens is enough to flip
+   every page-chrome utility (bg-surface-*, text-heading, text-body,
+   bg-ink-*, border-hairline, ...) since they're all built from these
+   custom properties. Brand colours (primary/accent) and the already-
+   dark hero/cinema sections are intentionally left unchanged.
+   ============================================================ */
+:root[data-theme="dark"] {
+  --color-ink-0: #13262f;
+  --color-ink-50: #0b1a21;
+  --color-ink-100: #17282f;
+  --color-ink-200: rgba(234, 243, 247, 0.14);
+
+  --color-heading: #eef3f5;
+  --color-body: #aebcc3;
+
+  --color-tint-bg: rgba(255, 255, 255, 0.08);
+  --color-tint-border: rgba(255, 255, 255, 0.22);
+}
+
+:root[data-theme="dark"] #site-header.is-scrolled {
+  background-color: rgba(11, 26, 33, 0.75);
+}
+
+/* Sun/moon toggle icon — CSS decides which is visible, JS only flips data-theme */
+.theme-toggle .icon-moon {
+  display: none;
+}
+:root[data-theme="dark"] .theme-toggle .icon-sun {
+  display: none;
+}
+:root[data-theme="dark"] .theme-toggle .icon-moon {
+  display: block;
+}
+
+/* ============================================================
+   Component classes — the repeated multi-utility combinations
+   (eyebrows, headings, leads, cards, buttons, nav/footer links)
+   live here once instead of being retyped in every template.
+   Layout/spacing/responsive utilities (gap, grid-cols, mt-36,
+   hidden md:flex, group-hover visibility toggles) stay as plain
+   Tailwind classes in the markup — that's what Tailwind is for,
+   and `group`/`group-hover` specifically can't be moved into a
+   custom class since Tailwind only recognises the literal
+   `.group` marker in the source template.
+   ============================================================ */
+@layer components {
+  a {
+    @apply no-underline;
+  }
+
+  /* Eyebrows — small uppercase kicker above a heading */
+  .eyebrow {
+    @apply inline-block font-body text-sm font-semibold tracking-eyebrow uppercase text-primary;
+  }
+  .eyebrow-dark {
+    @apply inline-block font-body text-sm font-semibold tracking-eyebrow uppercase text-on-dark/62;
+  }
+  .eyebrow-xs {
+    @apply inline-block font-body text-xs font-semibold tracking-eyebrow uppercase text-primary;
+  }
+  .eyebrow-xs-dark {
+    @apply inline-block font-body text-xs font-semibold tracking-eyebrow uppercase text-on-dark/62;
+  }
+
+  /* Headings */
+  .page-title {
+    @apply m-0 font-display font-medium text-4xl md:text-6xl leading-snug tracking-tight text-heading text-balance;
+  }
+  .section-heading {
+    @apply m-0 font-display font-medium text-3xl md:text-5xl leading-snug tracking-tight text-heading text-balance;
+  }
+  .section-heading-dark {
+    @apply m-0 font-display font-medium text-3xl md:text-5xl leading-snug tracking-tight text-on-dark text-balance;
+  }
+
+  /* Lead paragraphs */
+  .lead {
+    @apply font-body text-xl leading-relaxed text-body text-pretty;
+  }
+  .lead-dark {
+    @apply font-body text-xl leading-relaxed text-on-dark/62 text-pretty;
+  }
+  .lead-panel {
+    @apply font-body text-xl leading-relaxed text-heading/72 text-pretty;
+  }
+
+  /* Cards — padding is left to the call site since it varies (bento-card's
+     media sits flush, the contact tiles don't) */
+  .card {
+    @apply rounded-xl border border-hairline bg-surface-card shadow-md;
+  }
+  .card-hover {
+    @apply transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  /* Long-form body copy rendered from markdown (service pages, contact page) */
+  .prose-body {
+    @apply font-body text-lg leading-relaxed text-body text-pretty [&_p]:mb-5;
+  }
+
+  /* Media frames — rounded photo wrappers */
+  .media-frame {
+    @apply overflow-hidden rounded-2xl bg-ink-100 shadow-lg;
+  }
+  .media-cover {
+    @apply block h-full w-full object-cover;
+  }
+
+  /* Sticky-header nav links */
+  .nav-link {
+    @apply font-body text-base font-medium text-(--nav-fg);
+  }
+
+  /* Mobile drawer / dropdown row links */
+  .drawer-link {
+    @apply rounded-lg px-2 py-2.5 font-medium text-heading hover:bg-ink-50;
+  }
+
+  /* Footer */
+  .footer-label {
+    @apply mb-2 text-sm font-medium text-heading/55;
+  }
+  .footer-link {
+    @apply block py-[0.35rem] text-base text-body;
+  }
+
+  /* Universal hover underline for every text-style hyperlink on the site —
+     cinema gold, sliding left to right. Defined once here and applied via
+     .link-underline (plus baked into .nav-link/.footer-link/.drawer-link so
+     those don't need an extra class). Not used on buttons, whole-card links
+     (bento-card) or the logo — those already have their own hover treatment. */
+  .link-underline,
+  .nav-link,
+  .footer-link,
+  .drawer-link {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -0.2em;
+      width: 100%;
+      height: 2px;
+      background-color: var(--color-cinema-gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 300ms var(--ease-out);
+    }
+
+    &:hover::after,
+    &:focus-visible::after {
+      transform: scaleX(1);
+    }
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full font-body font-medium leading-none whitespace-nowrap shadow-sm transition-all duration-300 ease-out hover:scale-110 hover:shadow-lg active:scale-[0.97];
+  }
+  .btn-primary {
+    @apply border border-navy bg-navy text-on-dark hover:border-on-dark hover:bg-on-dark hover:text-navy;
+  }
+  .btn-accent {
+    @apply border border-accent bg-accent text-navy hover:border-navy hover:bg-navy hover:text-accent;
+  }
+  .btn-secondary {
+    @apply border border-transparent bg-tint-bg text-heading hover:bg-navy hover:text-on-dark;
+  }
+  .btn-outline {
+    @apply border border-tint-border bg-transparent text-heading hover:border-navy hover:bg-navy hover:text-on-dark;
+  }
+  .btn-sm {
+    @apply px-4 py-2 text-sm;
+  }
+  .btn-md {
+    @apply px-[1.4rem] py-[0.7rem] text-base;
+  }
+  .btn-lg {
+    @apply px-[1.9rem] py-[0.9rem] text-lg;
+  }
+
+  /* Form fields */
+  .form-label {
+    @apply mb-2 block font-body text-sm font-medium text-heading;
+  }
+  .form-input {
+    @apply w-full rounded-lg border border-hairline bg-ink-50 px-4 py-3 font-body text-base text-heading outline-none transition-all duration-300 ease-out focus:border-primary focus:ring-4 focus:ring-primary/30 focus:ring-offset-2;
+  }
+}

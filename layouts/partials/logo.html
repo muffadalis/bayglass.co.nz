@@ -1,0 +1,29 @@
+{{/* Bayglass wordmark. Pass "dark" to render navy ink for use on light surfaces,
+or "adaptive" to track the --nav-fg custom property (used in the sticky header,
+which switches colour itself between transparent and scrolled states). */}}
+{{ $dark := .dark }}
+{{ $adaptive := .adaptive }}
+{{ $ink := "text-white" }}
+{{ if $dark }}{{ $ink = "text-navy" }}{{ end }}
+{{ if $adaptive }}{{ $ink = "text-(--nav-fg)" }}{{ end }}
+<a href="/" class="inline-flex items-center gap-[0.55rem]">
+  <span class="inline-flex items-center gap-[2px]" aria-hidden="true">
+    <div style="transform: skewX(-14deg); display: flex; flex-direction: column; gap: 1px;">
+      <div style="display: flex; gap: 1px;">
+        <div class="w-[11px] h-[11px]"
+          style="border-radius: 2px; background: linear-gradient(150deg, #d4e0f0, #aec6e6);"></div>
+        <div class="w-[11px] h-[11px]"
+          style="border-radius: 2px; background: linear-gradient(150deg, #a6c2e6, #7ba6db);"></div>
+      </div>
+      <div style="display: flex; gap: 1px;">
+        <div class="w-[11px] h-[11px]"
+          style="border-radius: 2px; background: linear-gradient(150deg, #4f8dd0, #2f74c2);"></div>
+        <div class="w-[11px] h-[11px]"
+          style="border-radius: 2px; background: linear-gradient(150deg, #2b7ad0, #135fb6);"></div>
+      </div>
+    </div>
+  </span>
+  <span class="font-logo text-[1.1rem] tracking-[0.01em] leading-none {{ $ink }}">BAYGLASS</span>
+  <span
+    class="hidden sm:inline font-logo text-[0.6rem] tracking-[0.18em] leading-none {{ if $adaptive }}text-(--nav-fg)/70{{ else if $dark }}text-primary{{ else }}text-marine-300{{ end }}">KERIKERI</span>
+</a>

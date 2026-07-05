@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(hugo --gc --minify)",
+      "Bash(curl -s -o /dev/null -w \"home: %{http_code}\\\\n\" http://localhost:1313/)",
+      "Bash(curl -s -o /dev/null -w \"services: %{http_code}\\\\n\" http://localhost:1313/services/)",
+      "Bash(curl -s -o /dev/null -w \"glazing: %{http_code}\\\\n\" http://localhost:1313/services/glass-glazing/)",
+      "Bash(curl -s -o /dev/null -w \"contact: %{http_code}\\\\n\" http://localhost:1313/contact/)",
+      "Bash(curl -s -o /dev/null -w \"css: %{http_code}\\\\n\" http://localhost:1313/css/main.css)",
+      "Bash(curl -s http://localhost:1313/contact/)"
+    ]
+  }
+}

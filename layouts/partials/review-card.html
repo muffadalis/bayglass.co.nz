@@ -1,0 +1,15 @@
+{{/* Google review card. Params: name, meta, time, rating (1-5), text. */}}
+<div class="card flex h-full flex-col p-6">
+  <div class="flex gap-1" aria-label="{{ .rating }} out of 5 stars">
+    {{ range seq .rating }}
+    <svg class="h-4 w-4 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L1.5 7.7l5.9-.8L10 1.5z"/>
+    </svg>
+    {{ end }}
+  </div>
+  <p class="lead mt-4 flex-1 text-base">&ldquo;{{ .text }}&rdquo;</p>
+  <div class="mt-5 border-t border-hairline pt-4">
+    <div class="font-display font-medium text-heading">{{ .name }}</div>
+    <div class="text-sm text-heading/55">{{ .meta }} &middot; {{ .time }}</div>
+  </div>
+</div>

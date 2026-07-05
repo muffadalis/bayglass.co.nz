@@ -1,0 +1,38 @@
+/* ============================================================
+   BAYGLASS · TYPOGRAPHY TOKENS
+   Logo: Michroma · Headings: Space Grotesk · Body: Work Sans
+   ============================================================ */
+:root {
+  --font-logo:    'Michroma', sans-serif;
+  --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
+  --font-body:    'Work Sans', 'Segoe UI', sans-serif;
+
+  /* Type scale (Radiant-style: big tight display, calm body) */
+  --text-xs:   0.75rem;   /* 12px */
+  --text-sm:   0.875rem;  /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg:   1.125rem;  /* 18px */
+  --text-xl:   1.25rem;   /* 20px */
+  --text-2xl:  1.5rem;    /* 24px */
+  --text-3xl:  1.875rem;  /* 30px */
+  --text-4xl:  2.5rem;    /* 40px */
+  --text-5xl:  3.5rem;    /* 56px */
+  --text-6xl:  4.75rem;   /* 76px */
+  --text-7xl:  6rem;      /* 96px */
+
+  --leading-tight:  0.95;
+  --leading-snug:   1.15;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+
+  --tracking-tight:  -0.03em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.02em;
+  --tracking-eyebrow: 0.12em; /* uppercase eyebrows / logo cloud labels */
+
+  --weight-light:    300;
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+}

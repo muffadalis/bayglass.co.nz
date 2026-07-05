@@ -1,0 +1,16 @@
+{{ define "main" }}
+
+{{ partial "gradient-header.html" (dict "eyebrow" "Our services" "title" .Title "lead" .Params.lead) }}
+
+{{ $services := .Pages.ByParam "weight" }}
+<div class="container-page mt-20">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {{ range $services }}
+    {{ partial "bento-card.html" (dict "eyebrow" .Params.eyebrow "title" .Title "body" .Params.summary "media" .Params.image "href" .RelPermalink) }}
+    {{ end }}
+  </div>
+</div>
+
+{{ partial "cta-footer.html" . }}
+
+{{ end }}

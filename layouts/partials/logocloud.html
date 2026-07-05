@@ -1,0 +1,6 @@
+{{/* Horizontal supplier/partner strip. Reads data/suppliers.yaml. */}}
+<div class="flex flex-wrap items-center justify-between gap-8">
+  {{ range site.Data.suppliers }}
+  <span class="font-display font-semibold text-xl tracking-tight text-heading opacity-85">{{ . }}</span>
+  {{ end }}
+</div>

@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en-nz">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body class="font-body bg-surface-card text-body antialiased">
+  {{ partial "header.html" (dict "light" .IsHome) }}
+  {{ block "main" . }}{{ end }}
+  <script src="{{ "js/site.js" | relURL }}" defer></script>
+</body>
+</html>

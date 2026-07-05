@@ -1,0 +1,18 @@
+{{/* Closing CTA band on the soft gradient wash, plus the footer. Used on every page. */}}
+<div class="gradient-radiant-soft">
+  <div class="container-page text-center pt-7 pb-20">
+    <span class="eyebrow">Get started</span>
+    <h2 class="section-heading mt-4 mx-auto max-w-[18ch]">
+      Ready to bring your space to life?
+    </h2>
+    <p class="lead mt-5 mx-auto max-w-[42ch]">
+      Tell us what you're picturing and we'll measure, quote and make it — free, no obligation.
+    </p>
+    <div class="mt-10">
+      {{ partial "button.html" (dict "label" "Get a free quote" "href" "/contact/" "size" "lg") }}
+    </div>
+  </div>
+  <div class="container-page">
+    {{ partial "footer.html" . }}
+  </div>
+</div>

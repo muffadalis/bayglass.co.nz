@@ -1,0 +1,9 @@
+{{/* Bayglass pill button. Params: label, href, variant (primary|accent|secondary|outline), size (sm|md|lg) */}}
+{{ $variant := .variant | default "primary" }}
+{{ $size := .size | default "md" }}
+{{ $classes := printf "btn btn-%s btn-%s" $variant $size }}
+{{ if .submit }}
+<button type="submit" class="{{ $classes }}">{{ .label }}</button>
+{{ else }}
+<a href="{{ .href }}" class="{{ $classes }}">{{ .label }}</a>
+{{ end }}

@@ -1,0 +1,48 @@
+{{ define "main" }}
+
+{{/* ---------- Rotating hero — one cinematic slide per service ---------- */}}
+{{ partial "hero-carousel.html" . }}
+
+
+{{/* ---------- Services teaser ---------- */}}
+{{ $services := where site.RegularPages "Section" "services" }}
+{{ $services = $services.ByParam "weight" }}
+<div class="container-page mt-10">
+  <span class="eyebrow">Our services</span>
+  <h2 class="section-heading mt-3 mb-10 max-w-[18ch]">
+    Everything we make, made to measure.
+  </h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {{ range  $services }}
+    {{ partial "bento-card.html" (dict "eyebrow" .Params.eyebrow "title" .Title "body" .Params.summary "media" .Params.image "href" .RelPermalink) }}
+    {{ end }}
+  </div>
+  <div class="mt-10">
+    {{ partial "button.html" (dict "label" "View all services" "href" "/services/" "variant" "outline") }}
+  </div>
+</div>
+
+{{/* ---------- Dark section: Google reviews ---------- */}}
+<div class="mt-36 bg-surface-dark-2 py-24">
+  <div class="container-page">
+    <span class="eyebrow-dark">Google reviews</span>
+    <h2 class="section-heading-dark my-3 max-w-[32ch]">
+      What Kerikeri thinks of us.
+    </h2>
+    <p class="lead-dark mb-12">
+      Real reviews from real customers across Kerikeri and the Northland region.
+    </p>
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {{ range site.Data.reviews }}
+      {{ partial "review-card.html" . }}
+      {{ end }}
+    </div>
+    <div class="mt-10">
+      {{ partial "button.html" (dict "label" "Read more reviews on Google" "href" "https://share.google/C2ogiGUNgyoqaJysz" "variant" "accent") }}
+    </div>
+  </div>
+</div>
+
+{{ partial "cta-footer.html" . }}
+
+{{ end }}

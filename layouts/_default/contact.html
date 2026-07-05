@@ -1,0 +1,35 @@
+{{ define "main" }}
+
+{{ partial "gradient-header.html" (dict "eyebrow" "Get in touch" "title" .Title "lead" .Params.summary) }}
+
+<div class="container-page mt-20 max-w-2xl">
+  <div class="prose-body">
+    {{ .Content }}
+  </div>
+
+  <form class="mt-10 grid gap-6">
+    {{ partial "form-field.html" (dict "type" "text" "name" "name" "label" "Name" "required" true) }}
+    {{ partial "form-field.html" (dict "type" "email" "name" "email" "label" "Email" "required" true) }}
+    {{ partial "form-field.html" (dict "type" "textarea" "name" "message" "label" "Message" "required" true) }}
+    <div>
+      {{ partial "button.html" (dict "label" "Send message" "submit" true "size" "lg") }}
+    </div>
+  </form>
+
+  <div class="mt-10 grid gap-6 sm:grid-cols-2">
+    <div class="card card-hover p-6">
+      <div class="eyebrow-xs mb-2">Phone</div>
+      <a href="{{ site.Params.phoneHref | safeURL }}" class="link-underline inline-block text-2xl font-display font-medium text-heading">{{ site.Params.phone }}</a>
+    </div>
+    <div class="card card-hover p-6">
+      <div class="eyebrow-xs mb-2">Address</div>
+      <p class="text-lg text-body m-0">{{ site.Params.address }}</p>
+    </div>
+  </div>
+</div>
+
+<div class="container-page mt-36">
+  {{ partial "footer.html" . }}
+</div>
+
+{{ end }}

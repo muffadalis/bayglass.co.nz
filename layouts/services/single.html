@@ -1,0 +1,35 @@
+{{ define "main" }}
+
+{{ partial "gradient-header.html" (dict "eyebrow" .Params.eyebrow "title" .Title "lead" .Params.summary) }}
+
+<div class="container-page mt-20">
+  <div class="grid grid-cols-1 md:grid-cols-[1.4fr_1fr] gap-12 items-start">
+    <div>
+      <div class="prose-body">
+        {{ .Content }}
+      </div>
+      {{ with .Params.features }}
+      <ul class="mt-8 space-y-4">
+        {{ range . }}
+        <li class="flex gap-3 items-start">
+          <span class="mt-[0.55em] w-1.5 h-1.5 rounded-full bg-accent shrink-0" aria-hidden="true"></span>
+          <span class="text-body text-lg leading-relaxed">{{ . }}</span>
+        </li>
+        {{ end }}
+      </ul>
+      {{ end }}
+      <div class="mt-10">
+        {{ partial "button.html" (dict "label" "Get a quote for this" "href" "/contact/") }}
+      </div>
+    </div>
+    {{ with .Params.image }}
+    <div class="media-frame aspect-[4/5]">
+      <img src="{{ . }}" alt="{{ $.Title }}" class="media-cover" loading="lazy">
+    </div>
+    {{ end }}
+  </div>
+</div>
+
+{{ partial "cta-footer.html" . }}
+
+{{ end }}

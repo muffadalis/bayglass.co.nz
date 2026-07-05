@@ -1,0 +1,9 @@
+{{/* Contact form field. Params: type (text|email|textarea), name, label, required (bool). */}}
+<div>
+  <label for="{{ .name }}" class="form-label">{{ .label }}</label>
+  {{ if eq .type "textarea" }}
+  <textarea id="{{ .name }}" name="{{ .name }}" rows="5" {{ if .required }}required{{ end }} class="form-input"></textarea>
+  {{ else }}
+  <input type="{{ .type | default "text" }}" id="{{ .name }}" name="{{ .name }}" {{ if .required }}required{{ end }} class="form-input">
+  {{ end }}
+</div>

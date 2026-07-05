@@ -1,0 +1,12 @@
+{{/* Small gradient-panel page header — eyebrow + heading + one-line lead. Used on the
+     services index, each single service page, and the contact page. The site's sticky
+     header floats over the top of this panel, so it needs its own top clearance. */}}
+<div class="p-3">
+  <div class="gradient-radiant rounded-2xl shadow-ring overflow-hidden pb-14">
+    <div class="container-page pt-28 sm:pt-32">
+      {{ with .eyebrow }}<span class="eyebrow">{{ . }}</span>{{ end }}
+      <h1 class="page-title mt-3 max-w-[20ch]">{{ .title }}</h1>
+      {{ with .lead }}<p class="lead-panel mt-5 max-w-[42ch]">{{ . }}</p>{{ end }}
+    </div>
+  </div>
+</div>

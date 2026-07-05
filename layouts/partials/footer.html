@@ -1,0 +1,32 @@
+{{/* Bayglass footer — brand + link columns, legal/contact row. */}}
+{{ $services := where site.RegularPages "Section" "services" }}
+{{ $services = $services.ByParam "weight" }}
+<footer class="font-body">
+  <div class="grid grid-cols-1 md:grid-cols-[1.4fr_repeat(3,1fr)] gap-8 py-14 border-t border-hairline">
+    <div>{{ partial "logo.html" (dict "dark" true) }}</div>
+
+    <div>
+      <div class="footer-label">Services</div>
+      {{ range $services }}
+      <a href="{{ .RelPermalink }}" class="footer-link">{{ .Params.eyebrow | default .Title }}</a>
+      {{ end }}
+    </div>
+
+    <div>
+      <div class="footer-label">Company</div>
+      <a href="/about/" class="footer-link">About</a>
+      <a href="/contact/" class="footer-link">Contact</a>
+    </div>
+
+    <div>
+      <div class="footer-label">Get in touch</div>
+      <a href="{{ site.Params.phoneHref | safeURL }}" class="footer-link">{{ site.Params.phone }}</a>
+      <a href="/contact/" class="footer-link">Get a quote</a>
+    </div>
+  </div>
+
+  <div class="flex flex-col sm:flex-row gap-2 justify-between items-start sm:items-center py-6 border-t border-hairline text-sm text-heading/55">
+    <span>&copy; {{ now.Year }} Bay Glass Kerikeri Ltd.</span>
+    <span>{{ site.Params.phone }} &middot; {{ site.Params.address }}</span>
+  </div>
+</footer>

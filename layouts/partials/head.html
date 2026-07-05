@@ -1,0 +1,21 @@
+{{/* Document head: meta, title, Tailwind-compiled stylesheet. */}}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} &middot; Bay Glass Kerikeri{{ end }}</title>
+{{ with .Params.description | default site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
+
+{{ $css := resources.Get "css/main.css" }}
+{{ $opts := dict "minify" (not hugo.IsDevelopment) }}
+{{ $style := $css | css.TailwindCSS $opts }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}">
+
+{{/* Set the theme before first paint so there's no flash of the wrong colours. */}}
+<script>
+(function () {
+  try {
+    var stored = localStorage.getItem('theme');
+    var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  } catch (e) {}
+})();
+</script>
