@@ -42,4 +42,52 @@ document.addEventListener('DOMContentLoaded', function () {
       } catch (e) {}
     });
   }
+
+  // Contact form — Web3Forms. The form's plain action/method already work
+  // without JS; this just upgrades it to an inline status message instead
+  // of navigating away.
+  var contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    var statusEl = document.getElementById('contact-form-status');
+    var submitBtn = contactForm.querySelector('button[type="submit"]');
+    var submitLabel = submitBtn ? submitBtn.textContent : '';
+
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+      }
+
+      fetch(contactForm.action, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(contactForm),
+      })
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (result) {
+          statusEl.classList.remove('hidden', 'text-red-600');
+          if (result.success) {
+            statusEl.textContent = "Thanks — we've got your message and will be in touch soon.";
+            statusEl.classList.add('text-primary');
+            contactForm.reset();
+          } else {
+            throw new Error(result.message || 'Something went wrong.');
+          }
+        })
+        .catch(function () {
+          statusEl.classList.remove('hidden', 'text-primary');
+          statusEl.classList.add('text-red-600');
+          statusEl.textContent = 'Something went wrong sending that — please call us instead, or try again.';
+        })
+        .finally(function () {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = submitLabel;
+          }
+        });
+    });
+  }
 });
