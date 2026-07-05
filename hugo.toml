@@ -1,4 +1,4 @@
-baseURL = "https://bayglass.co.nz/"
+baseURL = "https://muffadalis.github.io/bayglass.co.nz/"
 languageCode = "en-nz"
 title = "Bay Glass Kerikeri — More than just glass"
 disableKinds = ["taxonomy", "term"]
