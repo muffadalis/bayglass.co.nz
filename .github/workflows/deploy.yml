@@ -24,7 +24,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Install npm dependencies (Tailwind CSS)
         run: npm ci
@@ -32,7 +32,12 @@ jobs:
       - name: Set up Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: "latest"
+          # Pinned rather than "latest": newer Hugo releases sandbox the
+          # TailwindCSS subprocess with Node's --permission flag, which
+          # isn't recognised by the Node 20 LTS line used below (only
+          # --experimental-permission is). This version is what's been
+          # developed and tested against locally.
+          hugo-version: "0.147.8"
           extended: true
 
       - name: Build site
