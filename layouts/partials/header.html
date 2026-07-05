@@ -45,8 +45,8 @@
           </div>
         </div>
 
-        <a href="/about/" class="nav-link">About</a>
-        <a href="/contact/" class="nav-link">Contact</a>
+        <a href="{{ "about/" | relURL }}" class="nav-link">About</a>
+        <a href="{{ "contact/" | relURL }}" class="nav-link">Contact</a>
 
         {{ partial "button.html" (dict "label" "Get a quote" "href" "/contact/" "size" "sm" "variant" (cond $light "accent" "primary")) }}
       </div>

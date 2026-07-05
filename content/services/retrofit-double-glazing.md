@@ -2,10 +2,10 @@
 title: "Retrofit double glazing"
 eyebrow: "Retrofit"
 summary: "Retrofit double glazing fits most existing aluminium or timber joinery — new-home comfort without new-home windows."
-image: "https://bayglass.co.nz/wp-content/uploads/Retro-picture-girl-front-300x199.jpg"
+image: "images/cinema/retro.jpg"
 heroHeadline: "Warmer, without the rebuild."
 heroBody: "Retrofit double glazing fits your existing joinery — new-home comfort, no new-home windows."
-heroImage: "https://bayglass.co.nz/wp-content/uploads/Retro-picture-girl-front-300x199.jpg"
+heroImage: "images/cinema/retro.jpg"
 features:
   - "Fits into your existing window and door frames — no reframing"
   - "Warmer, drier, quieter rooms year-round"
