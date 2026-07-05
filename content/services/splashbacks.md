@@ -2,11 +2,11 @@
 title: "Coloured glass splashbacks"
 eyebrow: "Splashbacks"
 summary: "Subtle tones, vibrant colour or a printed image. Custom made to your exact requirements."
-image: "/images/cinema/Splashback-4.png"
+image: "images/cinema/Splashback-4.png"
 heroEyebrow: "Splashbacks"
 heroHeadline: "Colour, done properly."
 heroBody: "Custom glass splashbacks in any tone — made to suit your kitchen or bathroom."
-heroImage: "/images/cinema/splashbacks.jpg"
+heroImage: "images/cinema/splashbacks.jpg"
 features:
   - "Any colour, matched to your kitchen or bathroom"
   - "Printed image splashbacks for a one-of-a-kind feature wall"

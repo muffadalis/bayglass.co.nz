@@ -2,11 +2,11 @@
 title: "Frameless glass showers"
 eyebrow: "Showers"
 summary: "Frameless enclosures made to suit every unique bathroom — stylish, easy-clean, elegant lines."
-image: "https://bayglass.co.nz/wp-content/uploads/cubicle_shower_pakiri-1080-2.jpg"
+image: "images/cinema/cubicle_shower_pakiri-1080-2.jpg"
 heroEyebrow: "Showers · Splashbacks"
 heroHeadline: "Frameless, and flawless."
 heroBody: "Custom frameless glass showers, made to suit every unique bathroom."
-heroImage: "/images/cinema/showers.jpg"
+heroImage: "images/cinema/showers.jpg"
 features:
   - "Frameless and semi-frameless configurations"
   - "Measured on site to suit awkward or non-standard bathrooms"

@@ -24,7 +24,7 @@
     </div>
     {{ with .Params.image }}
     <div class="media-frame aspect-[4/5]">
-      <img src="{{ . }}" alt="{{ $.Title }}" class="media-cover" loading="lazy">
+      <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="media-cover" loading="lazy">
     </div>
     {{ end }}
   </div>

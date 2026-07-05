@@ -3,7 +3,7 @@
 <a href="{{ .href }}" class="flex flex-col rounded-lg overflow-hidden no-underline {{ if $dark }}bg-surface-dark-2 border border-white/10{{ else }}bg-surface-card border border-hairline shadow-md{{ end }}">
   {{ with .media }}
   <div class="relative w-full aspect-[16/10] overflow-hidden {{ if $dark }}bg-white/3{{ else }}bg-ink-100{{ end }}">
-    <img src="{{ . }}" alt="" class="w-full h-full object-cover block" loading="lazy">
+    <img src="{{ . | relURL }}" alt="" class="w-full h-full object-cover block" loading="lazy">
   </div>
   {{ end }}
   <div class="px-7 pt-7 pb-8">

@@ -34,7 +34,7 @@
   <div class="relative overflow-hidden rounded-2xl shadow-ring bg-cinema-bg h-[82vh] min-h-[600px] max-h-[860px]">
     {{ range $i, $s := $services }}
     <div class="hero-slide absolute inset-0" style="animation-delay:{{ mul $i $slideDuration }}s">
-      <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('{{ $s.Params.heroImage | default $s.Params.image }}')"></div>
+      <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('{{ ($s.Params.heroImage | default $s.Params.image) | relURL }}')"></div>
       <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(14,21,24,.82) 0%, rgba(14,21,24,.15) 32%, rgba(14,21,24,.12) 55%, rgba(14,21,24,.9) 100%)"></div>
       <div class="absolute inset-0 flex flex-col justify-end p-6 sm:p-12 md:p-16">
         <div class="max-w-[640px]">

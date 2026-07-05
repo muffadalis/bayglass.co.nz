@@ -2,11 +2,11 @@
 title: "Balustrades & pool fences"
 eyebrow: "Balustrades"
 summary: "Glass and aluminium systems for decks, pools, stairways and balconies — including gates."
-image: "/images/cinema/Jacks-Bay-017-1329.jpg"
+image: "images/cinema/Jacks-Bay-017-1329.jpg"
 heroEyebrow: "Balustrades · Pool Fences"
 heroHeadline: "Nothing between you and the view."
 heroBody: "Frameless glass balustrades and pool fencing — built to the NZ Building Code."
-heroImage: "/images/cinema/balustrades-pool-fences.jpg"
+heroImage: "images/cinema/balustrades-pool-fences.jpg"
 features:
   - "Glass and aluminium balustrade systems"
   - "Pool fencing built to meet safety requirements"

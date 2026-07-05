@@ -5,8 +5,8 @@ summary: "Adjustable louvre roofs and outdoor room systems that turn a deck into
 heroEyebrow: "Outdoor Rooms · Louvre Roofs"
 heroHeadline: "Your new favourite room."
 heroBody: "Opening louvre roofs and shutter systems for genuine, year-round indoor-outdoor living."
-heroImage: "/images/cinema/outdoor-rooms-louvre.jpg"
-image: "/images/cinema/outdoor-rooms-louvre.jpg"
+heroImage: "images/cinema/outdoor-rooms-louvre.jpg"
+image: "images/cinema/outdoor-rooms-louvre.jpg"
 features:
   - "Opening louvre roofs — adjust for sun, shade or full weather cover"
   - "Integrated with glass or aluminium walls for a true outdoor room"
