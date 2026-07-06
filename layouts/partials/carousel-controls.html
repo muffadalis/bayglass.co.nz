@@ -1,0 +1,17 @@
+{{/* Shared prev/next arrows + bottom dot indicators for the home hero and each
+     service page's own photo carousel — kept as one partial so both look and
+     behave identically. Must sit inside a `[data-carousel]` container alongside
+     slides marked `data-carousel-slide` (see site.js for the interaction).
+     Params: count (number of slides). */}}
+{{ $count := .count }}
+<button type="button" class="absolute left-3 top-1/2 -translate-y-1/2 flex items-center justify-center w-11 h-11 rounded-full bg-navy/50 text-on-dark backdrop-blur-sm transition-colors duration-200 hover:bg-navy cursor-pointer" data-carousel-prev aria-label="Previous slide">
+  <svg width="9" height="15" viewBox="0 0 9 15" fill="none" aria-hidden="true"><path d="M8 1L1.5 7.5L8 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+<button type="button" class="absolute right-3 top-1/2 -translate-y-1/2 flex items-center justify-center w-11 h-11 rounded-full bg-navy/50 text-on-dark backdrop-blur-sm transition-colors duration-200 hover:bg-navy cursor-pointer" data-carousel-next aria-label="Next slide">
+  <svg width="9" height="15" viewBox="0 0 9 15" fill="none" aria-hidden="true"><path d="M1 1L7.5 7.5L1 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+<div class="absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-2" data-carousel-dots>
+  {{ range $i := (seq 0 (sub $count 1)) }}
+  <button type="button" class="h-2 w-2 rounded-full bg-on-dark/50 transition-all duration-200 data-[active=true]:w-5 data-[active=true]:bg-on-dark cursor-pointer" data-carousel-dot data-index="{{ $i }}" aria-label="Go to slide {{ add $i 1 }}"></button>
+  {{ end }}
+</div>

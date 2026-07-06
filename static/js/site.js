@@ -43,6 +43,54 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Photo carousels — home hero + each service page's own gallery. Same
+  // markup and behaviour for both: cross-fading slides, arrows, dots,
+  // autoplay that restarts whenever a visitor takes manual control.
+  var carousels = document.querySelectorAll('[data-carousel]');
+  carousels.forEach(function (carousel) {
+    var slides = carousel.querySelectorAll('[data-carousel-slide]');
+    var dots = carousel.querySelectorAll('[data-carousel-dot]');
+    var count = slides.length;
+    if (count < 2) return;
+
+    var index = 0;
+    var timer;
+
+    function render() {
+      slides.forEach(function (slide, i) {
+        var active = i === index;
+        slide.classList.toggle('opacity-100', active);
+        slide.classList.toggle('opacity-0', !active);
+        slide.classList.toggle('pointer-events-auto', active);
+        slide.classList.toggle('pointer-events-none', !active);
+      });
+      dots.forEach(function (dot, i) {
+        dot.setAttribute('data-active', i === index ? 'true' : 'false');
+      });
+    }
+
+    function goTo(next) {
+      index = (next + count) % count;
+      render();
+    }
+
+    function restartAutoplay() {
+      clearInterval(timer);
+      timer = setInterval(function () { goTo(index + 1); }, 6000);
+    }
+
+    var prevBtn = carousel.querySelector('[data-carousel-prev]');
+    var nextBtn = carousel.querySelector('[data-carousel-next]');
+    if (prevBtn) prevBtn.addEventListener('click', function () { goTo(index - 1); restartAutoplay(); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { goTo(index + 1); restartAutoplay(); });
+    dots.forEach(function (dot, i) {
+      dot.addEventListener('click', function () { goTo(i); restartAutoplay(); });
+    });
+
+    render();
+    restartAutoplay();
+  });
+
   // Contact form — Web3Forms. The form's plain action/method already work
   // without JS; this just upgrades it to an inline status message instead
   // of navigating away.

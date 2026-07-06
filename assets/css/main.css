@@ -278,6 +278,14 @@ body {
     @apply block h-full w-full object-cover;
   }
 
+  /* Carousel slides (home hero + service pages) — skip the cross-fade for
+     visitors who've asked for reduced motion; arrows/dots still work instantly. */
+  @media (prefers-reduced-motion: reduce) {
+    [data-carousel-slide] {
+      transition: none;
+    }
+  }
+
   /* Sticky-header nav links */
   .nav-link {
     @apply font-body text-base font-medium text-(--nav-fg);

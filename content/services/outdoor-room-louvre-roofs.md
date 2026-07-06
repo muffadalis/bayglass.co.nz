@@ -9,6 +9,13 @@ heroImage: "images/cinema/outdoor-rooms-louvre.jpg"
 image: "images/cinema/outdoor-rooms-louvre.jpg"
 gallery:
   - "images/cinema/outdoor-rooms-louvre.jpg"
+  - "images/cinema/bask1.jpg"
+  - "images/cinema/bask2.jpg"
+  - "images/cinema/bask3.jpg"
+  - "images/cinema/bask4.jpg"
+  - "images/cinema/bask5.jpg"
+  - "images/cinema/bask6.jpg"
+  - "images/cinema/bask7.jpg"
 features:
   - "Opening louvre roofs — adjust for sun, shade or full weather cover"
   - "Integrated with glass or aluminium walls for a true outdoor room"
