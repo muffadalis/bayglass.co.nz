@@ -1,32 +1,36 @@
 {{ define "main" }}
 
-{{ partial "gradient-header.html" (dict "eyebrow" .Params.eyebrow "title" .Title "lead" .Params.summary) }}
+{{/* ---------- Top hero — this service's own photo carousel ---------- */}}
+{{ $gallery := .Params.gallery }}
+{{ if not $gallery }}{{ with .Params.image }}{{ $gallery = slice . }}{{ end }}{{ end }}
+{{ with $gallery }}
+{{ partial "service-carousel.html" (dict "images" . "alt" $.Title) }}
+{{ end }}
+
+<div class="container-page mt-10">
+  {{ with .Params.eyebrow }}<span class="eyebrow">{{ . }}</span>{{ end }}
+  <h1 class="page-title mt-3 max-w-[20ch]">{{ .Title }}</h1>
+  {{ with .Params.summary }}<p class="lead mt-5 max-w-[48ch]">{{ . }}</p>{{ end }}
+</div>
 
 <div class="container-page mt-10 mb-10">
-  <div class="grid grid-cols-1 md:grid-cols-[1.4fr_1fr] gap-12 items-start">
-    <div>
-      <div class="prose-body">
-        {{ .Content }}
-      </div>
-      {{ with .Params.features }}
-      <ul class="mt-8 space-y-4">
-        {{ range . }}
-        <li class="flex gap-3 items-start">
-          <span class="mt-[0.55em] w-1.5 h-1.5 rounded-full bg-accent shrink-0" aria-hidden="true"></span>
-          <span class="text-body text-lg leading-relaxed">{{ . }}</span>
-        </li>
-        {{ end }}
-      </ul>
+  <div class="max-w-[70ch]">
+    <div class="prose-body">
+      {{ .Content }}
+    </div>
+    {{ with .Params.features }}
+    <ul class="mt-8 space-y-4">
+      {{ range . }}
+      <li class="flex gap-3 items-start">
+        <span class="mt-[0.55em] w-1.5 h-1.5 rounded-full bg-accent shrink-0" aria-hidden="true"></span>
+        <span class="text-body text-lg leading-relaxed">{{ . }}</span>
+      </li>
       {{ end }}
-      <div class="mt-10">
-        {{ partial "button.html" (dict "label" "Get a quote for this" "href" "/contact/") }}
-      </div>
-    </div>
-    {{ with .Params.image }}
-    <div class="media-frame aspect-[4/5]">
-      <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="media-cover" loading="lazy">
-    </div>
+    </ul>
     {{ end }}
+    <div class="mt-10">
+      {{ partial "button.html" (dict "label" "Get a quote for this" "href" "/contact/") }}
+    </div>
   </div>
 </div>
 

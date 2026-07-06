@@ -4,7 +4,7 @@
   {{ partial "head.html" . }}
 </head>
 <body class="font-body bg-surface-card text-body antialiased">
-  {{ partial "header.html" (dict "light" .IsHome) }}
+  {{ partial "header.html" (dict "light" (or .IsHome (and (eq .Type "services") (eq .Kind "page")))) }}
   {{ block "main" . }}{{ end }}
   <script src="{{ "js/site.js" | relURL }}" defer></script>
 </body>

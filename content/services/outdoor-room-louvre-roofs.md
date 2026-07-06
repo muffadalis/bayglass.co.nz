@@ -7,6 +7,8 @@ heroHeadline: "Your new favourite room."
 heroBody: "Opening louvre roofs and shutter systems for genuine, year-round indoor-outdoor living."
 heroImage: "images/cinema/outdoor-rooms-louvre.jpg"
 image: "images/cinema/outdoor-rooms-louvre.jpg"
+gallery:
+  - "images/cinema/outdoor-rooms-louvre.jpg"
 features:
   - "Opening louvre roofs — adjust for sun, shade or full weather cover"
   - "Integrated with glass or aluminium walls for a true outdoor room"

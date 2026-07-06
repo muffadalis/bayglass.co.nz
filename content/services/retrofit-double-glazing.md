@@ -3,6 +3,8 @@ title: "Retrofit double glazing"
 eyebrow: "Retrofit"
 summary: "Retrofit double glazing fits most existing aluminium or timber joinery — new-home comfort without new-home windows."
 image: "images/cinema/retro.jpg"
+gallery:
+  - "images/cinema/retro.jpg"
 heroHeadline: "Warmer, without the rebuild."
 heroBody: "Retrofit double glazing fits your existing joinery — new-home comfort, no new-home windows."
 heroImage: "images/cinema/retro.jpg"

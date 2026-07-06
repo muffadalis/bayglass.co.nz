@@ -1,0 +1,55 @@
+{{/* Full-bleed photo hero for the top of a service page — same edge-to-edge rounded
+     panel and CSS-only auto cross-fade as the homepage's hero-carousel, just looping
+     through this one service's own gallery instead of rotating between services. A
+     single-image gallery renders as a plain static photo, since there's nothing to
+     fade between. Params: images (list of image paths), alt (string). */}}
+{{ $images := .images }}
+{{ $alt := .alt }}
+{{ $count := len $images }}
+{{ $slideDuration := 6 }}
+{{ $total := mul $count $slideDuration }}
+{{ $slot := div 100.0 $count }}
+{{ $fadeIn := 1.2 }}
+{{ $fadeOutStart := sub $slot $fadeIn }}
+
+{{ if gt $count 1 }}
+<style>
+  .service-hero-slide {
+    opacity: 0;
+    animation-name: serviceHeroFade;
+    animation-duration: {{ $total }}s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+  @keyframes serviceHeroFade {
+    0%          { opacity: 0; }
+    {{ $fadeIn }}%      { opacity: 1; }
+    {{ $fadeOutStart }}% { opacity: 1; }
+    {{ $slot }}%       { opacity: 0; }
+    100%        { opacity: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .service-hero-slide { animation: none; opacity: 0; }
+    .service-hero-slide:first-child { opacity: 1; }
+  }
+</style>
+{{ end }}
+
+<div class="p-3">
+  <div class="relative overflow-hidden rounded-2xl shadow-ring bg-ink-100 h-[82vh] min-h-[600px] max-h-[860px]">
+    {{ if gt $count 1 }}
+    {{ range $i, $img := $images }}
+    <div class="service-hero-slide absolute inset-0" style="animation-delay:{{ mul $i $slideDuration }}s">
+      <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('{{ $img | relURL }}')"></div>
+    </div>
+    {{ end }}
+    {{ else }}
+    {{ with index $images 0 }}
+    <img src="{{ . | relURL }}" alt="{{ $alt }}" class="block h-full w-full object-cover" loading="lazy">
+    {{ end }}
+    {{ end }}
+
+    {{/* Top-down fade so the fixed nav stays legible over any photo */}}
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-40" style="background:linear-gradient(180deg, rgba(2,48,71,0.55) 0%, rgba(2,48,71,0) 100%)"></div>
+  </div>
+</div>

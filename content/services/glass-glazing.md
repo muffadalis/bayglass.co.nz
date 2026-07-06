@@ -3,6 +3,8 @@ title: "Glass & glazing"
 eyebrow: "Glass & glazing"
 summary: "Broken window? Cracked mirror? New glazing for a build or renovation — we cut, replace and install it all, right across the Bay of Islands."
 image: "images/cinema/intro-bayglass.jpg"
+gallery:
+  - "images/cinema/intro-bayglass.jpg"
 heroHeadline: "More than just glass."
 heroBody: "Glass cut, replaced and installed — from a single broken pane to a full glazing fit-out."
 heroImage: "images/cinema/intro-bayglass.jpg"
