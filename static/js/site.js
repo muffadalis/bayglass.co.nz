@@ -31,6 +31,29 @@ document.addEventListener('DOMContentLoaded', function () {
     backdrop.addEventListener('click', closeMenu);
   }
 
+  // Cookie notice — slide it in unless the visitor already dismissed it.
+  var cookieBanner = document.getElementById('cookie-banner');
+  if (cookieBanner) {
+    var cookieAccepted;
+    try {
+      cookieAccepted = localStorage.getItem('cookie-consent');
+    } catch (e) {}
+
+    if (cookieAccepted !== 'accepted') {
+      cookieBanner.classList.remove('translate-y-full');
+    }
+
+    var cookieAcceptBtn = document.getElementById('cookie-banner-accept');
+    if (cookieAcceptBtn) {
+      cookieAcceptBtn.addEventListener('click', function () {
+        cookieBanner.classList.add('translate-y-full');
+        try {
+          localStorage.setItem('cookie-consent', 'accepted');
+        } catch (e) {}
+      });
+    }
+  }
+
   var themeToggle = document.getElementById('theme-toggle');
   if (themeToggle) {
     themeToggle.addEventListener('click', function () {
