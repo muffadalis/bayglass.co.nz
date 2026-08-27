@@ -19,7 +19,7 @@ gallery:
 features:
   - "Opening louvre roofs — adjust for sun, shade or full weather cover"
   - "Integrated with glass or aluminium walls for a true outdoor room"
-  - "LouvreTec systems, supplied and installed"
+  - "Louvre roof systems, supplied and installed"
   - "Rain-sensing and remote control options available"
 weight: 1
 ---
@@ -30,5 +30,5 @@ in the rain, all from a remote or a rain sensor.
 Paired with glass or aluminium walls, it becomes a genuine outdoor room:
 somewhere to use whatever Northland's weather is doing.
 
-We're a LouvreTec supply partner, so the roof itself is backed by a proven
+We supply Bask louvre and out door prodcuts, so the roof itself is backed by a proven
 system — we handle the measuring, structure and installation around it.
