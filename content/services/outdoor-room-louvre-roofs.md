@@ -30,5 +30,5 @@ in the rain, all from a remote or a rain sensor.
 Paired with glass or aluminium walls, it becomes a genuine outdoor room:
 somewhere to use whatever Northland's weather is doing.
 
-We supply Bask louvre and out door prodcuts, so the roof itself is backed by a proven
+We supply Bask louvre and outdoor products, so the roof itself is backed by a proven
 system — we handle the measuring, structure and installation around it.
