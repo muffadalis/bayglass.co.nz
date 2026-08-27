@@ -63,7 +63,7 @@ No database. Content lives in the repo:
 - `/content/_index.md`, `/content/services/_index.md`, `/content/contact.md` —
   home, services-index and contact page content
 - `/data/suppliers.yaml` — logo-cloud supplier names (Bask, Metro Glass,
-  Viridian, Insulglass, Houzz — as in the handoff)
+  Viridian, Opus, APL)
 - Images: the handoff hot-links images from `bayglass.co.nz/wp-content/uploads/…`.
   I'll use those same hot-linked URLs to start (matches the design system
   exactly); downloading local copies into `/static/images/` can be a fast
