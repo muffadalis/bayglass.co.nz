@@ -1,13 +1,53 @@
 baseURL = "https://bayglass.co.nz/"
-languageCode = "en-nz"
-title = "Bay Glass — More than just glass"
+locale = "en-nz"
+title = "Bay Glass"
 disableKinds = ["taxonomy", "term"]
+enableRobotsTXT = true
+disableHugoGeneratorInject = true
+
+[minify]
+  disableJSON = false
+  [minify.tdewolff.html]
+    keepComments = false
+
+# Hugo 0.158+ sandboxes the css.TailwindCSS subprocess and only runs binaries on
+# this allow-list. The defaults (sass/go/git/node/postcss) don't include the
+# Tailwind CLI, so the build fails without this. Keeps the defaults, adds
+# tailwindcss + npx. Local and CI both run Hugo 0.165.0 extended.
+[security]
+  [security.exec]
+    allow = ['^(dart-)?sass$', '^go$', '^git$', '^npx$', '^node$', '^postcss$', '^tailwindcss$', 'tailwindcss']
+
 
 [params]
-  phone = "09-407 9035"
+  # NAP — kept byte-identical with the Google Business Profile
+  businessName = "Bay Glass"
+  legalName = "Bay Glass Northland Ltd."
+  phone = "09 407 9035"
   phoneHref = "tel:+6494079035"
-  address = "40 Klinac Lane, Waipapa"
+  email = "info@bayglass.co.nz"
+  address = "40 Klinac Lane, Waipapa 0230"
+  addressLocality = "Waipapa"
+  addressRegion = "Northland"
+  postalCode = "0230"
+  addressCountry = "NZ"
+  latitude = "-35.181"
+  longitude = "173.928"
+  priceRange = "$$"
   banner = "24-hour emergency callouts — Northland wide"
+  description = "Northland's glass specialists in Kerikeri — showers, splashbacks, balustrades, glazing and retrofit double glazing across the Bay of Islands. Get a free quote."
+  ogImage = "images/cinema/intro-bayglass.jpg"
+  reviewCount = "57"
+  reviewRating = "4.9"
+
+  [params.social]
+    facebook = "https://www.facebook.com/bayglass.kerikeri/"
+    googleProfile = "https://share.google/C2ogiGUNgyoqaJysz"
+
+[[params.openingHours]]
+  days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+  opens = "08:00"
+  closes = "16:30"
 
 [[menus.main]]
   name = "Services"

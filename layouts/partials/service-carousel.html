@@ -13,12 +13,16 @@
     {{ if gt $count 1 }}
     {{ range $i, $img := $images }}
     <div class="absolute inset-0 transition-opacity duration-700 ease-out{{ if eq $i 0 }} opacity-100 pointer-events-auto{{ else }} opacity-0 pointer-events-none{{ end }}" data-carousel-slide>
-      <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('{{ $img | relURL }}')"></div>
+      {{ if eq $i 0 }}
+      {{ partial "picture.html" (dict "src" $img "alt" $alt "class" "absolute inset-0 block h-full w-full object-cover" "priority" true "sizes" "100vw") }}
+      {{ else }}
+      <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('{{ (replaceRE `\.(jpe?g|png|JPG)$` ".webp" $img) | relURL }}')" role="img" aria-label="{{ $alt }}"></div>
+      {{ end }}
     </div>
     {{ end }}
     {{ else }}
     {{ with index $images 0 }}
-    <img src="{{ . | relURL }}" alt="{{ $alt }}" class="block h-full w-full object-cover" loading="lazy">
+    {{ partial "picture.html" (dict "src" . "alt" $alt "class" "block h-full w-full object-cover" "priority" true "sizes" "100vw") }}
     {{ end }}
     {{ end }}
 

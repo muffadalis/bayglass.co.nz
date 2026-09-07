@@ -2,3 +2,7 @@ public/
 resources/
 node_modules/
 .hugo_build.lock
+
+# Pre-optimization image originals — archived locally by /audit (6 Sep 2026).
+# The un-optimized versions are also preserved in git history at commit 4287821.
+assets/images/cinema-originals/

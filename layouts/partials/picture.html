@@ -1,0 +1,21 @@
+{{/* Responsive <picture> with a WebP source and the original as fallback.
+     Params:
+       src      — path under /static, e.g. "images/cinema/intro-bayglass.jpg"
+       alt      — alt text (pass "" only for genuinely decorative images)
+       class    — classes for the <img>
+       sizes    — the sizes attribute (optional)
+       priority — true for the LCP image: eager + fetchpriority=high
+     Reads data/imagedims.json for width/height (prevents layout shift). */}}
+{{ $src := .src }}
+{{ $file := path.Base $src }}
+{{ $webp := replaceRE `\.(jpe?g|png|JPG)$` ".webp" $src }}
+{{ $dims := index hugo.Data.imagedims $file }}
+{{ $w := "" }}{{ $h := "" }}
+{{ with $dims }}{{ $w = .w }}{{ $h = .h }}{{ end }}
+<picture style="display:contents">
+  <source type="image/webp" srcset="{{ $webp | relURL }}"{{ with .sizes }} sizes="{{ . }}"{{ end }}>
+  <img src="{{ $src | relURL }}" alt="{{ .alt }}"
+    {{- with .class }} class="{{ . }}"{{ end }}
+    {{- with $w }} width="{{ . }}"{{ end }}{{ with $h }} height="{{ . }}"{{ end }}
+    {{- if .priority }} loading="eager" fetchpriority="high"{{ else }} loading="lazy" decoding="async"{{ end }}>
+</picture>

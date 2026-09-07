@@ -1,0 +1,22 @@
+{{/* "Related services" internal-link block for the foot of each service page.
+     Lists the sibling services, links up to the services hub and across to About.
+     Context: the current service page. */}}
+{{ $current := .RelPermalink }}
+{{ $siblings := (where site.RegularPages "Section" "services").ByParam "weight" }}
+<nav class="container-page mt-4 mb-16" aria-label="Related services">
+  <h2 class="section-heading text-2xl md:text-3xl mb-6">Related services</h2>
+  <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
+    {{ range $siblings }}
+    {{ if ne .RelPermalink $current }}
+    <li>
+      <a href="{{ .RelPermalink }}" class="link-underline font-display font-medium text-heading">{{ .Title }}</a>
+      <span class="block text-sm text-body">{{ .Params.summary | truncate 90 }}</span>
+    </li>
+    {{ end }}
+    {{ end }}
+  </ul>
+  <p class="mt-6 text-body">
+    See <a href="/services/" class="link-underline">all glass &amp; glazing services in Kerikeri</a>,
+    or read <a href="/about/" class="link-underline">about Bay Glass</a>.
+  </p>
+</nav>

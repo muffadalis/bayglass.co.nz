@@ -1,0 +1,89 @@
+{{/* JSON-LD structured data. LocalBusiness on every page; Service on service pages;
+     WebSite on the homepage; BreadcrumbList on every non-home page. Data is pulled
+     from site params so NAP stays consistent with the Google Business Profile. */}}
+{{ $p := site.Params }}
+{{ $orgId := printf "%s#business" site.BaseURL }}
+
+{{ $sameAs := slice }}
+{{ with $p.social.facebook }}{{ $sameAs = $sameAs | append . }}{{ end }}
+{{ with $p.social.googleProfile }}{{ $sameAs = $sameAs | append . }}{{ end }}
+
+{{ $business := dict
+  "@type" "Glazier"
+  "@id" $orgId
+  "name" $p.businessName
+  "legalName" $p.legalName
+  "url" site.BaseURL
+  "telephone" $p.phone
+  "email" $p.email
+  "priceRange" $p.priceRange
+  "image" (printf "%s%s" site.BaseURL ($p.ogImage | strings.TrimPrefix "/"))
+  "address" (dict
+    "@type" "PostalAddress"
+    "streetAddress" "40 Klinac Lane"
+    "addressLocality" $p.addressLocality
+    "addressRegion" $p.addressRegion
+    "postalCode" $p.postalCode
+    "addressCountry" $p.addressCountry)
+  "geo" (dict "@type" "GeoCoordinates" "latitude" $p.latitude "longitude" $p.longitude)
+  "areaServed" (slice
+    (dict "@type" "AdministrativeArea" "name" "Northland, New Zealand")
+    (dict "@type" "Place" "name" "Kerikeri")
+    (dict "@type" "Place" "name" "Bay of Islands"))
+  "sameAs" $sameAs
+  "aggregateRating" (dict
+    "@type" "AggregateRating"
+    "ratingValue" $p.reviewRating
+    "reviewCount" $p.reviewCount)
+}}
+
+{{ $hours := slice }}
+{{ range $p.openingHours }}
+  {{ $hours = $hours | append (dict
+    "@type" "OpeningHoursSpecification"
+    "dayOfWeek" .days
+    "opens" .opens
+    "closes" .closes) }}
+{{ end }}
+{{ with $hours }}{{ $business = merge $business (dict "openingHoursSpecification" .) }}{{ end }}
+
+{{ $graph := slice $business }}
+
+{{/* WebSite on the homepage */}}
+{{ if .IsHome }}
+  {{ $graph = $graph | append (dict
+    "@type" "WebSite"
+    "@id" (printf "%s#website" site.BaseURL)
+    "url" site.BaseURL
+    "name" $p.businessName
+    "publisher" (dict "@id" $orgId)) }}
+{{ end }}
+
+{{/* Service on service single pages */}}
+{{ if and (eq .Type "services") .IsPage }}
+  {{ $graph = $graph | append (dict
+    "@type" "Service"
+    "name" .Title
+    "serviceType" (.Params.eyebrow | default .Title)
+    "description" (.Params.summary | default .Params.description)
+    "url" .Permalink
+    "provider" (dict "@id" $orgId)
+    "areaServed" (dict "@type" "AdministrativeArea" "name" "Northland, New Zealand")) }}
+{{ end }}
+
+{{/* Breadcrumbs on every non-home page */}}
+{{ if not .IsHome }}
+  {{ $crumbs := slice (dict "@type" "ListItem" "position" 1 "name" "Home" "item" site.BaseURL) }}
+  {{ $pos := 1 }}
+  {{ if and (eq .Type "services") .IsPage }}
+    {{ $pos = add $pos 1 }}
+    {{ $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" "Services" "item" (printf "%sservices/" site.BaseURL)) }}
+  {{ end }}
+  {{ $pos = add $pos 1 }}
+  {{ $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" .Title "item" .Permalink) }}
+  {{ $graph = $graph | append (dict "@type" "BreadcrumbList" "itemListElement" $crumbs) }}
+{{ end }}
+
+<script type="application/ld+json">
+{{ (dict "@context" "https://schema.org" "@graph" $graph) | jsonify (dict "indent" "  ") | safeJS }}
+</script>

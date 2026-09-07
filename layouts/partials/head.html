@@ -1,13 +1,58 @@
-{{/* Document head: meta, title, Tailwind-compiled stylesheet. */}}
+{{/* Document head: meta, title, canonical, social, schema, Tailwind-compiled stylesheet. */}}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} &middot; Bay Glass Northland{{ end }}</title>
-{{ with .Params.description | default site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
+
+{{/* ---------- Title ---------- */}}
+{{ $brand := site.Title }}
+{{ $title := "" }}
+{{ if .IsHome }}
+  {{ $title = .Params.seoTitle | default "Glass & Glazing, Kerikeri | Bay Glass, Bay of Islands" }}
+{{ else if .Params.seoTitle }}
+  {{ $title = .Params.seoTitle }}
+{{ else }}
+  {{ $title = printf "%s | %s, Kerikeri" .Title $brand }}
+{{ end }}
+<title>{{ $title }}</title>
+
+{{/* ---------- Description ---------- */}}
+{{ $desc := .Params.description | default .Params.summary | default site.Params.description }}
+{{ with $desc }}<meta name="description" content="{{ . }}">{{ end }}
+
+{{/* ---------- Canonical / indexability ---------- */}}
+{{ if eq .Kind "404" }}<meta name="robots" content="noindex, follow">{{ end }}
+<link rel="canonical" href="{{ .Permalink }}">
+
+{{/* ---------- Open Graph / Twitter ---------- */}}
+{{ $ogImg := "" }}
+{{ with (.Params.image | default site.Params.ogImage) }}{{ $ogImg = . | absURL }}{{ end }}
+<meta property="og:site_name" content="{{ $brand }}">
+<meta property="og:locale" content="en_NZ">
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:title" content="{{ $title }}">
+{{ with $desc }}<meta property="og:description" content="{{ . }}">{{ end }}
+<meta property="og:url" content="{{ .Permalink }}">
+{{ with $ogImg }}<meta property="og:image" content="{{ . }}">{{ end }}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $title }}">
+{{ with $desc }}<meta name="twitter:description" content="{{ . }}">{{ end }}
+{{ with $ogImg }}<meta name="twitter:image" content="{{ . }}">{{ end }}
+
+{{/* ---------- Icons ---------- */}}
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#023047">
+
+{{/* ---------- Fonts (preconnect + single stylesheet link, no CSS @import) ---------- */}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&family=Space+Grotesk:wght@400;500;600;700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Archivo:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,300;1,400&display=swap">
 
 {{ $css := resources.Get "css/main.css" }}
 {{ $opts := dict "minify" (not hugo.IsDevelopment) }}
 {{ $style := $css | css.TailwindCSS $opts }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+
+{{/* ---------- Structured data ---------- */}}
+{{ partial "schema.html" . }}
 
 {{/* Set the theme before first paint so there's no flash of the wrong colours. */}}
 <script>

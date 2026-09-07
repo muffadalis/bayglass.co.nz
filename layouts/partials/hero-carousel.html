@@ -7,8 +7,13 @@
 <div class="p-3">
   <div class="relative overflow-hidden rounded-2xl shadow-ring bg-cinema-bg h-[82vh] min-h-[600px] max-h-[860px]"{{ if gt $n 1 }} data-carousel{{ end }}>
     {{ range $i, $s := $services }}
+    {{ $heroSrc := $s.Params.heroImage | default $s.Params.image }}
     <div class="absolute inset-0 transition-opacity duration-700 ease-out{{ if eq $i 0 }} opacity-100 pointer-events-auto{{ else }} opacity-0 pointer-events-none{{ end }}" data-carousel-slide>
-      <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('{{ ($s.Params.heroImage | default $s.Params.image) | relURL }}')"></div>
+      {{ if eq $i 0 }}
+      {{ partial "picture.html" (dict "src" $heroSrc "alt" (printf "%s — Bay Glass, Kerikeri" $s.Title) "class" "absolute inset-0 block h-full w-full object-cover" "priority" true "sizes" "100vw") }}
+      {{ else }}
+      <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('{{ (replaceRE `\.(jpe?g|png|JPG)$` ".webp" $heroSrc) | relURL }}')" role="img" aria-label="{{ $s.Title }} — Bay Glass"></div>
+      {{ end }}
       <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(14,21,24,.82) 0%, rgba(14,21,24,.15) 32%, rgba(14,21,24,.12) 55%, rgba(14,21,24,.9) 100%)"></div>
       <div class="absolute inset-0 flex flex-col justify-end p-6 sm:p-12 md:p-16">
         <div class="max-w-[640px]">

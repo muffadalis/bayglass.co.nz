@@ -1,5 +1,7 @@
 ---
 title: "Outdoor room & louvre roofs"
+seoTitle: "Louvre Roofs & Outdoor Rooms, Northland | Bay Glass"
+description: "Adjustable louvre roofs and outdoor rooms in Kerikeri and Northland — open for sun, angle for shade, close flat in the rain. Bask systems installed. Free quote."
 eyebrow: "Outdoor living"
 summary: "Adjustable louvre roofs and outdoor room systems that turn a deck into a room you'll actually use."
 heroEyebrow: "Outdoor Rooms · Louvre Roofs"

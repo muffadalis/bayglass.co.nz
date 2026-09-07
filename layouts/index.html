@@ -1,5 +1,10 @@
 {{ define "main" }}
 
+{{/* Page H1 — the hero is a rotating cinematic caption, so the page's single
+     real H1 sits here for crawlers and screen readers. Promote to a visible
+     heading via /service-page if the design changes. */}}
+<h1 class="sr-only">Glass, glazing and glazing repairs &mdash; Kerikeri &amp; the Bay of Islands</h1>
+
 {{/* ---------- Rotating hero — one cinematic slide per service ---------- */}}
 {{ partial "hero-carousel.html" . }}
 
@@ -33,7 +38,7 @@
       Real reviews from real customers across Kerikeri and the Northland region.
     </p>
     <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {{ range site.Data.reviews }}
+      {{ range hugo.Data.reviews }}
       {{ partial "review-card.html" . }}
       {{ end }}
     </div>

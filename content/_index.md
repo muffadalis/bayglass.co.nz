@@ -1,4 +1,7 @@
 ---
 title: "Bay Glass"
-description: "Northland's glass specialists — showers, splashbacks, balustrades, glazing and retrofit double glazing, custom made and expertly installed across the Bay of Islands."
+description: "Northland's glass specialists in Kerikeri — showers, splashbacks, balustrades, glazing and retrofit double glazing across the Bay of Islands. Get a free quote."
+aliases:
+  - "/testimonials/"
+  - "/home/"
 ---

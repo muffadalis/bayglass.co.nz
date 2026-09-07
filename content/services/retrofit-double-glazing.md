@@ -1,5 +1,7 @@
 ---
 title: "Retrofit double glazing"
+seoTitle: "Retrofit Double Glazing, Kerikeri & Northland | Bay Glass"
+description: "Retrofit double glazing in Kerikeri and Northland — fitted into your existing aluminium or timber joinery for warmer, drier rooms, no reframing. Free quote."
 eyebrow: "Retrofit"
 summary: "Retrofit double glazing fits most existing aluminium or timber joinery — new-home comfort without new-home windows."
 image: "images/cinema/retro.jpg"

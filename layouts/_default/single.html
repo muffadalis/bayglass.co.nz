@@ -5,7 +5,12 @@
 <div class="container-page mt-20 max-w-2xl">
   {{ with .Params.image }}
   <div class="media-frame aspect-video mb-10">
-    <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="media-cover" loading="lazy">
+    {{ partial "picture.html" (dict
+      "src" .
+      "alt" ($.Params.imageAlt | default "Bay Glass — glass and glazing work in Northland")
+      "class" "media-cover"
+      "priority" true
+      "sizes" "(min-width: 768px) 42rem, 100vw") }}
   </div>
   {{ end }}
   <div class="prose-body">

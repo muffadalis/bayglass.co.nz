@@ -1,0 +1,17 @@
+{{ define "main" }}
+{{ partial "gradient-header.html" (dict "eyebrow" "Page not found" "title" "That page isn't here." "lead" "The link may be old or mistyped. Here's the way back.") }}
+
+<div class="container-page mt-12 mb-10 max-w-2xl">
+  <ul class="space-y-3">
+    <li><a href="/" class="link-underline font-display font-medium text-heading">Home</a></li>
+    <li><a href="/services/" class="link-underline font-display font-medium text-heading">All services</a></li>
+    <li><a href="/about/" class="link-underline font-display font-medium text-heading">About Bay Glass</a></li>
+    <li><a href="/contact/" class="link-underline font-display font-medium text-heading">Contact &amp; quotes</a></li>
+  </ul>
+  <p class="lead mt-8">
+    Need glass sorted now? Call <a href="{{ site.Params.phoneHref | safeURL }}" class="link-underline">{{ site.Params.phone }}</a> Northland wide.
+  </p>
+</div>
+
+{{ partial "cta-footer.html" . }}
+{{ end }}
