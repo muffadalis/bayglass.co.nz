@@ -49,7 +49,8 @@
 {{ $css := resources.Get "css/main.css" }}
 {{ $opts := dict "minify" (not hugo.IsDevelopment) }}
 {{ $style := $css | css.TailwindCSS $opts }}
-<link rel="stylesheet" href="{{ $style.RelPermalink }}">
+{{ if hugo.IsProduction }}{{ $style = $style | minify | fingerprint }}{{ end }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}"{{ with $style.Data.Integrity }} integrity="{{ . }}"{{ end }}>
 
 {{/* ---------- Structured data ---------- */}}
 {{ partial "schema.html" . }}
