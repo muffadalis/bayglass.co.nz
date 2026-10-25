@@ -55,6 +55,7 @@ Done 6 Sep. Added `<h1 class="sr-only">Glass, glazing and glazing repairs — Ke
 ### [ ] 18. Route: thin service pages + empty About → `/service-page`
 7 service pages run 70–90 words of body; About is one sentence. Fix is real depth (process, price bands, real jobs, FAQ, per-page proof) — that's writing, so it leaves this command. Do NOT pad to a word count.
 **Who:** you, via `/service-page` (×8)
+**26 Oct, in progress (retrofit first):** plan approved; new optional page sections built (answer, steps, tables, recent jobs, FAQ + FAQ schema); retrofit draft now has answer, steps, suitability table, "what affects the price" (no prices), 7-question FAQ + FAQ schema, from your facts (26 Oct). ~55 → ~550 words. Recent jobs: none supplied, section hidden. Lab mobile: 100 / 100 / 79 / 100. Awaiting your approval; not published.
 
 ### [x] 19. Google Business Profile · categories, services, description, service areas
 Done 25 Oct by you. Categories 5 → 10, "Glass Splash Back" duplicate removed, services added from the list (no town names), 670-character description written, service areas added (up to 20 towns, Kerikeri to Whangārei). Products and attributes moved to item 38. (Profile name: done 25 Oct.)
@@ -144,9 +145,8 @@ Done 26 Oct on your instruction. Glass & glazing page: removed "A smashed window
 ### [x] 44. Retrofit double glazing is aluminium only
 Done 26 Oct on your correction. Removed "or timber" from the retrofit page (meta description, summary, first paragraph), `llms.txt`, `gbp-products.md` (product 7 now aluminium sliding doors) and the page plan in `project_specs.md`.
 
-### [ ] 45. Remove timber from the Google profile
-The profile description (from 25 Oct) says "aluminium or timber joinery"; paste the corrected one. Remove the service "Double Glazing for Timber Windows" and the product "Double Glazing for Timber Windows" if added. Check the Retrofit product description for "timber" too.
-**Who:** you · **Time:** 5 min · **Changes:** none to the site.
+### [x] 45. Remove timber from the Google profile
+Done 26 Oct by you: description replaced (aluminium only), timber service/product removed.
 
 ---
 
@@ -285,3 +285,12 @@ Remaining: accessibility = brand blue (item 33); best practices = Clarity cookie
 - **Owner decision:** Microsoft Clarity's 8 third-party cookies (Best Practices 79). Evidence: your "34 - yes" (keep), 26 Oct.
 
 **26 Oct, second change (your correction):** retrofit page, first paragraph: "slots into your existing aluminium or timber joinery" → "slots into your existing aluminium joinery". Body sentences altered today: 2, both at your request.
+
+## Waived · 26 Oct 2026 (2)
+
+- **Owner decision:** no prices anywhere on the site or profile products. Checks that ask for pricing tables / explicit prices (GEO 3.6, 6.2 pricing part) are waived. Evidence: "never put prices on the site", 26 Oct.
+
+**26 Oct, retrofit page, your wording (approved "yes"):**
+- Bullet: "Fits into your existing window and door frames — no reframing" → "Fits into your existing aluminium frames — usually no reframing"
+- First paragraph: "…a warmer, drier, healthier home without replacing a single frame." → "…a warmer, drier, healthier home, usually without replacing a single frame."
+Reason: reframing usually isn't needed but depends on the age of the joinery (owner, 26 Oct). Timing per owner: measure usually within a week; install time depends on size, complexity and distance.

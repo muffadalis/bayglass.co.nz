@@ -15,6 +15,11 @@
 
 <div class="container-page mt-10 mb-10">
   <div class="max-w-[70ch]">
+    {{/* Optional answer-first block: a question-style H2 with a short direct answer. */}}
+    {{ with .Params.answer }}
+    <h2 class="section-heading text-2xl md:text-3xl">{{ .question }}</h2>
+    <p class="mt-4 mb-8 font-body text-lg leading-relaxed text-body">{{ .text }}</p>
+    {{ end }}
     <div class="prose-body">
       {{ .Content }}
     </div>
@@ -28,6 +33,11 @@
       {{ end }}
     </ul>
     {{ end }}
+    {{/* Optional deeper sections - each renders only when the page's front matter has it. */}}
+    {{ with .Params.steps }}{{ partial "service-steps.html" . }}{{ end }}
+    {{ range .Params.tables }}{{ partial "content-table.html" . }}{{ end }}
+    {{ with .Params.jobs }}{{ partial "service-jobs.html" . }}{{ end }}
+    {{ with .Params.faq }}{{ partial "faq.html" . }}{{ end }}
     <div class="mt-10">
       {{ partial "button.html" (dict "label" "Get a quote for this" "href" "/contact/") }}
     </div>

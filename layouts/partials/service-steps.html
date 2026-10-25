@@ -1,0 +1,18 @@
+{{/* Numbered "how it works" steps for a service page.
+     Params: heading, items (list of {title, text}). Renders nothing without items. */}}
+{{ with .items }}
+<section class="mt-14" aria-labelledby="steps-heading">
+  <h2 id="steps-heading" class="section-heading text-2xl md:text-3xl">{{ $.heading | default "How it works" }}</h2>
+  <ol class="mt-8 space-y-6">
+    {{ range $i, $step := . }}
+    <li class="flex gap-4 items-start">
+      <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-navy font-display text-base font-medium text-on-dark" aria-hidden="true">{{ add $i 1 }}</span>
+      <div>
+        <h3 class="m-0 font-display text-xl font-medium text-heading">{{ $step.title }}</h3>
+        <p class="mt-1 mb-0 font-body text-lg leading-relaxed text-body">{{ $step.text }}</p>
+      </div>
+    </li>
+    {{ end }}
+  </ol>
+</section>
+{{ end }}

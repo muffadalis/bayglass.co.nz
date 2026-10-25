@@ -31,7 +31,7 @@ Category: Glass & glazing · Photo: `glazing1.jpg`
 
 **5. Retrofit Double Glazing**
 Category: Double glazing · Photo: `retro.jpg`
-> Retrofit double glazing fitted into your existing window and door frames, with no reframing. Warmer, drier, quieter rooms and less condensation, without the cost of new windows. Measured and installed by our own team.
+> Retrofit double glazing fitted into your existing aluminium window and door frames, usually with no reframing. Warmer, drier, quieter rooms and less condensation, without the cost of new windows. Measured and installed by our own team.
 
 **6. Double Glazing for Aluminium Windows**
 Category: Double glazing · Photo: `retro.jpg` or your photo
@@ -39,7 +39,7 @@ Category: Double glazing · Photo: `retro.jpg` or your photo
 
 **7. Double Glazing for Aluminium Sliding Doors**
 Category: Double glazing · Photo: your photo (a sliding door)
-> Double glazing for existing aluminium sliding and hinged doors, fitted into the frames you already have. Warmer, quieter rooms and less condensation, with no reframing. Measured on site, free quote.
+> Double glazing for existing aluminium sliding and hinged doors, fitted into the frames you already have. Warmer, quieter rooms and less condensation, usually with no reframing. Measured on site, free quote.
 _(Replaces "Timber Windows" 26 Oct: retrofit is aluminium only.)_
 
 ### Showers → https://bayglass.co.nz/services/glass-showers/

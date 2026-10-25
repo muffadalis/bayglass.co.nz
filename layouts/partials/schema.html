@@ -71,6 +71,15 @@
     "areaServed" (dict "@type" "AdministrativeArea" "name" "Northland, New Zealand")) }}
 {{ end }}
 
+{{/* FAQPage when a page has an faq block (same questions as shown on the page) */}}
+{{ with .Params.faq.items }}
+  {{ $qs := slice }}
+  {{ range . }}
+    {{ $qs = $qs | append (dict "@type" "Question" "name" .q "acceptedAnswer" (dict "@type" "Answer" "text" .a)) }}
+  {{ end }}
+  {{ $graph = $graph | append (dict "@type" "FAQPage" "mainEntity" $qs) }}
+{{ end }}
+
 {{/* Breadcrumbs on every non-home page */}}
 {{ if not .IsHome }}
   {{ $crumbs := slice (dict "@type" "ListItem" "position" 1 "name" "Home" "item" site.BaseURL) }}

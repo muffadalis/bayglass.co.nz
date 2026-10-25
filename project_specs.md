@@ -113,9 +113,8 @@ cold, damp or noisy rooms and existing **aluminium** windows and doors (we do no
    what retrofit double glazing is and who it suits (answer-first, for Google + AI)
 2. **How it works** — 4-5 numbered steps: free measure → quote → make → install day → tidy-up
 3. **Is my window suitable?** — aluminium only: which aluminium windows and doors work, and what to do if yours are timber (answer honestly, e.g. we can't retrofit timber)
-4. **What it costs** — price ranges ONLY from figures you give me (table: per window
-   / typical room / whole house). If you'd rather not publish prices, this becomes
-   "what affects the price" with no numbers
+4. **What affects the price** — NO prices or ranges, ever (owner rule, 26 Oct): what
+   changes the cost (number and size of windows, glass type, access), ending in "free measure and quote"
 5. **Benefits** — warmer, drier, quieter, less condensation; real numbers only if you
    have them (e.g. a customer's before/after, glass spec)
 6. **Recent jobs** — 2-3 real Northland jobs: suburb, house type, what we did, photo
@@ -131,7 +130,7 @@ cold, damp or noisy rooms and existing **aluminium** windows and doors (we do no
 - No new libraries, no new top-level folders. Photos go in `static/images/cinema/`
 
 ## What I need from you (facts only; I write the words, you approve)
-1. Price: rough range per window, or for a typical bedroom / whole house? OK to publish?
+1. What changes the cost of a job (sizes, number of windows, glass type, access)? No numbers needed
 2. How long from measure to install? How long does an install day take?
 3. Glass you use (e.g. Low-E, argon) and joinery types you can and can't do
 4. 2-3 recent retrofit jobs: town, house type, what changed for the owner; a photo each if possible
@@ -143,5 +142,5 @@ cold, damp or noisy rooms and existing **aluminium** windows and doors (we do no
 - `hugo` builds clean; `hugo server -D` shows no errors
 - Checked on phone and desktop width; other 6 service pages unchanged
 - Lighthouse mobile stays 100 performance / 100 accessibility on the page
-- Title stays "Retrofit Double Glazing, Northland | Bay Glass Kerikeri"; no invented
-  prices, jobs, numbers or claims
+- Title stays "Retrofit Double Glazing, Northland | Bay Glass Kerikeri"; **no prices on the
+  site, ever**; no invented jobs, numbers or claims

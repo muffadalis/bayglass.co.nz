@@ -1,0 +1,28 @@
+{{/* A simple data table with a heading (suitability, prices, comparisons).
+     Params: heading, intro (optional), columns (list), rows (list of lists), note (optional). */}}
+{{ with .rows }}
+<section class="mt-14">
+  <h2 class="section-heading text-2xl md:text-3xl">{{ $.heading }}</h2>
+  {{ with $.intro }}<p class="mt-4 font-body text-lg leading-relaxed text-body">{{ . }}</p>{{ end }}
+  <div class="mt-6 overflow-x-auto rounded-xl border border-hairline bg-surface-card">
+    <table class="w-full border-collapse text-left font-body text-base">
+      <thead>
+        <tr class="border-b border-hairline">
+          {{ range $.columns }}<th scope="col" class="px-5 py-3 font-display font-medium text-heading">{{ . }}</th>{{ end }}
+        </tr>
+      </thead>
+      <tbody>
+        {{ range . }}
+        <tr class="border-b border-hairline last:border-0">
+          {{ range $i, $cell := . }}
+          {{ if eq $i 0 }}<th scope="row" class="px-5 py-3 font-medium text-heading">{{ $cell }}</th>
+          {{ else }}<td class="px-5 py-3 text-body">{{ $cell }}</td>{{ end }}
+          {{ end }}
+        </tr>
+        {{ end }}
+      </tbody>
+    </table>
+  </div>
+  {{ with $.note }}<p class="mt-3 font-body text-sm text-heading/70">{{ . }}</p>{{ end }}
+</section>
+{{ end }}
