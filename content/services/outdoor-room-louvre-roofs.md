@@ -1,10 +1,13 @@
 ---
 title: "Outdoor room & louvre roofs"
-seoTitle: "Louvre Roofs & Outdoor Rooms, Northland | Bay Glass"
+aliases:
+  - "/louvretec/"
+  - "/category/image-galleries/louvretec"
+seoTitle: "louvre roofs & Outdoor Rooms, Northland | Bay Glass Kerikeri"
 description: "Adjustable louvre roofs and outdoor rooms in Kerikeri and Northland — open for sun, angle for shade, close flat in the rain. Bask systems installed. Free quote."
 eyebrow: "Outdoor living"
 summary: "Adjustable louvre roofs and outdoor room systems that turn a deck into a room you'll actually use."
-heroEyebrow: "Outdoor Rooms · Louvre Roofs"
+heroEyebrow: "Outdoor Rooms · louvre roofs"
 heroHeadline: "Your new favourite room."
 heroBody: "Opening louvre roofs and shutter systems for genuine, year-round indoor-outdoor living."
 heroImage: "images/cinema/outdoor-rooms-louvre.jpg"
@@ -21,7 +24,7 @@ gallery:
 features:
   - "Opening louvre roofs — adjust for sun, shade or full weather cover"
   - "Integrated with glass or aluminium walls for a true outdoor room"
-  - "Louvre roof systems, supplied and installed"
+  - "louvre roof systems, supplied and installed"
   - "Rain-sensing and remote control options available"
 weight: 1
 ---

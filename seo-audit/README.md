@@ -9,6 +9,6 @@ claude
 /audit yoursite.com
 ```
 
-Needs Claude Code. Semrush optional. Search Console exports optional but recommended.
+Needs Claude Code. Search Console exports optional but recommended.
 
 Everything I teach publicly is free. The rest of the SEO blueprint lives in the community: https://www.skool.com/automatable-free

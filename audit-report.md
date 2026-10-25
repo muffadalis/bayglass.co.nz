@@ -1,4 +1,4 @@
-# Audit: bayglass.co.nz · 6 Sep 2026 · 11 pages · owner mode
+# Audit: bayglass.co.nz · 6 Sep 2026 · re-run 25 Oct 2026 · 11 pages · owner mode
 
 ### [x] 1. Add a robots.txt · Google and the AI crawlers had no instructions
 Done 6 Sep. `enableRobotsTXT` on + `layouts/robots.txt`: allows everyone, names GPTBot/OAI-SearchBot/ClaudeBot/PerplexityBot/Google-Extended, points to the sitemap.
@@ -47,6 +47,7 @@ Done 6 Sep. `layouts/404.html` — branded, `noindex`, links back to home/servic
 
 ### [x] 16. Standardise name, address and phone
 Done 6 Sep. Site now uses "Bay Glass", `09 407 9035`, "40 Klinac Lane, Waipapa 0230" everywhere (via `hugo.toml` params → footer, contact page, schema). Legal name "Bay Glass Northland Ltd." kept in the copyright line only. **Your Google profile is still named "Bay Glass Kerikeri" — reconcile in `/gbp`.**
+**25 Oct:** reconciled by you. Site name changed to "Bay Glass Kerikeri" (`hugo.toml` `businessName`, homepage title, schema), now matching the Google profile.
 
 ### [x] 17. Add an H1 to the homepage · it had none
 Done 6 Sep. Added `<h1 class="sr-only">Glass, glazing and glazing repairs — Kerikeri & the Bay of Islands</h1>` at the top of `main`. Screen-reader / crawler only, so the cinematic hero is untouched. **This is the one new line of text — change the wording any time, or promote it to a visible heading via `/service-page`.**
@@ -56,16 +57,15 @@ Done 6 Sep. Added `<h1 class="sr-only">Glass, glazing and glazing repairs — Ke
 **Who:** you, via `/service-page` (×8)
 
 ### [ ] 19. Route: Google Business Profile → `/gbp`
-Categories 5→10, services 13→50, service areas 0→20, products 0→20, write the description, set attributes, reconcile the "Bay Glass Kerikeri" profile name.
+Categories 5→10, services 13→50, service areas 0→20, products 0→20, write the description, set attributes. (Profile name: done 25 Oct, the site now uses "Bay Glass Kerikeri" too.)
 **Who:** you, via `/gbp`
 
 ### [ ] 20. Route: reviews cadence → `/review-generator`
 57 reviews at 4.9 is strong. Keep recency and reply rate up — both are ranking factors.
 **Who:** you, via `/review-generator`
 
-### [ ] 21. You: connect Semrush units + export Search Console
-Semrush MCP is out of API units (semrush.com/mcp-access) and no Search Console property was found. Both unlock the 5 "not measured" lines.
-**Who:** you
+### [x] 21. You: export Search Console
+Done 25 Oct. Property found (already verified via DNS), 4 reports supplied. Semrush dropped: cost too high.
 
 ### [ ] 22. You: run the live AI-surface test · month-1 baseline
 Paste into ChatGPT, Perplexity and Google (AI Mode), record who gets named:
@@ -76,6 +76,53 @@ Paste into ChatGPT, Perplexity and Google (AI Mode), record who gets named:
 5. "frameless shower installer Kerikeri"
 6. "who is Bay Glass Kerikeri"
 **Who:** you. Log results in the baseline table below.
+
+### [x] 23. Redirect the old website addresses · 57 showing "not found"
+Done 25 Oct. Search Console listed 56 "Not found (404)"; the old site archive gave 57. 54 now redirect via `aliases` (showers → showers, balustrades → balustrades, galleries → home, etc.). `/user`, `/user/login`, `/user/password` left as 404 on purpose (old admin pages). `/category/bayglass/` had 190 search views at ~position 3.
+
+### [x] 24. Phone-sized images
+Done 25 Oct. 640px and 1080px WebP copies made for all 28 photos (`-640w` / `-1080w`); `partials/picture.html` now lists them in `srcset`. Hero background slides use the 1080px copy on screens up to 1080px.
+
+### [x] 25. Hidden hero slides load after the page
+Done 25 Oct. The 6 hidden slideshow backgrounds now get their image after page load (`data-bg-class` in `hero-carousel.html` + `site.js`). Homepage mobile LCP 12.3 s → 3.2 s (lab).
+
+### [x] 26. Fonts stop blocking the page
+Done 25 Oct. Font stylesheet loads non-blocking; Archivo + Cormorant Garamond only requested on the homepage (the only page using them).
+
+### [x] 27. Fix 2 meta description lengths
+Done 25 Oct. Glass & glazing 121 → 159 chars; Security & insect screens 162 → 155 chars.
+
+### [x] 28. Services page heading levels
+Done 25 Oct. Card titles on `/services/` are now H2 (were H3 straight under the H1). Homepage cards unchanged. Tags only, no words changed.
+
+### [x] 29. Star rating label + carousel dot tap size
+Done 25 Oct. `role="img"` on the star rating; carousel dots now sit in a 24px tap area, so they're spaced slightly wider.
+
+### [ ] 30. Tell Google the 404s are fixed · after you publish
+Search Console → Indexing → Pages → "Not found (404)" → **Validate fix**. Also export that list and send it to me to confirm nothing is missed.
+**Who:** you · **Time:** 2 min · **Changes:** none to the site.
+
+### [ ] 31. Fix the website link and check the postcode on your Google profile
+Website link reads `http://www.bayglass.co.nz/`; set it to `https://bayglass.co.nz/`. You use postcode 0230, but Smith&Smith at the same address uses 0295; check with NZ Post and use the same one everywhere.
+**Who:** you, in the Business Profile · **Time:** 5 min · **Changes:** none to the site.
+
+### [ ] 32. Route: windscreen repair page → `/service-page`
+Google lists you as a Windshield Repair Service and you rank ~10.6 for "windscreen repair kerikeri", but there's no page. `/windscreens` currently redirects to Glass & glazing.
+**Who:** you, via `/service-page`
+
+### [ ] 33. Your call: brand blue `#219ebc` text contrast
+3.14:1 on white, fails (needs 4.5:1). `#18809a` passes at 4.57:1. It's your brand colour, so it's your decision.
+**Who:** you
+
+### [ ] 34. Your call: Microsoft Clarity cookies
+Clarity sets 8 third-party cookies, which caps Best Practices at 79. Keep it if you use its recordings.
+**Who:** you
+
+### [x] 35. Your title rewrite + name change + 24-hour claim removed
+Done 25 Oct by you. 9 titles rewritten to "… Northland & Bay of Islands | Bay Glass Kerikeri" (table in "Title tags · 25 Oct 2026" below). "24-hour emergency callouts" removed from the banner (`hugo.toml`) and `llms.txt`; none left anywhere on the site.
+
+### [x] 36. Tidy the new titles · typo + length
+Done 25 Oct. "Bay of Island" typo fixed (6 titles), "louvers" → "louvre roofs" on the homepage (lowercase "louvre roof" everywhere, per you), all 9 titles now 54-60 chars; About lengthened 49 → 57 and now uses "Bay Glass Kerikeri". Your wording kept: service first, then one area (Northland or Bay of Islands), then "| Bay Glass Kerikeri". 9 title tags only, no body copy.
 
 ---
 
@@ -131,3 +178,74 @@ Not yet run — no access to ChatGPT / Perplexity / Google AI Mode from the audi
 ## Waived · 6 Sep 2026
 
 - **Platform limit** — true server-side 301s for the old WordPress URLs. GitHub Pages is a static host with no `.htaccess` / `_redirects` (evidence: `curl` shows only http→https is redirected). Workaround applied in item 14: Hugo `aliases` generate client-side redirect + `rel=canonical` stubs, which Google honours as 301-equivalent.
+
+---
+
+## Copy report · 25 Oct 2026
+
+**Body sentences altered: 0.** Changed: 2 meta descriptions (head tags), 54 redirect lines in front matter, 7 card heading tags on `/services/` (H3 → H2, same words).
+
+| Page | Meta before (chars) | Meta after (chars) |
+|---|---|---|
+| Glass & glazing | Glass repairs and new glazing in Kerikeri and the Bay of Islands: broken windows, cut-to-size glass, mirrors. Free quote. (121) | Glass repairs and new glazing in Kerikeri and the Bay of Islands — broken windows replaced, glass cut to size, mirrors and safety glass. Call for a free quote. (159) |
+| Security & insect screens | …— custom-made, fitted to your existing doors and windows… (162) | …— custom-made for your existing doors and windows… (155) |
+
+## Title tags · 25 Oct 2026 (your edit)
+
+Rendered titles from the build. ⚠ = over 60 characters, ✎ = "Bay of Island" typo.
+
+| Page | Before (6 Sep, chars) | Your edit (25 Oct, chars) | Final, item 36 (chars) |
+|---|---|---|---|
+| Home | Glass & Glazing, Kerikeri \| Bay Glass, Bay of Islands (53) | Glass, Showers, Outdoor louvers, Northland & Bay of Islands \| Bay Glass Kerikeri (80) ⚠ | Glass, Showers & louvre roofs Northland \| Bay Glass Kerikeri (60) |
+| Services | Glass & Glazing Services in Kerikeri & Northland \| Bay Glass (58) | Glass & Glazing Services Northland & Bay of Island \| Bay Glass Kerikeri (71) ⚠ ✎ | Glass & Glazing Services, Northland \| Bay Glass Kerikeri (56) |
+| Glass & glazing | Glass Repairs & Glazing in Kerikeri \| Bay Glass, Northland (57) | Glass Repairs & Glazing in Northland & Bay of Island \| Bay Glass Kerikeri (73) ⚠ ✎ | Glass Repairs & Glazing, Bay of Islands \| Bay Glass Kerikeri (60) |
+| Retrofit double glazing | Retrofit Double Glazing, Kerikeri & Northland \| Bay Glass (57) | Retrofit Double Glazing Northland & Bay of Island \| Bay Glass Kerikeri (70) ⚠ ✎ | Retrofit Double Glazing, Northland \| Bay Glass Kerikeri (55) |
+| Splashbacks | Glass Splashbacks, Kerikeri & Bay of Islands \| Bay Glass (56) | Glass Splashbacks Northland & Bay of Islands \| Bay Glass Kerikeri (65) ⚠ | Glass Splashbacks, Bay of Islands \| Bay Glass Kerikeri (54) |
+| Glass showers | Frameless Glass Showers, Kerikeri \| Bay Glass, Northland (56) | Frameless Glass Showers, Northland & Bay of Island \| Bay Glass Kerikeri (71) ⚠ ✎ | Frameless Glass Showers, Bay of Islands \| Bay Glass Kerikeri (60) |
+| Balustrades & pool fences | Glass Balustrades & Pool Fences, Northland \| Bay Glass (54) | Glass Balustrades & Pool Fences, Northland & Bay of Island \| Bay Glass Kerikeri (79) ⚠ ✎ | Balustrades & Pool Fences, Northland \| Bay Glass Kerikeri (57) |
+| Security & insect screens | Security & Insect Screens, Kerikeri \| Bay Glass, Northland (58) | Security & Insect Screens, Northland & Bay of Islands \| Bay Glass Kerikeri (74) ⚠ | Security & Insect Screens, Northland \| Bay Glass Kerikeri (57) |
+| Outdoor room & louvre roofs | Louvre Roofs & Outdoor Rooms, Northland \| Bay Glass (51) | Louvre Roofs & Outdoor Rooms, Northland & Bay of Island \| Bay Glass Kerikeri (76) ⚠ ✎ | louvre roofs & Outdoor Rooms, Northland \| Bay Glass Kerikeri (60) |
+| About | About Bay Glass — Glaziers in Waipapa, Kerikeri (49) | unchanged (49) | About Bay Glass Kerikeri — Glaziers in Waipapa, Northland (57) |
+| Contact | Contact Bay Glass — Glaziers in Kerikeri, Northland (53) | unchanged (53) | unchanged (53) |
+
+On-page check "Title tag 50-60 characters": your edit took it to 1 of 11; after item 36 (About lengthened to 57 on your request) it is 11 of 11.
+
+## Undo · 25 Oct 2026
+
+```
+cd D:/sources/bayglass.co.nz && git checkout -- content layouts assets audit-report.md audit-report.html && rm -f static/images/cinema/*-640w.webp static/images/cinema/*-1080w.webp
+```
+⚠ Until committed, this also throws away your own 25 Oct title edits in `content/` and `layouts/partials/head.html`. Commit those first if you only want to undo mine.
+
+## Search Console baseline · 25 Oct 2026 (last 6 months)
+
+| Clicks | Views | Avg position | Indexed | Not indexed | Manual actions | Field speed |
+|---|---|---|---|---|---|---|
+| 182 | 2,692 | 8.7 | 11 (= sitemap) | 96 (56 not found, 35 crawled-not-indexed, 3 redirect, 2 duplicate) | none | not enough data |
+
+Brand searches ("bay glass kerikeri", "bay glass", "bayglass"…) = ~77% of clicks with a known query. Close to page 1 but not there yet: "double glazing northland" (pos 18.6, 49 views), "windscreen repair kerikeri" (10.6), "aluminium joinery kerikeri" (15.3).
+
+## Lighthouse · 25 Oct 2026 (lab data, mobile, 2 runs each, local copy of the new build)
+
+| Page | Before (perf/a11y/bp/seo) | After |
+|---|---|---|
+| Home `/` | 65 / 87 / 79 / 100 | 93 / 96 / 79 / 100 |
+| Service `/services/retrofit-double-glazing/` | 69 / 96 / 79 / 100 | 100 / 96 / 79 / 100 |
+| Services `/services/` | 70 / 93 / 79 / 100 | 100 / 95 / 79 / 100 |
+| Contact `/contact/` | 87 / 95 / 79 / 100 (live) | 100 / 95 / 79 / 100 |
+| About `/about/` | - | 100 / 100 / 79 / 100 |
+
+Remaining: accessibility = brand blue (item 33); best practices = Clarity cookies (item 34); homepage perf 93 = main image shares the phone connection with the Google tag script.
+
+## What this audit did NOT measure · 25 Oct 2026
+
+- **Site health crawl, backlinks, competitor keywords/traffic:** skipped. No paid SEO tool (Semrush dropped, cost).
+- **Map pack + competitor reviews:** skipped. NZ Google Maps not reachable from here. Close: search "glazier Kerikeri" on Maps, note the top 3.
+- **Exact 404 list:** inferred from the old site archive (57 vs Search Console's 56). Close: item 30 export.
+- **Field speed:** Search Console has too few visits yet.
+- **Live AI test:** not run. Close: item 22.
+- **Business Profile products:** not pasted.
+
+## Waived · 25 Oct 2026
+
+- **Platform limit:** server-side 301s. Still GitHub Pages (static host, no redirect config); Hugo aliases used instead (evidence: `curl -I` on an old URL returns 200 + meta refresh + canonical).

@@ -3,7 +3,7 @@ name: audit
 description: "Whole-site SEO audit and fix. Grades every page on five layers (on-page 80 checks, technical/Lighthouse, AI readiness, doorway pages, local), reports in plain English, waits for approval, then fixes the list on a loop and writes an HTML report. Use for /audit, 'audit my site', 'SEO audit', 'score my website'."
 ---
 
-Audit AND fix the entire site: $ARGUMENTS (if no URL given, ask for one). Thirteen layers - Search Console, Semrush, the competitor benchmark, backlinks and authority, on-page, technical, AI surfaces, index hygiene, framework traps, hidden content, the keyword reality check, thin and doorway content, and local/Business Profile - graded on every page, reported in full, then - once I approve - fixed on a loop until it's clean.
+Audit AND fix the entire site: $ARGUMENTS (if no URL given, ask for one). Thirteen layers - Search Console, the site crawl, the competitor benchmark, backlinks and authority, on-page, technical, AI surfaces, index hygiene, framework traps, hidden content, the keyword reality check, thin and doorway content, and local/Business Profile - graded on every page, reported in full, then - once I approve - fixed on a loop until it's clean.
 
 **The order is always audit → report → approval → fix.** Never fix while auditing, and never touch a file before I've seen the report and said go.
 
@@ -68,7 +68,7 @@ A site can be fully repaired and still not read 100, because some checks fail fo
 
 **Three types, and only three:**
 - **Platform limit** - the platform physically cannot do it: a WordPress theme that hard-codes the title, a Wix editor with no file access, a host that controls the server config, a third-party script (booking widget, chat, tracking) the owner needs and cannot modify. Evidence: name the plugin, theme, host or script.
-- **Crawler artifact** - the tool is wrong, the site is not: a Semrush warning on a URL that returns 200 in a browser, a Lighthouse run that flags a lazy-loaded image the page needs, a `site:` count that lags the Search Console export, a duplicate-content flag on a canonicalised page. Evidence: the live check that contradicts the tool, stated so the owner can repeat it.
+- **Crawler artifact** - the tool is wrong, the site is not: a crawler warning on a URL that returns 200 in a browser, a Lighthouse run that flags a lazy-loaded image the page needs, a `site:` count that lags the Search Console export, a duplicate-content flag on a canonicalised page. Evidence: the live check that contradicts the tool, stated so the owner can repeat it.
 - **Owner decision** - fixable, and the owner said no: a brand colour that fails contrast, a deliberately unlinked page, a design choice. Evidence: the owner's yes, recorded on the item. Never waive as an owner decision something the owner has not been asked about.
 
 **Two scores, always both:**
@@ -93,10 +93,10 @@ Every layer reports two numbers next to its result: **how many items were graded
 
 **0. Whose site is this?** If the URL isn't mine, say so up front and ask which of the two jobs this is (never guess):
 
-- **Prospect mode** - I'm pitching them. Audit only, fix nothing, and end with a one-page report I could send or walk through on a call - the starting-line summary, the top 5 problems in plain English with what each one is costing them, and what fixing it would take. No jargon, no Semrush screenshots, no fix loop. This is the pitch, not the delivery.
+- **Prospect mode** - I'm pitching them. Audit only, fix nothing, and end with a one-page report I could send or walk through on a call - the starting-line summary, the top 5 problems in plain English with what each one is costing them, and what fixing it would take. No jargon, no tool screenshots, no fix loop. This is the pitch, not the delivery.
 - **Competitor gap mode** (`/audit gap [their-url]`, or just `/audit gap`) - I'm mining them. Same engine, opposite question: not "what's broken on their site" but "what do they have that I don't."
 
-  **No URL given? Find the competitors with Semrush first.** Pull the Organic Competitors report for MY domain - it ranks rivals by real keyword overlap, which beats anyone's guess about who the competition is. Cross it against the Layer 3 selection rules (same service, same customers, same area for local - never aggregators, marketplaces or news sites), show me the top 3-5 with their overlap numbers, and let me confirm or swap before pulling anything expensive. A named URL skips discovery. No Semrush connected? Fall back to the map pack + live SERP method from Layer 3, and say that's what happened.
+  **No URL given? Find the competitors first.** Use the map pack + live SERP method from Layer 3 for my money keywords (Search Console queries first), cross it against the Layer 3 selection rules (same service, same customers, same area for local - never aggregators, marketplaces or news sites), show me the top 3-5, and let me confirm or swap. A named URL skips discovery.
 
   Then scan → rank → route, pointed at their domain:
   1. **Keyword gap:** every keyword they rank for that I don't (their organic research vs mine, Search Console first for my side). Filter to commercially relevant, then to REALISTIC - anything above the difficulty ceiling my referring-domain count supports (Layer 4 logic) goes in a "later" bucket, not the list.
@@ -130,11 +130,11 @@ Show me the page count and the list before grading anything, so I can confirm it
 
 Recommend based on the count: under about 15 pages, say "everything" is fine and quick. Over about 50, recommend the one-page-per-template option first, because a template fix lands on every page built from that template and grading 200 near-identical pages tells you the same thing 200 times. Record the answer and say the scope back at the top of the report - a report that doesn't say what it covered reads as a report that covered everything.
 
-**The site-level layers ALWAYS run full-site, whatever scope I pick.** Search Console (Layer 1), Semrush (Layer 2), the competitor benchmark (Layer 3), backlinks (Layer 4), index hygiene (Layer 8), framework traps (Layer 9), local and Business Profile (Layer 11), and the structure read are properties of the SITE or the business, not of a page. Scoping those to four pages produces a confident wrong verdict - "your sitemap is fine" when it is missing 180 URLs. Only the per-page layers narrow to the chosen scope: on-page (Layer 5), technical (Layer 6), the per-page half of GEO (Layer 7), hidden content (Layer 10), thin and doorway (Layer 13), plus the proof count. Say this distinction plainly when I pick a slice, so I know what the report does and does not prove.
+**The site-level layers ALWAYS run full-site, whatever scope I pick.** Search Console (Layer 1), the site crawl (Layer 2), the competitor benchmark (Layer 3), backlinks (Layer 4), index hygiene (Layer 8), framework traps (Layer 9), local and Business Profile (Layer 11), and the structure read are properties of the SITE or the business, not of a page. Scoping those to four pages produces a confident wrong verdict - "your sitemap is fine" when it is missing 180 URLs. Only the per-page layers narrow to the chosen scope: on-page (Layer 5), technical (Layer 6), the per-page half of GEO (Layer 7), hidden content (Layer 10), thin and doorway (Layer 13), plus the proof count. Say this distinction plainly when I pick a slice, so I know what the report does and does not prove.
 
 Re-running later with a wider scope appends to `audit-report.md` rather than replacing it, same as any other re-run.
 
-**2. Zero-credential first run.** No Semrush connected? Don't block - score what's scoreable RIGHT NOW: Lighthouse on the homepage + key pages, on-page spot checks against `references/on-page-seo.md`, the AI-access checks from `references/geo.md`, the live AI-surface test, the map pack and review comparison, robots/sitemap/HTTPS. Deliver that report card first (I see my site scored in minute five), THEN say what Semrush unlocks (the full crawl, Site Health, keyword data, and the entire backlink layer) and walk me through connecting it - free account (1 project, 100 pages/month) or the 14-day trial (https://www.semrush.com/partner/jonocatliffseo_7401436/?irclickid=UodwPVRilxyZWxsygXUph16GUkr03ZTt3xLWws0&irgwc=1&afsrc=1) for the full toolkit. The win comes before the credential.
+**2. Zero-credential first run.** Don't block on anything - score what's scoreable RIGHT NOW: Lighthouse on the homepage + key pages, on-page spot checks against `references/on-page-seo.md`, the AI-access checks from `references/geo.md`, the live AI-surface test, the map pack and review comparison, robots/sitemap/HTTPS. Deliver that report card first (I see my site scored in minute five), THEN say what the Search Console exports unlock (real queries, positions, the indexed count, the linking sites). The win comes before the credential.
 
 ---
 
@@ -161,7 +161,7 @@ Re-running later with a wider scope appends to `audit-report.md` rather than rep
 
 **⛔ GSC EXPORTS ARE OPTIONAL. NEVER GATE THE AUDIT ON THEM. Score everything that can be scored with no credentials first - that self-serve win in the first five minutes is the point of this command. Then ask for exports to unlock the layers that genuinely need query data (cannibalization, indexation status, striking distance), and if they are not supplied, run without them and say exactly which checks were skipped and why. A member must never hit a credentials wall before seeing a score.**
 
-Do not start grading and collect Search Console later. Open the run by asking for the four exports, wait, and only then begin. Every other layer is better once they land: the keyword reality check reads real positions instead of Semrush estimates, index hygiene compares against Google's own indexed count, and the technical layer gets field data instead of one lab run.
+Do not start grading and collect Search Console later. Open the run by asking for the four exports, wait, and only then begin. Every other layer is better once they land: the keyword reality check reads real positions instead of estimates, index hygiene compares against Google's own indexed count, and the technical layer gets field data instead of one lab run.
 
 **If they are not supplied, the audit is PAUSED, not downgraded.** Say plainly: *"I can run this without Search Console, but roughly a third of it becomes inference rather than measurement - real positions, what is actually indexed, and field performance all come from there. It is four Export buttons and about two minutes. Want to grab them, or shall I run the inferred version and flag it?"* Then wait for an actual answer.
 
@@ -171,9 +171,9 @@ Running the inferred version is a legitimate choice they can make. Quietly runni
 
 Cross-check the Performance export against Layer 12's ranking data and the Pages export against Layer 8's live index check. Where the two disagree, Search Console wins and the disagreement itself is worth reporting.
 
-### Layer 2 - Semrush
+### Layer 2 - Site crawl (free)
 
-Fetch the Site Audit for the domain. **The connector cannot create projects - it only reads ones that already exist.** If `projects` shows no project for this domain, STOP at this layer and ask - never defer it to a scoreboard footnote: "No Site Audit project exists yet. Setting one up is two minutes in your dashboard and the crawl uses quota (free tier: 100 pages/month). Want to do it now?" On yes, walk it click by click: semrush.com/projects → Create project → enter the domain → open Site Audit → set the page limit → Start Audit → re-check `projects` here. On no, the layer reads "not measured - no Site Audit project; two minutes in the dashboard to close." **The click is always the OWNER'S, in their dashboard - never imply the connector can create the project, and never pretend a crawl ran when no project exists.** Then grab every error, warning and notice, per page. Pull organic research too: every keyword the site ranks for, mapped to its page - that feeds the cannibalization check and Layer 12. Raw material, never the deliverable.
+Crawl the site yourself - no paid tool. Start from the sitemap and the homepage, follow every internal link, and record each URL's status code, redirect target, title, meta description, canonical, H1 and image tags. Then check the OLD addresses too: every URL in the Search Console "Not found (404)" export, plus the domain's history from the Wayback Machine (`https://web.archive.org/cdx/search/cdx?url=domain.com/*&output=txt&fl=original,statuscode&collapse=urlkey`), each fetched live. Every old address that 404s and has a matching page today is a redirect to add. Report errors (broken links, 404s, 5xx), warnings (redirect chains, missing tags) and notices, per page. The keyword list comes from the Search Console Performance export - it feeds the cannibalization check and Layer 12. Raw material, never the deliverable.
 
 ### Layer 3 - The competitor benchmark
 
@@ -191,15 +191,14 @@ Pull the same six numbers for the site and for each competitor:
 
 **These are required scoreboard lines.** The rule for the whole report: never state a raw site number without the competitor number beside it. "63 pages indexed" tells the owner nothing. "63 indexed, competitors at 210, 340 and 89" tells them where they are.
 
-Where Semrush is not connected, the keyword, traffic and referring-domain columns cannot be filled - say so on the line rather than leaving it blank. Indexed pages, review count and rating are all obtainable with no credential at all, so those three always have values.
+Competitors' keyword, traffic and referring-domain numbers need a paid tool, so they read "not measured" - say so on the line rather than leaving it blank. Indexed pages, review count and rating are all obtainable with no credential at all, so those three always have values.
 
 ### Layer 4 - Backlinks and authority
 
-**Link count is the single biggest input to every difficulty score in the industry - roughly 58% of the weight in Semrush's KD formula.** That makes this layer the thing that decides what the site can realistically target. A site with 4 referring domains chasing a KD-60 keyword is not going to get there no matter how clean the on-page grade is, and an audit that never looked at links cannot say that out loud.
+**Link count is the single biggest input to every keyword difficulty score in the industry.** That makes this layer the thing that decides what the site can realistically target. A site with 4 referring domains chasing a KD-60 keyword is not going to get there no matter how clean the on-page grade is, and an audit that never looked at links cannot say that out loud.
 
 Grade, for the domain:
 - **Referring domains** - the count, and how many are genuinely distinct businesses rather than one network
-- **Domain authority score** - Semrush Authority Score, stated as the tool's estimate, not as a Google metric
 - **Anchor text profile** - the split between branded, naked URL, generic ("click here"), and exact-match commercial anchors. Heavy exact-match commercial anchoring is a risk signal, not a win
 - **Toxic or spammy links** - directory farms, foreign-language link pages, comment spam, paid-link footprints. Report the count and the worst offenders by name
 - **Lost links** - referring domains dropped in the last 6 to 12 months, and whether anything ranking dropped with them
@@ -207,7 +206,7 @@ Grade, for the domain:
 
 Then say the consequence plainly: given this referring-domain count, name the difficulty ceiling the site can realistically target today, and route the keyword implications to Layer 12.
 
-**Semrush covers this layer when connected** (backlinks research plus domain overview). **When it is not connected, say what cannot be assessed rather than skipping silently** - there is no free way to see referring domains, anchor text, toxicity or lost links, so the line reads "not measured - needs Semrush" and the report's "What this audit did NOT measure" section carries it. Never let a missing backlink layer read as a clean backlink layer.
+**Free sources only:** Search Console → Links → Top linking sites (Export), and Bing Webmaster Tools → Backlinks (free, Export). Together they give the referring domains and anchor text. Toxicity, lost links and competitors' backlinks have no free source, so those lines read "not measured - no free source" and the report's "What this audit did NOT measure" section carries them. Never let a missing backlink layer read as a clean backlink layer.
 
 ### Layer 5 - On-page
 
@@ -304,13 +303,13 @@ Grade all of these:
 - **Review response rate** - what share of reviews have an owner reply, and how fast
 - **Citation coverage** - which of the Tier 1 and Tier 2 directories in `references/citations.md` have a listing, which are missing, and which carry a stale NAP variant
 
-**Map pack position from Semrush, when a tracking campaign exists.** Position Tracking supports the local pack directly: `projects` → the campaign ID, then `tracking_position_organic` with `linktype_filter=1` (local pack only), `business_name` set to the exact Business Profile name, and the campaign's city or ZIP as the location. That returns the pack position per money keyword, per location, with history - use it before a live search, and say which one the numbers came from (`local.mapPackSource`). No campaign? Say so in the report ("map pack: live search, one location, one day") and fall back to the live search. Setting the campaign up is the owner's click, in their Semrush project; never imply the connector created it.
+**Map pack position: live search.** Search each money keyword with the city and record the three-pack, and say so in the report ("map pack: live search, one location, one day") in `local.mapPackSource`. If the live search can't see the right country, the line reads "not measured" and the owner is asked to search Google Maps and note the top 3.
 
 **The marks, from `references/gbp-setup.md` - grade the profile against these numbers, not against "filled or empty":**
 - **Categories: 10** - 1 primary + 9 secondary. Report `N of 10`. A primary that differs from what the map-pack rivals use is its own finding.
 - **Services: 50** (target 70 with extras, minimum 30). Report `N of 50`. Each service named without the city, matched to a `[service] [city]` keyword with volume, ranked by that volume.
 
-  **How the services table gets filled, no shortcuts (Jono, 28 Aug 2026):** every service on the profile is a money keyword until the lookup says otherwise. For each one: (1) **Volume:** search `[service] [primary city]` (city from the profile address) with Semrush keyword research, in the confirmed country database (default is US, confirm first). Try the two or three natural phrasings ("seo toronto", "seo services toronto", "seo company toronto") and keep the highest. Only when every phrasing returns zero does the row read "no keyword", and the report says which phrasings were tried. No Semrush connected: use the live SERP and Google autocomplete and mark the volume "not measured". (2) **Money keyword:** the highest-volume phrasing, written as searched. (3) **Page:** the page whose title tag or H1 contains the service (read `website-index.md`, then the sitemap, then the crawl). Only a real match counts. **Never default to /contact, the homepage or the services hub** - if no page carries the service, the cell reads "none" and that is a finding: a service sold with no page to rank for it. (4) Rows sorted by volume, highest first, the order the profile itself should use. Same lookup `references/gbp-setup.md` uses, so the audit and `/gbp` never disagree. **A table where every row says "no keyword" and points at one page means the lookup did not run. Do not ship it.**
+  **How the services table gets filled, no shortcuts (Jono, 28 Aug 2026):** every service on the profile is a money keyword until the lookup says otherwise. For each one: (1) **Volume:** search `[service] [primary city]` (city from the profile address) with Google Keyword Planner (free with a Google Ads account) or the Search Console impressions for that query, in the confirmed country (confirm first). Try the two or three natural phrasings ("seo toronto", "seo services toronto", "seo company toronto") and keep the highest. Only when every phrasing returns zero does the row read "no keyword", and the report says which phrasings were tried. No volume source available: use the live SERP and Google autocomplete and mark the volume "not measured". (2) **Money keyword:** the highest-volume phrasing, written as searched. (3) **Page:** the page whose title tag or H1 contains the service (read `website-index.md`, then the sitemap, then the crawl). Only a real match counts. **Never default to /contact, the homepage or the services hub** - if no page carries the service, the cell reads "none" and that is a finding: a service sold with no page to rank for it. (4) Rows sorted by volume, highest first, the order the profile itself should use. Same lookup `references/gbp-setup.md` uses, so the audit and `/gbp` never disagree. **A table where every row says "no keyword" and points at one page means the lookup did not run. Do not ship it.**
 - **Service areas: 20** cities, service-area businesses only, inside a 60-minute drive. Report `N of 20`. Location businesses list one city; say so instead of scoring it.
 - **Products: 20** (target 30 with extras), every one with all six fields - name, price, description with the keyword first, category, link to the matching page, photo. Report `N of 20`, and count a product missing any field as not there.
 The Local layer's 0-100 score is the average of those four ratios, scaled down by NAP conflicts and the review gap. On the HTML report the profile rows read `Categories · mark 10 · 1 of 10`, and so on.
@@ -319,7 +318,7 @@ The Local layer's 0-100 score is the average of those four ratios, scaled down b
 - **Categories** - against the map-pack rivals' categories too. A secondary the rivals all carry is a finding.
 - **Services** - matched to a money keyword from `keyword-map.md` with its volume, and whether a page exists for it. Two failures: a service the business sells that is not on the profile, and a service named in words nobody searches ("Plumbing repair") when the keyword is "water heater repair austin".
 - **Products** - each title carries the keyword, each tile has all six fields.
-The Business Profile contents are read from the public Maps listing (and `gbp-{slug}.md` when it exists); Semrush does not expose them.
+The Business Profile contents are read from the public Maps listing (and `gbp-{slug}.md` when it exists).
 
 **Routing:** profile setup, categories, services, attributes and the citation campaign go to `/gbp`. Review count, recency and response rate go to `/review-generator`. Neither is fixed inside this command's loop.
 
@@ -327,7 +326,7 @@ The Business Profile contents are read from the public Maps listing (and `gbp-{s
 
 ### Layer 12 - The keyword reality check (usually the actual problem)
 
-Pull what the site ACTUALLY ranks for - from the Layer 1 Search Console Performance export first, Semrush second - and compare it against what the business sells:
+Pull what the site ACTUALLY ranks for - from the Layer 1 Search Console Performance export - and compare it against what the business sells:
 - How many ranking keywords are commercial, versus brand terms and accidental junk?
 - Is there a single keyword that a buyer would search? A site ranking #1 for its own brand name and nothing else is invisible to everyone who doesn't already know it exists.
 - Which services have no page at all?
@@ -361,7 +360,7 @@ Run the same comparison on service pages that share a template and on any near-d
 
 ### Plus three site-level reads, graded once
 
-- **Cannibalization** - what each page ACTUALLY ranks for (Search Console first, Semrush second) versus what `keyword-map.md` says it should own. Overlapping pages flagged with the winner named.
+- **Cannibalization** - what each page ACTUALLY ranks for (from Search Console) versus what `keyword-map.md` says it should own. Overlapping pages flagged with the winner named.
 - **Proof count** - COUNT the proof touches per page: every real number, review quote, credential, guarantee, named client and original photo (each must trace to `context/proof/proof-inventory.md` - unverifiable claims count against, not for). **Target: 5+ per page.**
 - **Structure** - grade the tree against `references/pyramid-structure.md`: 3 tiers max (any URL 4+ folders deep = flagged), the tier-1 set present (/services/, /blog/, /about, /contact, /quote), blog posts flat under /blog/, city pages only at tier 3, hubs for every spoke, sitemap mirrors the tree, orphans, E-E-A-T pages.
 
@@ -371,10 +370,10 @@ Run the same comparison on service pages that share a template and on any near-d
 
 **The audit finishes completely and reports BEFORE a single file is touched.** No "I'll fix the easy ones while I'm here." No fixing as you go. Grade everything, show me everything, then stop and wait for my yes.
 
-The report, in plain English and never in Semrush jargon:
+The report, in plain English and never in SEO-tool jargon:
 
 **The scoreboard as it stands today.** Every one of these lines is required, with a value or the words "not measured" plus the reason. Never blank, never dropped:
-- Semrush Site Health
+- Site crawl: URLs crawled, broken links, old addresses still 404ing
 - Lighthouse per template, labelled lab data, with the pages and form factor named
 - Core Web Vitals field data from Search Console, mobile and desktop
 - On-page pass rate, with pages graded versus pages in scope
@@ -398,11 +397,11 @@ Then:
 **This section appears in every report, including the ones where nothing was skipped.** In that case it says "Everything in scope was measured in full" and lists nothing. A section that only appears when there is bad news is a section that gets quietly dropped, and quietly dropped is exactly how the gaps got there.
 
 One line per item, with the reason:
-- **Skipped** - the layer did not run at all. "Backlinks and authority: not measured, Semrush not connected."
+- **Skipped** - the layer did not run at all. "Competitor backlinks: not measured, no free source."
 - **Sampled** - the layer ran on part of the scope. "On-page: 12 of 63 pages graded, sampled for time."
 - **Inferred** - the finding is a deduction, not a measurement. "Indexed count: inferred from the sitemap and a site: search, Search Console export not supplied."
 
-Then the one line that makes it useful: **what it would take to close each one.** "Connect Semrush (free tier covers this)" or "Export the four Search Console reports, about two minutes."
+Then the one line that makes it useful: **what it would take to close each one.** "Export the Search Console Links report" or "Export the four Search Console reports, about two minutes."
 
 Then ask plainly: **"Want me to fix all of this, some of it, or shall we talk through it first?"** and WAIT.
 
@@ -416,8 +415,8 @@ I might only want the errors. I might want to see the meta rewrites before they 
 - **THE COPY RULE and THE DELETION RULE hold throughout** (see the top of this file): fix the mechanical issue, never touch the writing, never remove anything. Body sentences altered should be zero; things deleted should be zero
 - Anything genuinely unfixable from here (server config only the host controls, a flag on an external domain) goes on a short WAIVED list with a one-line reason each - waived means consciously skipped, not forgotten
 
-**5. Re-run and loop.** Re-audit only what was in scope. Trigger a fresh Semrush crawl, re-run Lighthouse against a fresh production build, re-run the live index check, re-grade on-page and GEO. Fix whatever remains. **Keep looping** until:
-- Semrush Site Health = 100%
+**5. Re-run and loop.** Re-audit only what was in scope. Re-run the site crawl, re-run Lighthouse against a fresh production build, re-run the live index check, re-grade on-page and GEO. Fix whatever remains. **Keep looping** until:
+- Site crawl: 0 broken internal links, 0 old addresses 404ing that have a matching page
 - Lighthouse = 100 on all four, per template, stated as lab data (WordPress lane: if a plugin or theme hard-blocks the last points, 90+ with the blockers named and waived)
 - Every page passes every on-page check
 - GEO site-level checks all pass
@@ -547,7 +546,7 @@ Done 13 Aug. Root layout was pointing every page at the homepage.
 - `notMeasured`: one string per skipped / sampled / inferred item with what closes it. Empty array renders "Everything in scope was measured in full."
 - `costs`: prospect mode only - the top 4-5 problems with a monthly dollar estimate each.
 
-**Rules:** plain English in every string, no Semrush jargon, no em-dashes (hyphens only), real numbers only - never a placeholder that looks like data. The sample JSON in the template is Dave's Plumbing, a made-up business: replace every value, keep every key. The `date` is the day of the latest pass. One report per site: re-running overwrites `audit-report.html`; the markdown file is where history lives.
+**Rules:** plain English in every string, no SEO-tool jargon, no em-dashes (hyphens only), real numbers only - never a placeholder that looks like data. The sample JSON in the template is Dave's Plumbing, a made-up business: replace every value, keep every key. The `date` is the day of the latest pass. One report per site: re-running overwrites `audit-report.html`; the markdown file is where history lives.
 
 **Less text, every time (Jono, 27 Aug 2026).** The page is scanned, not read. Section titles are two or three words. No lead paragraphs, no notes. `fixed` lines are 3 to 6 words ("41 alt texts, 19 titles, 8 links"). Fix rows: `who` is "me" or "you", `changes` is 2 to 4 words. Check text is the reference wording with the explanation after the hyphen dropped, parentheticals removed, never a rewrite. The page hides what did not change: passed-before-and-still-passes checks and done fix rows sit behind "Show all" toggles, so what the reader sees first is only what moved.
 

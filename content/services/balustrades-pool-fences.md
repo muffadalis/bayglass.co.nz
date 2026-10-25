@@ -1,6 +1,13 @@
 ---
 title: "Balustrades & pool fences"
-seoTitle: "Glass Balustrades & Pool Fences, Northland | Bay Glass"
+aliases:
+  - "/balustrades-handrails"
+  - "/balustrades-handrails-pool-fences/"
+  - "/content/balustrade-frameless"
+  - "/content/balustrade-monanui"
+  - "/content/balustrade-watts"
+  - "/category/image-galleries/handrails-and-balustrades"
+seoTitle: "Balustrades & Pool Fences, Northland | Bay Glass Kerikeri"
 description: "Glass and aluminium balustrades and pool fencing in Kerikeri and Northland — decks, stairs, balconies and handrails, to the NZ Building Code. Free quote."
 eyebrow: "Balustrades"
 summary: "Glass and aluminium systems for decks, pools, stairways and balconies — including gates."

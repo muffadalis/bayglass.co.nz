@@ -1,7 +1,10 @@
 ---
 title: "Glass & glazing"
-seoTitle: "Glass Repairs & Glazing in Kerikeri | Bay Glass, Northland"
-description: "Glass repairs and new glazing in Kerikeri and the Bay of Islands: broken windows, cut-to-size glass, mirrors. Free quote."
+aliases:
+  - "/glass-and-glazing/"
+  - "/windscreens"
+seoTitle: "Glass Repairs & Glazing, Bay of Islands | Bay Glass Kerikeri"
+description: "Glass repairs and new glazing in Kerikeri and the Bay of Islands — broken windows replaced, glass cut to size, mirrors and safety glass. Call for a free quote."
 eyebrow: "Glass & glazing"
 summary: "Broken window? Cracked mirror? New glazing for a build or renovation — we cut, replace and install it all, right across the Bay of Islands."
 image: "images/cinema/intro-bayglass.jpg"
@@ -14,7 +17,6 @@ features:
   - "Glass cut and replaced to any size, same-day where possible"
   - "New glazing for renovations, extensions and new builds"
   - "Mirrors, cut and edged to fit"
-  - "24-hour emergency board-ups and repairs, Northland wide"
 weight: 2
 ---
 A smashed window doesn't wait for business hours — and neither do we. Whether

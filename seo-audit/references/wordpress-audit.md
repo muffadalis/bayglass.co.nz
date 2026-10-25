@@ -1,6 +1,6 @@
 # WordPress audit-fix loop - where every issue actually gets fixed
 
-**What it is:** the map the agent reads before fixing a WordPress site from a Semrush (or any) audit. The prompt says how to behave; this says how to find what is really rendering a page, and where each issue type truly gets fixed.
+**What it is:** the map the agent reads before fixing a WordPress site from an audit. The prompt says how to behave; this says how to find what is really rendering a page, and where each issue type truly gets fixed.
 **Standing reference** - keep the stack profile at the end LIVING, or it sends the agent to the wrong place.
 **Next:** fill in "Your stack profile" for this site, then run the source-of-truth diagnostic below.
 

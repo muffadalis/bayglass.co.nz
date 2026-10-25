@@ -16,7 +16,7 @@
 {{ $brand := site.Title }}
 {{ $title := "" }}
 {{ if .IsHome }}
-  {{ $title = .Params.seoTitle | default "Glass & Glazing, Kerikeri | Bay Glass, Bay of Islands" }}
+  {{ $title = .Params.seoTitle | default "Glass, Showers & louvre roofs Northland | Bay Glass Kerikeri" }}
 {{ else if .Params.seoTitle }}
   {{ $title = .Params.seoTitle }}
 {{ else }}
@@ -51,10 +51,17 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#023047">
 
-{{/* ---------- Fonts (preconnect + single stylesheet link, no CSS @import) ---------- */}}
+{{/* ---------- Fonts (preconnect + one stylesheet link, no CSS @import) ----------
+     Archivo + Cormorant Garamond are only used by the homepage hero, so only the
+     homepage asks for them. The stylesheet loads without blocking the first paint
+     (media=print swap); text shows in the fallback font for a moment, then swaps. */}}
+{{ $fonts := "family=Michroma&family=Space+Grotesk:wght@400;500;600;700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400" }}
+{{ if .IsHome }}{{ $fonts = printf "%s&family=Archivo:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,300;1,400" $fonts }}{{ end }}
+{{ $fontsURL := printf "https://fonts.googleapis.com/css2?%s&display=swap" $fonts }}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&family=Space+Grotesk:wght@400;500;600;700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Archivo:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,300;1,400&display=swap">
+<link rel="stylesheet" href="{{ $fontsURL | safeURL }}" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="{{ $fontsURL | safeURL }}"></noscript>
 
 {{ $css := resources.Get "css/main.css" }}
 {{ $opts := dict "minify" (not hugo.IsDevelopment) }}

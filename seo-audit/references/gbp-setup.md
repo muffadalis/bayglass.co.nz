@@ -93,14 +93,14 @@ For a location-based business such as a restaurant, retail shop or clinic:
 
 That target is 50 to use plus 20 extras.
 
-**The country comes first.** Semrush and Keyword Planner both default to the US. Confirm the country and set the database before any volume lookup, or every number below is for the wrong market.
+**The country comes first.** Keyword Planner defaults to the US. Confirm the country and set the database before any volume lookup, or every number below is for the wrong market.
 
-**Search `[service] [city]`, but name the service WITHOUT the city.** The city in the query isolates local demand, because Semrush has no sub-country targeting. It is a measuring device, not part of the service name. Google already knows where the business is, that is what the profile is, so a city inside a service name is keyword stuffing and a suspension risk.
+**Search `[service] [city]`, but name the service WITHOUT the city.** The city in the query isolates local demand, because national volume tools have no sub-country targeting. It is a measuring device, not part of the service name. Google already knows where the business is, that is what the profile is, so a city inside a service name is keyword stuffing and a suspension risk.
 
 - Pull every service from the business website
 - Cross-reference the top 3 competitor service menus to find gaps
 - Match against Google's pre-defined service list, which carries extra ranking weight
-- Run local keyword research for each service: WebSearch, Semrush or Google Keyword Planner for `[service] [primary city]` monthly volume, in the confirmed country database
+- Run local keyword research for each service: WebSearch or Google Keyword Planner for `[service] [primary city]` monthly volume, in the confirmed country database
 - Rank all services by that volume, highest first. The high-volume ones lead. Never let the order the website happened to list them in decide the order on the profile
 - For close variants, pick the higher-volume name. For example "couples therapy toronto" at 1,300 searches a month beats "couples counselling toronto" at 590 a month
 - Use BOTH when they are close: one as the service name, one in the description
@@ -695,7 +695,6 @@ Rules:
 - Same abbreviation style throughout, "St." or "Street", pick one
 - Same phone format throughout, "(555) 555-5555" or "555-555-5555", pick one
 - 30 to 50 consistent citations beat 300 messy ones
-- Recommend SEMRush Listing Management for bulk submission, one form covering 70 or more directories
 
 **How Claude builds each tier.** Tier 1 and Tier 2 are hardcoded above and stable across industries, so do not research them. Only Tier 3 gets a live WebSearch of `"top citation directories [industry] 2026"`, picking 3 to 5 niche directories in priority order based on Domain Authority plus relevance.
 
@@ -754,7 +753,7 @@ Claude generates `gbp-{slug}.md` containing all 12 sections above, ready for the
 2. Upload photos matching the photos brief
 3. Connect the booking platform, if applicable
 4. Add the FAQ content to the website
-5. Submit citations, manually or via SEMRush Listing Management
+5. Submit citations manually
 
 Estimated time: 30 minutes start to finish for a typical small business.
 

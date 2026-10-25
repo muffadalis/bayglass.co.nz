@@ -1,11 +1,12 @@
 ---
 title: "Coloured glass splashbacks"
-seoTitle: "Glass Splashbacks, Kerikeri & Bay of Islands | Bay Glass"
+seoTitle: "Glass Splashbacks, Bay of Islands | Bay Glass Kerikeri"
 description: "Coloured glass splashbacks in Kerikeri and the Bay of Islands — any colour or printed image, toughened and cut to fit your kitchen or bathroom. Free quote."
 eyebrow: "Splashbacks"
 summary: "Subtle tones, vibrant colour or a printed image. Custom made to your exact requirements."
 aliases:
   - "/splashbacks/"
+  - "/category/image-galleries/splashbacks"
 image: "images/cinema/Splashback-4.png"
 gallery:
   - "images/cinema/Splashback-4.png"

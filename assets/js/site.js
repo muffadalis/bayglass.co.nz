@@ -114,6 +114,14 @@ document.addEventListener('DOMContentLoaded', function () {
     restartAutoplay();
   });
 
+  // Hidden hero slides wait for the page to finish loading before fetching
+  // their background photo, so the first slide paints sooner.
+  window.addEventListener('load', function () {
+    document.querySelectorAll('[data-bg-class]').forEach(function (el) {
+      el.classList.add(el.getAttribute('data-bg-class'));
+    });
+  });
+
   // Contact form — Web3Forms. The form's plain action/method already work
   // without JS; this just upgrades it to an inline status message instead
   // of navigating away.

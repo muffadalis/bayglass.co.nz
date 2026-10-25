@@ -9,9 +9,9 @@
 <script id="audit-data" type="application/json">
 {
  "mode": "owner",
- "business": "Bay Glass",
+ "business": "Bay Glass Kerikeri",
  "domain": "bayglass.co.nz",
- "date": "6 September 2026",
+ "date": "25 October 2026",
  "pages": [
   {
    "url": "/",
@@ -1333,12 +1333,12 @@
    "flags": []
   }
  ],
- "passes": 3,
- "minutes": 95,
+ "passes": 5,
+ "minutes": 170,
  "before": 42,
- "after": 71,
- "issuesBefore": 32,
- "issuesAfter": 11,
+ "after": 75,
+ "issuesBefore": 39,
+ "issuesAfter": 12,
  "bodySentencesChanged": 0,
  "lostPerMonth": 0,
  "layers": [
@@ -1346,16 +1346,15 @@
    "name": "On-page",
    "sub": "titles, metas, headings, schema, links, images",
    "before": 38,
-   "after": 84,
-   "fixed": "11 titles, 11 metas, 11 canonicals, schema, 25 alt texts"
+   "after": 85,
+   "fixed": "titles, 13 metas, 58 redirects, headings"
   },
   {
    "name": "Technical",
    "sub": "speed, images, fonts, layout shift",
    "before": 46,
-   "after": 86,
-   "fixed": "images 27.8MB to 13.7MB, WebP, width/height, LCP un-lazied",
-   "pending": "estimate — Lighthouse not re-run"
+   "after": 93,
+   "fixed": "phone-sized images, fonts non-blocking, hidden slides deferred"
   },
   {
    "name": "AI readiness",
@@ -1369,14 +1368,14 @@
    "sub": "no city pages, service pages distinct",
    "before": 100,
    "after": 100,
-   "fixed": "none needed — 0 doorway sets"
+   "fixed": "none needed - 0 doorway sets (service pages 64% alike)"
   },
   {
    "name": "Local",
    "sub": "map pack, reviews, profile fields",
    "before": 15,
    "after": null,
-   "fixed": "on-site NAP fixed + LocalBusiness schema added; profile fields still 5 / 13 / 0 / 0",
+   "fixed": "site NAP fixed; profile still 5 / 14 / 0 / not seen",
    "route": "/gbp · /review-generator"
   }
  ],
@@ -1863,7 +1862,7 @@
  },
  "technical": {
   "formFactor": "mobile",
-  "runs": 0,
+  "runs": 2,
   "templates": [
    {
     "name": "Home",
@@ -1875,15 +1874,15 @@
      66
     ],
     "after": [
-     88,
-     92,
-     92,
+     93,
+     96,
+     79,
      100
     ]
    },
    {
     "name": "Service page",
-    "url": "/services/splashbacks",
+    "url": "/services/retrofit-double-glazing/",
     "before": [
      44,
      84,
@@ -1891,9 +1890,9 @@
      58
     ],
     "after": [
-     90,
-     92,
-     92,
+     100,
+     96,
+     79,
      100
     ]
    }
@@ -2145,19 +2144,19 @@
   "sets": []
  },
  "local": {
-  "lead": "57 Google reviews at 4.9 is a real strength. The profile itself is barely built and nothing on this loop moved it — routed to /gbp.",
-  "mapPackSource": "not measured — no Semrush units, NZ local SERP not reachable from the audit environment",
+  "lead": "57 Google reviews at 4.9 is a real strength. The profile itself is still half built - routed to /gbp.",
+  "mapPackSource": "not measured - NZ map results not reachable from the audit environment",
   "fields": [
    {
     "name": "Name",
     "before": "Bay Glass / Bay Glass Northland Ltd. / Bay Glass Kerikeri",
-    "after": "site now 'Bay Glass' everywhere; profile still 'Bay Glass Kerikeri'",
-    "warn": true
+    "after": "'Bay Glass Kerikeri' on site and profile"
    },
    {
     "name": "Address",
     "before": "40 Klinac Lane, Waipapa (no postcode)",
-    "after": "40 Klinac Lane, Waipapa 0230"
+    "after": "40 Klinac Lane, Waipapa 0230 - check postcode (0295 used next door)",
+    "warn": true
    },
    {
     "name": "Phone",
@@ -2171,7 +2170,7 @@
    },
    {
     "name": "Services · mark 50",
-    "before": "13 of 50 (one duplicate)",
+    "before": "14 of 50 (splashbacks listed twice)",
     "flag": true
    },
    {
@@ -2181,8 +2180,8 @@
    },
    {
     "name": "Products · mark 20",
-    "before": "0 of 20",
-    "flag": true
+    "before": "not seen - not pasted",
+    "warn": true
    },
    {
     "name": "Description",
@@ -2203,6 +2202,12 @@
     "name": "Hours",
     "before": "Mon-Fri 8:00-16:30 (set)",
     "after": "also in schema"
+   },
+   {
+    "name": "Website link",
+    "before": "http://www.bayglass.co.nz/",
+    "after": "should be https://bayglass.co.nz/",
+    "warn": true
    }
   ],
   "mapPack": [
@@ -2247,21 +2252,21 @@
     "count": null,
     "rating": null,
     "recent": null,
-    "replyRate": "not measured — needs Semrush"
+    "replyRate": "not measured"
    },
    {
     "name": "Competitor 2",
     "count": null,
     "rating": null,
     "recent": null,
-    "replyRate": "not measured — needs Semrush"
+    "replyRate": "not measured"
    },
    {
     "name": "Competitor 3",
     "count": null,
     "rating": null,
     "recent": null,
-    "replyRate": "not measured — needs Semrush"
+    "replyRate": "not measured"
    }
   ],
   "services": [
@@ -2306,6 +2311,12 @@
     "keyword": "louvre roof northland",
     "vol": null,
     "page": "/services/outdoor-room-louvre-roofs"
+   },
+   {
+    "name": "Windscreen repairs",
+    "keyword": "windscreen repair kerikeri",
+    "vol": null,
+    "page": null
    }
   ]
  },
@@ -2410,10 +2421,10 @@
   },
   {
    "layer": "Technical",
-   "item": "Old WordPress URLs 404 (/splashbacks/, /showers/, /testimonials/)",
+   "item": "57 old website addresses showing \"not found\"",
    "status": "done",
    "who": "me",
-   "changes": "4 aliases; full list needs you"
+   "changes": "54 redirects, 3 login pages left"
   },
   {
    "layer": "Technical",
@@ -2452,21 +2463,106 @@
   },
   {
    "layer": "Measurement",
-   "item": "Semrush units + Search Console exports",
+   "item": "Search Console set up and exported",
+   "status": "done",
+   "who": "you",
+   "changes": "4 reports supplied"
+  },
+  {
+   "layer": "Technical",
+   "item": "Phones downloaded 1920px desktop images",
+   "status": "done",
+   "who": "me",
+   "changes": "640 + 1080px copies"
+  },
+  {
+   "layer": "Technical",
+   "item": "Hidden hero slides loaded before the first",
+   "status": "done",
+   "who": "me",
+   "changes": "load after page"
+  },
+  {
+   "layer": "Technical",
+   "item": "5 font families blocking every page",
+   "status": "done",
+   "who": "me",
+   "changes": "non-blocking, 2 home-only"
+  },
+  {
+   "layer": "On-page",
+   "item": "2 meta descriptions wrong length",
+   "status": "done",
+   "who": "me",
+   "changes": "159 and 155 chars"
+  },
+  {
+   "layer": "On-page",
+   "item": "Services page skipped H2",
+   "status": "done",
+   "who": "me",
+   "changes": "card titles now H2"
+  },
+  {
+   "layer": "Technical",
+   "item": "Star rating label + tiny carousel dots",
+   "status": "done",
+   "who": "me",
+   "changes": "role=img, 24px tap area"
+  },
+  {
+   "layer": "Measurement",
+   "item": "Tell Google the 404s are fixed",
    "status": "byhand",
    "who": "you",
-   "changes": "unlocks 5 unmeasured layers"
+   "changes": "Validate fix in Search Console"
+  },
+  {
+   "layer": "Content",
+   "item": "No page for windscreen repairs",
+   "status": "queued",
+   "who": "/service-page",
+   "changes": "new page, your approval"
+  },
+  {
+   "layer": "Technical",
+   "item": "Brand blue text contrast 3.14:1",
+   "status": "byhand",
+   "who": "you",
+   "changes": "your call: #18809a passes"
+  },
+  {
+   "layer": "Technical",
+   "item": "Clarity sets 8 third-party cookies",
+   "status": "byhand",
+   "who": "you",
+   "changes": "your call: keep or remove"
+  },
+  {
+   "layer": "Local",
+   "item": "Site name now matches the Google profile",
+   "status": "done",
+   "who": "you",
+   "changes": "'Bay Glass Kerikeri'"
+  },
+  {
+   "layer": "On-page",
+   "item": "9 titles too long, 6 said \"Bay of Island\"",
+   "status": "done",
+   "who": "me",
+   "changes": "54-60 chars, typo fixed"
   }
  ],
  "notMeasured": [
-  "Lighthouse / PageSpeed: not run — no Chrome in the audit environment and Google's PSI API daily quota was exhausted. The Technical scores here are estimates from code inspection. Verify with PageSpeed Insights on the deployed site.",
-  "Semrush Site Health, backlinks, authority, competitor keyword/traffic/referring-domain numbers: not measured — Semrush MCP is out of API units (semrush.com/mcp-access).",
-  "Search Console — real positions, indexed count, manual actions, field Core Web Vitals: inferred only. You chose the inferred run and no property was found. Run /gsc, then export.",
-  "Live AI-surface test (ChatGPT / Perplexity / Google AI Mode): not run — no access from the audit environment. Prompts are in audit-report.md item 22.",
-  "site: index count and the real keyword list: inconclusive — US-only web search doesn't return NZ results. Run site:bayglass.co.nz yourself."
+  "Site health crawl, backlinks and competitor keyword/traffic numbers: not measured - no paid SEO tool connected.",
+  "Map pack and competitor reviews: not measured - NZ Google Maps results are not reachable from here. Search \"glazier Kerikeri\" on Google Maps and note the top 3.",
+  "Real-visitor speed (field Core Web Vitals): Search Console says not enough data yet. Lab scores above are 2 runs each on a local copy of the new build.",
+  "Exact list of the 56 \"not found\" addresses: inferred from the old site archive (57 found). Confirm: Search Console - Pages - Not found (404) - Export.",
+  "Live AI test (ChatGPT / Perplexity / Google AI Mode): not run. Prompts are in audit-report.md item 22.",
+  "Business Profile products: not pasted."
  ],
  "costs": [],
- "rawAfter": 66,
+ "rawAfter": 70,
  "waived": [
   {
    "type": "platform limit",
@@ -2492,18 +2588,6 @@
    "item": "favicon",
    "before": "none",
    "after": "favicon.svg + theme-color"
-  },
-  {
-   "group": "Index hygiene",
-   "item": "Old URLs holding links now 404",
-   "before": "/splashbacks/, /showers/, /testimonials/",
-   "after": "4 aliases; full list pending your GSC export"
-  },
-  {
-   "group": "Index hygiene",
-   "item": "sitemap vs site: vs Search Console",
-   "before": "11 / unknown / unknown",
-   "after": "11 / unknown / unknown — still needs GSC"
   },
   {
    "group": "Links and redirects",
@@ -2540,6 +2624,48 @@
    "item": "Semantic landmarks",
    "before": "no <main>, no H1 on home",
    "after": "<main> sitewide, H1 on home"
+  },
+  {
+   "group": "Index hygiene",
+   "item": "Old addresses Google still visits",
+   "before": "57 showing not found",
+   "after": "54 redirect, 3 logins left"
+  },
+  {
+   "group": "Index hygiene",
+   "item": "sitemap vs Search Console indexed",
+   "before": "11 / unknown",
+   "after": "11 / 11 - match"
+  },
+  {
+   "group": "Index hygiene",
+   "item": "Manual actions (penalties)",
+   "before": "unknown",
+   "after": "none"
+  },
+  {
+   "group": "Speed and mobile",
+   "item": "Homepage download on a phone",
+   "before": "1,968 KB",
+   "after": "1,138 KB"
+  },
+  {
+   "group": "Speed and mobile",
+   "item": "Homepage main image on a phone",
+   "before": "11.9 s",
+   "after": "3.2 s"
+  },
+  {
+   "group": "Speed and mobile",
+   "item": "Fonts on non-home pages",
+   "before": "5 families, blocking",
+   "after": "3 families, non-blocking"
+  },
+  {
+   "group": "Claims",
+   "item": "24-hour emergency callouts",
+   "before": "banner + llms.txt",
+   "after": "removed everywhere"
   }
  ]
 }

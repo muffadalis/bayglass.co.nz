@@ -1,7 +1,12 @@
 ---
 title: "Security & insect screens"
-seoTitle: "Security & Insect Screens, Kerikeri | Bay Glass, Northland"
-description: "Security and insect screens in Kerikeri and the Bay of Islands — custom-made, fitted to your existing doors and windows, keeping airflow and the view. Free quote."
+aliases:
+  - "/security-screens/"
+  - "/insect-screens/"
+  - "/content/flyscreen1-0"
+  - "/category/image-galleries/fly-security-screens"
+seoTitle: "Security & Insect Screens, Northland | Bay Glass Kerikeri"
+description: "Security and insect screens in Kerikeri and the Bay of Islands — custom-made for your existing doors and windows, keeping airflow and the view. Free quote."
 eyebrow: "Security screens"
 summary: "Keep the bugs out and the home secure, without losing the view or the airflow."
 heroHeadline: "Keep the view. Lose the bugs."

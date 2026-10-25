@@ -6,7 +6,7 @@
 <div class="container-page mt-20">
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
     {{ range $services }}
-    {{ partial "bento-card.html" (dict "eyebrow" .Params.eyebrow "title" .Title "body" .Params.summary "media" .Params.image "href" .RelPermalink) }}
+    {{ partial "bento-card.html" (dict "level" 2 "eyebrow" .Params.eyebrow "title" .Title "body" .Params.summary "media" .Params.image "href" .RelPermalink) }}
     {{ end }}
   </div>
 </div>

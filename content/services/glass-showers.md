@@ -1,11 +1,19 @@
 ---
 title: "Frameless glass showers"
-seoTitle: "Frameless Glass Showers, Kerikeri | Bay Glass, Northland"
+seoTitle: "Frameless Glass Showers, Bay of Islands | Bay Glass Kerikeri"
 description: "Frameless glass showers in Kerikeri and the Bay of Islands — measured on site to suit any bathroom, toughened safety glass, easy-clean coatings. Free quote."
 eyebrow: "Showers"
 summary: "Frameless enclosures made to suit every unique bathroom — stylish, easy-clean, elegant lines."
 aliases:
   - "/showers/"
+  - "/glass-showers/"
+  - "/content/customized-shower-design"
+  - "/content/shower-eurocurve-0"
+  - "/content/shower-photos"
+  - "/content/shower-quadrant"
+  - "/content/square-shower-0"
+  - "/content/square-shower-overbath"
+  - "/category/image-galleries/showers"
 image: "images/cinema/cubicle_shower_pakiri-1080-2.jpg"
 gallery:
   - "images/cinema/cubicle_shower_pakiri-1080-2.jpg"

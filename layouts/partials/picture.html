@@ -12,8 +12,22 @@
 {{ $dims := index hugo.Data.imagedims $file }}
 {{ $w := "" }}{{ $h := "" }}
 {{ with $dims }}{{ $w = .w }}{{ $h = .h }}{{ end }}
+{{/* Phone/tablet copies (name-640w.webp, name-1080w.webp) are listed when they exist,
+     so small screens download a small file. */}}
+{{ $srcset := slice }}
+{{ range $size := slice 640 1080 }}
+  {{ $variant := replaceRE `\.webp$` (printf "-%dw.webp" $size) $webp }}
+  {{ if fileExists (printf "static/%s" $variant) }}
+    {{ $srcset = $srcset | append (printf "%s %dw" ($variant | relURL) $size) }}
+  {{ end }}
+{{ end }}
+{{ if $srcset }}
+  {{ $srcset = $srcset | append (printf "%s %vw" ($webp | relURL) ($w | default 1920)) }}
+{{ else }}
+  {{ $srcset = slice ($webp | relURL) }}
+{{ end }}
 <picture style="display:contents">
-  <source type="image/webp" srcset="{{ $webp | relURL }}"{{ with .sizes }} sizes="{{ . }}"{{ end }}>
+  <source type="image/webp" srcset="{{ delimit $srcset ", " }}" sizes="{{ .sizes | default "100vw" }}">
   <img src="{{ $src | relURL }}" alt="{{ .alt }}"
     {{- with .class }} class="{{ . }}"{{ end }}
     {{- with $w }} width="{{ . }}"{{ end }}{{ with $h }} height="{{ . }}"{{ end }}

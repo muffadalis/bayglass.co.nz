@@ -1,4 +1,6 @@
-{{/* Bento-grid feature tile, always a link. Params: eyebrow, title, body, media (image URL), dark (bool), href. */}}
+{{/* Bento-grid feature tile, always a link. Params: eyebrow, title, body, media (image URL), dark (bool), href,
+     level (heading level for the title, default 3 — pass 2 when the cards sit directly under the H1). */}}
+{{ $level := .level | default 3 }}
 {{ $dark := .dark }}
 <a href="{{ .href }}" class="flex flex-col rounded-lg overflow-hidden no-underline {{ if $dark }}bg-surface-dark-2 border border-white/10{{ else }}bg-surface-card border border-hairline shadow-md{{ end }}">
   {{ with .media }}
@@ -14,7 +16,12 @@
     {{ with .eyebrow }}
     <div class="font-body text-xs font-semibold tracking-eyebrow uppercase mb-[0.6rem] {{ if $dark }}text-on-dark/62{{ else }}text-primary{{ end }}">{{ . }}</div>
     {{ end }}
-    <h3 class="m-0 mb-2 font-display font-medium text-2xl tracking-tight {{ if $dark }}text-on-dark{{ else }}text-heading{{ end }}">{{ .title }}</h3>
+    {{ $headingClass := printf "m-0 mb-2 font-display font-medium text-2xl tracking-tight %s" (cond (eq $dark true) "text-on-dark" "text-heading") }}
+    {{ if eq $level 2 }}
+    <h2 class="{{ $headingClass }}">{{ .title }}</h2>
+    {{ else }}
+    <h3 class="{{ $headingClass }}">{{ .title }}</h3>
+    {{ end }}
     <p class="m-0 font-body text-base leading-relaxed {{ if $dark }}text-on-dark/62{{ else }}text-body{{ end }}">{{ .body }}</p>
   </div>
 </a>

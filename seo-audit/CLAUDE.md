@@ -9,7 +9,7 @@ One command: `/audit yoursite.com`. It grades every page on five layers - on-pag
 3. When it asks: paste your sitemap URL, the four Search Console exports (2 min), and three pastes from your Business Profile (About, Services, Products).
 4. Read the report. Say what to fix. Watch the loop.
 
-Connect Semrush (free tier is enough) to unlock the crawl, keywords and the rivals. The audit runs without it and says what it could not measure.
+No paid SEO tool needed. Search Console exports unlock real keywords, positions and linking sites; the audit says what it could not measure.
 
 ## What it never does
 

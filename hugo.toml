@@ -21,7 +21,7 @@ disableHugoGeneratorInject = true
 
 [params]
   # NAP — kept byte-identical with the Google Business Profile
-  businessName = "Bay Glass"
+  businessName = "Bay Glass Kerikeri"
   legalName = "Bay Glass Northland Ltd."
   phone = "09 407 9035"
   phoneHref = "tel:+6494079035"
@@ -34,7 +34,6 @@ disableHugoGeneratorInject = true
   latitude = "-35.181"
   longitude = "173.928"
   priceRange = "$$"
-  banner = "24-hour emergency callouts — Northland wide"
   description = "Northland's glass specialists in Kerikeri — showers, splashbacks, balustrades, glazing and retrofit double glazing across the Bay of Islands. Get a free quote."
   ogImage = "images/cinema/intro-bayglass.jpg"
   reviewCount = "57"

@@ -82,11 +82,9 @@ Warning: some aggregators charge. Localeze is about $300 a year. Data Axle has a
 
 ---
 
-## Tier 3.5: the SEMRush network, 70+ sites from one form
+## Tier 3.5: the long-tail network, 70+ sites
 
-SEMRush Listing Management costs $20 to $40 a month as part of the Local plan and pushes your NAP to roughly 70+ directories from a single form. The count fluctuates between about 70 and 95 as SEMRush adds and removes partners.
-
-**How the distribution works.** You do not submit to all of them directly. SEMRush validates and normalizes your NAP, submits it to about 15 major anchor sites (Google, Apple Maps, Bing, Yelp, Facebook, Foursquare, TripAdvisor, YellowPages) plus the data aggregators in Tier 3 (Data Axle, Foursquare API, Localeze, Acxiom, Here, TomTom), and those feed roughly 70 downstream sites. Net effect: one form, about 95 listings, NAP byte-identical across all of them, auto-sync on changes.
+These are the downstream sites the Tier 3 data aggregators (Data Axle, Foursquare API, Localeze, Acxiom, Here, TomTom) feed. Get the aggregators right and most of these fill in on their own; check the important ones by hand.
 
 Here is the full network, broken out so you know what you are getting.
 
@@ -340,18 +338,17 @@ Submit each directory by hand. About 5 to 10 minutes per listing times 30 listin
 
 | Service | Cost | What it does |
 |---|---|---|
-| SEMRush Listing Management | $20-40 a month | One form to 70+ directories, auto-detects inconsistencies |
 | BrightLocal Citation Builder | $3-9 per citation | One-time submissions, manual review |
 | Whitespark Local Citation Finder | $20 a month | Finds gaps and submits |
 | Yext | $200-500 a year | Real-time syncing across 70+ directories |
 | Moz Local | $99-179 a year | Distribution and monitoring |
 
-**Recommendation:** SEMRush Listing Management is the best value. Use Whitespark for citation gap analysis. Use Yext only if you have 10 or more locations.
+**Recommendation:** Use Whitespark for citation gap analysis. Use Yext only if you have 10 or more locations.
 
 ### The hybrid, recommended for solos and small businesses
 
 1. Manually submit Tier 1 and Tier 2, the 25 most important, all free
-2. Run a SEMRush Listing Management scan to find gaps and submit to the long tail
+2. Submit to the Tier 3 data aggregators so the long tail fills in
 3. Manually submit Tier 4, the industry-specific ones - these matter more than the long tail
 4. Set a quarterly reminder to re-check NAP consistency
 
@@ -380,7 +377,6 @@ Every 3 months, run this:
 - [ ] Update hours if seasonal
 - [ ] Add any new locations to ALL directories
 - [ ] Remove duplicate listings, Google penalizes duplicates
-- [ ] Re-run the SEMRush Listing Scan if subscribed
 
 ---
 
@@ -390,6 +386,5 @@ Every 3 months, run this:
 - **Time to build manually** - 8 to 12 hours spread over 2 to 4 weeks
 - **Time to build with paid tools** - 1 to 2 hours
 - **Cost to build manually** - nothing
-- **Cost with SEMRush Listing Management** - about $240 a year
 - **NAP consistency target** - 100 percent byte-identical across all listings
 - **Re-audit frequency** - quarterly

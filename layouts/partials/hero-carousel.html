@@ -12,7 +12,17 @@
       {{ if eq $i 0 }}
       {{ partial "picture.html" (dict "src" $heroSrc "alt" (printf "%s — Bay Glass, Kerikeri" $s.Title) "class" "absolute inset-0 block h-full w-full object-cover" "priority" true "sizes" "100vw") }}
       {{ else }}
-      <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('{{ (replaceRE `\.(jpe?g|png|JPG)$` ".webp" $heroSrc) | relURL }}')" role="img" aria-label="{{ $s.Title }} — Bay Glass"></div>
+      {{ $bg := replaceRE `\.(jpe?g|png|JPG)$` ".webp" $heroSrc }}
+      {{ $bg1080 := replaceRE `\.webp$` "-1080w.webp" $bg }}
+      {{/* Phones and tablets get the 1080px copy (made alongside the original). The hero is
+           tall and cropped to fill, so 640px would look soft on a phone. */}}
+      <style>
+        .hero-bg-{{ $i }}{background-image:url('{{ $bg | relURL }}')}
+        {{ if fileExists (printf "static/%s" $bg1080) }}@media (max-width:1080px){.hero-bg-{{ $i }}{background-image:url('{{ $bg1080 | relURL }}')}}{{ end }}
+      </style>
+      {{/* The class (and so the download) is added by site.js once the page has loaded,
+           so these hidden slides don't compete with the first, visible one. */}}
+      <div class="absolute inset-0 bg-cover bg-center" data-bg-class="hero-bg-{{ $i }}" role="img" aria-label="{{ $s.Title }} — Bay Glass"></div>
       {{ end }}
       <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(14,21,24,.82) 0%, rgba(14,21,24,.15) 32%, rgba(14,21,24,.12) 55%, rgba(14,21,24,.9) 100%)"></div>
       <div class="absolute inset-0 flex flex-col justify-end p-6 sm:p-12 md:p-16">
