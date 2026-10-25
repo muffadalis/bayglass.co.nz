@@ -107,17 +107,14 @@ Search Console → Indexing → Pages → "Not found (404)" → **Export** → D
 ### [x] 31. Fix the website link and check the postcode on your Google profile
 Done 25 Oct by you. Website link now `https://bayglass.co.nz/` (was http://www.). Postcode confirmed 0230, matching the site.
 
-### [ ] 32. Route: windscreen repair page → `/service-page`
-Google lists you as a Windshield Repair Service and you rank ~10.6 for "windscreen repair kerikeri", but there's no page. `/windscreens` currently redirects to Glass & glazing.
-**Who:** you, via `/service-page`
+### [x] 32. Windscreen repair page · not needed
+Closed 26 Oct: you don't do windscreens. Remove "Windshield Repair Service" (category) and "Windscreen Repairs" (service) from the Google profile if still there. Old `/windscreens` address keeps redirecting to Glass & glazing.
 
-### [ ] 33. Your call: brand blue `#219ebc` text contrast
-3.14:1 on white, fails (needs 4.5:1). `#18809a` passes at 4.57:1. It's your brand colour, so it's your decision.
-**Who:** you
+### [x] 33. Brand blue text contrast
+Done 26 Oct on your yes. New `--color-primary-text` = marine-600 `#1a7f97` (4.64:1 on white, was 3.14:1) for eyebrow text only (`.eyebrow`, `.eyebrow-xs`, bento card eyebrow). Buttons, gradients and backgrounds keep `#219ebc`. Dark mode uses marine-400 `#4fb3d1` for the same text. Also review-card date text `text-heading/55` → `/70` (3.49:1 → 5.45:1), which was the next contrast fail. Accessibility now 100 on Home, Services, Glass & glazing, About, Contact (lab, mobile, 26 Oct).
 
-### [ ] 34. Your call: Microsoft Clarity cookies
-Clarity sets 8 third-party cookies, which caps Best Practices at 79. Keep it if you use its recordings.
-**Who:** you
+### [x] 34. Microsoft Clarity cookies · keeping
+Decided 26 Oct: keep Clarity. Best Practices stays at 79; waived as an owner decision (see Waived · 26 Oct).
 
 ### [x] 35. Your title rewrite + name change + 24-hour claim removed
 Done 25 Oct by you. 9 titles rewritten to "… Northland & Bay of Islands | Bay Glass Kerikeri" (table in "Title tags · 25 Oct 2026" below). "24-hour emergency callouts" removed from the banner (`hugo.toml`) and `llms.txt`; none left anywhere on the site.
@@ -125,9 +122,8 @@ Done 25 Oct by you. 9 titles rewritten to "… Northland & Bay of Islands | Bay 
 ### [x] 36. Tidy the new titles · typo + length
 Done 25 Oct. "Bay of Island" typo fixed (6 titles), "louvers" → "louvre roofs" on the homepage (lowercase "louvre roof" everywhere, per you), all 9 titles now 54-60 chars; About lengthened 49 → 57 and now uses "Bay Glass Kerikeri". Your wording kept: service first, then one area (Northland or Bay of Islands), then "| Bay Glass Kerikeri". 9 title tags only, no body copy.
 
-### [ ] 38. Google profile · products + attributes
-Products: **added 25 Oct by you** (from `gbp-products.md` / the 7 service pages). Waiting on Google approval. Attributes: still to do - Edit profile → More → tick what applies.
-**Who:** you · **Time:** 5 min · **Changes:** none to the site.
+### [x] 38. Google profile · products + attributes
+Done 25-26 Oct by you. Products added (from `gbp-products.md` / the 7 service pages), attributes set.
 
 ### [ ] 39. Close the review gap with Wilkinson Glass · 57 vs 81
 ChatGPT (25 Oct) puts Wilkinson Glass Bay of Islands at 5.0 from **81** reviews against your 4.9 from **57**. Reviews are the #1 local ranking factor. Ask every happy customer for a Google review (a short link + QR card at job sign-off) and reply to every review.
@@ -136,9 +132,21 @@ ChatGPT (25 Oct) puts Wilkinson Glass Bay of Islands at 5.0 from **81** reviews 
 ### [x] 40. Point the site at the current Facebook page
 Done 25 Oct. `hugo.toml` `params.social.facebook` → `https://www.facebook.com/profile.php?id=61578672983400` (schema sameAs on every page). The old `facebook.com/bayglass.kerikeri/` page is inaccessible, per you.
 
-### [ ] 41. Fix Facebook on your Google profile + deal with the old page
-Google profile → Edit profile → Contact → Social profiles → replace `facebook.com/bayglass.kerikeri/` with the current page. Old `bayglass.kerikeri` is a personal **account**, not a Page: **recovered by you 25 Oct**. Before deleting, check it is not an admin of the current Page or any ad account. Delete via Accounts Center → Personal details → Account ownership and control → Deactivation or deletion → Delete account (30-day undo window, do not log in during it). Reviews link for the current page: `https://www.facebook.com/profile.php?id=61578672983400&sk=reviews`.
-**Who:** you · **Time:** 10 min · **Changes:** none to the site.
+### [x] 41. Fix Facebook on your Google profile + deal with the old page
+Done 26 Oct by you. Google profile now links the current Facebook page; old `bayglass.kerikeri` account recovered for deletion (check it isn't a Page admin first; 30-day wait). Current page username: **bayglassnz**. Reviews link: `https://www.facebook.com/bayglassnz/reviews`.
+
+### [x] 42. Short Facebook link on the website
+Done 26 Oct. `hugo.toml` `social.facebook` → `https://www.facebook.com/bayglassnz` (schema sameAs on every page).
+
+### [x] 43. Remove the after-hours claim
+Done 26 Oct on your instruction. Glass & glazing page: removed "A smashed window doesn't wait for business hours — and neither do we." Rest of the paragraph unchanged. No other 24-hour / after-hours / emergency wording left on the site.
+
+### [x] 44. Retrofit double glazing is aluminium only
+Done 26 Oct on your correction. Removed "or timber" from the retrofit page (meta description, summary, first paragraph), `llms.txt`, `gbp-products.md` (product 7 now aluminium sliding doors) and the page plan in `project_specs.md`.
+
+### [ ] 45. Remove timber from the Google profile
+The profile description (from 25 Oct) says "aluminium or timber joinery"; paste the corrected one. Remove the service "Double Glazing for Timber Windows" and the product "Double Glazing for Timber Windows" if added. Check the Retrofit product description for "timber" too.
+**Who:** you · **Time:** 5 min · **Changes:** none to the site.
 
 ---
 
@@ -265,3 +273,15 @@ Remaining: accessibility = brand blue (item 33); best practices = Clarity cookie
 ## Waived · 25 Oct 2026
 
 - **Platform limit:** server-side 301s. Still GitHub Pages (static host, no redirect config); Hugo aliases used instead (evidence: `curl -I` on an old URL returns 200 + meta refresh + canonical).
+
+## Copy report · 26 Oct 2026
+
+**Body sentences altered: 1, at your request.** Glass & glazing page, first paragraph:
+- Before: "A smashed window doesn't wait for business hours — and neither do we. Whether it's a cracked pane at home, a broken shopfront, or a full glazing package for a new build, our team measures, cuts and installs it on site."
+- After: "Whether it's a cracked pane at home, a broken shopfront, or a full glazing package for a new build, our team measures, cuts and installs it on site."
+
+## Waived · 26 Oct 2026
+
+- **Owner decision:** Microsoft Clarity's 8 third-party cookies (Best Practices 79). Evidence: your "34 - yes" (keep), 26 Oct.
+
+**26 Oct, second change (your correction):** retrofit page, first paragraph: "slots into your existing aluminium or timber joinery" → "slots into your existing aluminium joinery". Body sentences altered today: 2, both at your request.

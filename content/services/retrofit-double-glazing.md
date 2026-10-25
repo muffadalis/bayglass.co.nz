@@ -3,9 +3,9 @@ title: "Retrofit double glazing"
 aliases:
   - "/retrofit-double-glazing/"
 seoTitle: "Retrofit Double Glazing, Northland | Bay Glass Kerikeri"
-description: "Retrofit double glazing in Kerikeri and Northland — fitted into your existing aluminium or timber joinery for warmer, drier rooms, no reframing. Free quote."
+description: "Retrofit double glazing in Kerikeri and Northland — fitted into your existing aluminium windows and doors for warmer, drier rooms, no reframing. Free quote."
 eyebrow: "Retrofit"
-summary: "Retrofit double glazing fits most existing aluminium or timber joinery — new-home comfort without new-home windows."
+summary: "Retrofit double glazing fits most existing aluminium joinery — new-home comfort without new-home windows."
 image: "images/cinema/retro.jpg"
 gallery:
   - "images/cinema/retro.jpg"
@@ -20,8 +20,8 @@ features:
 weight: 5
 ---
 Imagine the possibilities: a warmer, drier, healthier home without replacing a
-single frame. Retrofit double glazing slots into your existing aluminium or
-timber joinery, so you get new-home comfort without the cost or mess of
+single frame. Retrofit double glazing slots into your existing aluminium
+joinery, so you get new-home comfort without the cost or mess of
 new-home windows.
 
 We measure on site, manufacture to fit, and install with minimal disruption —

@@ -19,9 +19,8 @@ features:
   - "Mirrors, cut and edged to fit"
 weight: 2
 ---
-A smashed window doesn't wait for business hours — and neither do we. Whether
-it's a cracked pane at home, a broken shopfront, or a full glazing package for
-a new build, our team measures, cuts and installs it on site.
+Whether it's a cracked pane at home, a broken shopfront, or a full glazing
+package for a new build, our team measures, cuts and installs it on site.
 
 More than just glass: we handle mirrors and specialty glass too, custom made
 to your exact requirements and backed by our own installation team.

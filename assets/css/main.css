@@ -60,6 +60,9 @@
   --color-primary: var(--color-marine-500);
   --color-primary-hover: var(--color-marine-600);
   --color-primary-strong: var(--color-marine-700);
+  /* Brand blue for small TEXT (eyebrows). One step darker than primary so it passes
+     WCAG AA contrast on white (4.64:1 vs 3.14:1). Backgrounds/gradients keep primary. */
+  --color-primary-text: var(--color-marine-600);
   --color-accent-hover: var(--color-gold-700);
   --color-accent-soft: var(--color-gold-400);
 
@@ -179,6 +182,8 @@ body {
    dark hero/cinema sections are intentionally left unchanged.
    ============================================================ */
 :root[data-theme="dark"] {
+  /* On dark backgrounds the lighter brand blue reads better than the darker text shade. */
+  --color-primary-text: var(--color-marine-400);
   --color-ink-0: #13262f;
   --color-ink-50: #0b1a21;
   --color-ink-100: #17282f;
@@ -224,13 +229,13 @@ body {
 
   /* Eyebrows — small uppercase kicker above a heading */
   .eyebrow {
-    @apply inline-block font-body text-sm font-semibold tracking-eyebrow uppercase text-primary;
+    @apply inline-block font-body text-sm font-semibold tracking-eyebrow uppercase text-primary-text;
   }
   .eyebrow-dark {
     @apply inline-block font-body text-sm font-semibold tracking-eyebrow uppercase text-on-dark/62;
   }
   .eyebrow-xs {
-    @apply inline-block font-body text-xs font-semibold tracking-eyebrow uppercase text-primary;
+    @apply inline-block font-body text-xs font-semibold tracking-eyebrow uppercase text-primary-text;
   }
   .eyebrow-xs-dark {
     @apply inline-block font-body text-xs font-semibold tracking-eyebrow uppercase text-on-dark/62;

@@ -37,9 +37,10 @@ Category: Double glazing · Photo: `retro.jpg`
 Category: Double glazing · Photo: `retro.jpg` or your photo
 > Double glazing for existing aluminium windows and doors. We replace the single glass with double glazed units made to fit your joinery, cutting heat loss and condensation. Free measure and quote.
 
-**7. Double Glazing for Timber Windows**
-Category: Double glazing · Photo: your photo (timber window)
-> Double glazing for existing timber windows, keeping the character of your joinery while making rooms warmer and quieter. Measured on site and manufactured to fit. Call for a free quote.
+**7. Double Glazing for Aluminium Sliding Doors**
+Category: Double glazing · Photo: your photo (a sliding door)
+> Double glazing for existing aluminium sliding and hinged doors, fitted into the frames you already have. Warmer, quieter rooms and less condensation, with no reframing. Measured on site, free quote.
+_(Replaces "Timber Windows" 26 Oct: retrofit is aluminium only.)_
 
 ### Showers → https://bayglass.co.nz/services/glass-showers/
 
