@@ -56,9 +56,8 @@ Done 6 Sep. Added `<h1 class="sr-only">Glass, glazing and glazing repairs — Ke
 7 service pages run 70–90 words of body; About is one sentence. Fix is real depth (process, price bands, real jobs, FAQ, per-page proof) — that's writing, so it leaves this command. Do NOT pad to a word count.
 **Who:** you, via `/service-page` (×8)
 
-### [ ] 19. Route: Google Business Profile → `/gbp`
-Categories 5→10, services 13→50, service areas 0→20, products 0→20, write the description, set attributes. (Profile name: done 25 Oct, the site now uses "Bay Glass Kerikeri" too.)
-**Who:** you, via `/gbp`
+### [x] 19. Google Business Profile · categories, services, description, service areas
+Done 25 Oct by you. Categories 5 → 10, "Glass Splash Back" duplicate removed, services added from the list (no town names), 670-character description written, service areas added (up to 20 towns, Kerikeri to Whangārei). Products and attributes moved to item 38. (Profile name: done 25 Oct.)
 
 ### [ ] 20. Route: reviews cadence → `/review-generator`
 57 reviews at 4.9 is strong. Keep recency and reply rate up — both are ranking factors.
@@ -98,13 +97,15 @@ Done 25 Oct. Card titles on `/services/` are now H2 (were H3 straight under the 
 ### [x] 29. Star rating label + carousel dot tap size
 Done 25 Oct. `role="img"` on the star rating; carousel dots now sit in a 24px tap area, so they're spaced slightly wider.
 
-### [ ] 30. Tell Google the 404s are fixed · after you publish
-Search Console → Indexing → Pages → "Not found (404)" → **Validate fix**. Also export that list and send it to me to confirm nothing is missed.
-**Who:** you · **Time:** 2 min · **Changes:** none to the site.
+### [x] 30. Tell Google the 404s are fixed
+Done 25 Oct by you. Validate fix started on "Not found (404)" (56 pages). Expect 1-4 weeks; 3 old login pages will stay failed on purpose.
 
-### [ ] 31. Fix the website link and check the postcode on your Google profile
-Website link reads `http://www.bayglass.co.nz/`; set it to `https://bayglass.co.nz/`. You use postcode 0230, but Smith&Smith at the same address uses 0295; check with NZ Post and use the same one everywhere.
-**Who:** you, in the Business Profile · **Time:** 5 min · **Changes:** none to the site.
+### [ ] 37. Optional: export the 404 list · confirms nothing is missed
+Search Console → Indexing → Pages → "Not found (404)" → **Export** → Download CSV → drop it in `google-data/`. Checks Google's 56 against the 57 redirected/left from the old site archive.
+**Who:** you · **Time:** 1 min · **Changes:** none to the site.
+
+### [x] 31. Fix the website link and check the postcode on your Google profile
+Done 25 Oct by you. Website link now `https://bayglass.co.nz/` (was http://www.). Postcode confirmed 0230, matching the site.
 
 ### [ ] 32. Route: windscreen repair page → `/service-page`
 Google lists you as a Windshield Repair Service and you rank ~10.6 for "windscreen repair kerikeri", but there's no page. `/windscreens` currently redirects to Glass & glazing.
@@ -123,6 +124,21 @@ Done 25 Oct by you. 9 titles rewritten to "… Northland & Bay of Islands | Bay 
 
 ### [x] 36. Tidy the new titles · typo + length
 Done 25 Oct. "Bay of Island" typo fixed (6 titles), "louvers" → "louvre roofs" on the homepage (lowercase "louvre roof" everywhere, per you), all 9 titles now 54-60 chars; About lengthened 49 → 57 and now uses "Bay Glass Kerikeri". Your wording kept: service first, then one area (Northland or Bay of Islands), then "| Bay Glass Kerikeri". 9 title tags only, no body copy.
+
+### [ ] 38. Google profile · products + attributes
+Products: **added 25 Oct by you** (from `gbp-products.md` / the 7 service pages). Waiting on Google approval. Attributes: still to do - Edit profile → More → tick what applies.
+**Who:** you · **Time:** 5 min · **Changes:** none to the site.
+
+### [ ] 39. Close the review gap with Wilkinson Glass · 57 vs 81
+ChatGPT (25 Oct) puts Wilkinson Glass Bay of Islands at 5.0 from **81** reviews against your 4.9 from **57**. Reviews are the #1 local ranking factor. Ask every happy customer for a Google review (a short link + QR card at job sign-off) and reply to every review.
+**Who:** you · **Time:** ongoing · **Changes:** none to the site.
+
+### [x] 40. Point the site at the current Facebook page
+Done 25 Oct. `hugo.toml` `params.social.facebook` → `https://www.facebook.com/profile.php?id=61578672983400` (schema sameAs on every page). The old `facebook.com/bayglass.kerikeri/` page is inaccessible, per you.
+
+### [ ] 41. Fix Facebook on your Google profile + deal with the old page
+Google profile → Edit profile → Contact → Social profiles → replace `facebook.com/bayglass.kerikeri/` with the current page. Old `bayglass.kerikeri` is a personal **account**, not a Page: **recovered by you 25 Oct**. Before deleting, check it is not an admin of the current Page or any ad account. Delete via Accounts Center → Personal details → Account ownership and control → Deactivation or deletion → Delete account (30-day undo window, do not log in during it). Reviews link for the current page: `https://www.facebook.com/profile.php?id=61578672983400&sk=reviews`.
+**Who:** you · **Time:** 10 min · **Changes:** none to the site.
 
 ---
 
@@ -161,7 +177,7 @@ Not yet run — no access to ChatGPT / Perplexity / Google AI Mode from the audi
 
 | Date | Surface | Prompt | Cited? | Who was named |
 |---|---|---|---|---|
-| _pending_ | | | | |
+| 25 Oct 2026 | ChatGPT | "best glazier in Kerikeri" | **Yes, #1** | 1. Bay Glass Kerikeri (4.9, 57 reviews - details accurate, source Birdeye +1, not bayglass.co.nz). 2. Wilkinson Glass Bay of Islands (5.0, 81 reviews, 3 General Gates Ave, Kerikeri). 3. Waipapa Glass (5.0, 6 reviews, 399D Puketotara Rd). 4. Glass & Balustrade Solutions (no rating shown, "17+ years"). Verdict: Bay Glass + Wilkinson "strongest starting points". |
 
 ## What this audit did NOT measure · 6 Sep 2026
 

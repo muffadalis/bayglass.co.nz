@@ -1338,7 +1338,7 @@
  "before": 42,
  "after": 75,
  "issuesBefore": 39,
- "issuesAfter": 12,
+ "issuesAfter": 10,
  "bodySentencesChanged": 0,
  "lostPerMonth": 0,
  "layers": [
@@ -1375,7 +1375,7 @@
    "sub": "map pack, reviews, profile fields",
    "before": 15,
    "after": null,
-   "fixed": "site NAP fixed; profile still 5 / 14 / 0 / not seen",
+   "fixed": "categories 10, services, description, areas; products left",
    "route": "/gbp · /review-generator"
   }
  ],
@@ -2144,7 +2144,7 @@
   "sets": []
  },
  "local": {
-  "lead": "57 Google reviews at 4.9 is a real strength. The profile itself is still half built - routed to /gbp.",
+  "lead": "ChatGPT ranks Bay Glass Kerikeri #1 for best glazier in Kerikeri. Wilkinson Glass is close behind with more reviews (81 vs 57). Profile mostly built; attributes left.",
   "mapPackSource": "not measured - NZ map results not reachable from the audit environment",
   "fields": [
    {
@@ -2155,8 +2155,7 @@
    {
     "name": "Address",
     "before": "40 Klinac Lane, Waipapa (no postcode)",
-    "after": "40 Klinac Lane, Waipapa 0230 - check postcode (0295 used next door)",
-    "warn": true
+    "after": "40 Klinac Lane, Waipapa 0230 - confirmed"
    },
    {
     "name": "Phone",
@@ -2166,27 +2165,29 @@
    {
     "name": "Categories · mark 10",
     "before": "5 of 10",
-    "flag": true
+    "after": "10 of 10"
    },
    {
     "name": "Services · mark 50",
     "before": "14 of 50 (splashbacks listed twice)",
-    "flag": true
+    "after": "added from list - count not confirmed",
+    "warn": true
    },
    {
     "name": "Service areas · mark 20",
     "before": "0 of 20 — field blank",
-    "flag": true
+    "after": "up to 20 towns added"
    },
    {
     "name": "Products · mark 20",
     "before": "not seen - not pasted",
-    "warn": true
+    "warn": true,
+    "after": "still to do"
    },
    {
     "name": "Description",
     "before": "empty",
-    "flag": true
+    "after": "written, 670 of 750 characters"
    },
    {
     "name": "Attributes",
@@ -2206,8 +2207,7 @@
    {
     "name": "Website link",
     "before": "http://www.bayglass.co.nz/",
-    "after": "should be https://bayglass.co.nz/",
-    "warn": true
+    "after": "https://bayglass.co.nz/"
    }
   ],
   "mapPack": [
@@ -2241,32 +2241,32 @@
   ],
   "reviews": [
    {
-    "name": "Bay Glass",
+    "name": "Bay Glass Kerikeri",
     "count": 57,
     "rating": 4.9,
     "recent": null,
     "replyRate": "not measured"
    },
    {
-    "name": "Competitor 1",
-    "count": null,
-    "rating": null,
+    "name": "Wilkinson Glass Bay of Islands",
+    "count": 81,
+    "rating": 5,
     "recent": null,
     "replyRate": "not measured"
    },
    {
-    "name": "Competitor 2",
-    "count": null,
-    "rating": null,
+    "name": "Waipapa Glass",
+    "count": 6,
+    "rating": 5,
     "recent": null,
     "replyRate": "not measured"
    },
    {
-    "name": "Competitor 3",
+    "name": "Glass & Balustrade Solutions",
     "count": null,
     "rating": null,
     "recent": null,
-    "replyRate": "not measured"
+    "replyRate": "not shown"
    }
   ],
   "services": [
@@ -2450,9 +2450,9 @@
   {
    "layer": "Local",
    "item": "Profile: categories 5/10, services 13/50, areas 0/20, products 0/20",
-   "status": "queued",
-   "who": "/gbp",
-   "changes": "build the profile out"
+   "status": "done",
+   "who": "you",
+   "changes": "all but products"
   },
   {
    "layer": "Local",
@@ -2551,6 +2551,27 @@
    "status": "done",
    "who": "me",
    "changes": "54-60 chars, typo fixed"
+  },
+  {
+   "layer": "Local",
+   "item": "Profile website link http://www, postcode check",
+   "status": "done",
+   "who": "you",
+   "changes": "https link, 0230 confirmed"
+  },
+  {
+   "layer": "Local",
+   "item": "Profile products + attributes",
+   "status": "byhand",
+   "who": "you",
+   "changes": "20 products"
+  },
+  {
+   "layer": "Local",
+   "item": "Review gap: Wilkinson 81 vs your 57",
+   "status": "byhand",
+   "who": "you",
+   "changes": "ask every customer"
   }
  ],
  "notMeasured": [
