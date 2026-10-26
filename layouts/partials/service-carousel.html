@@ -16,7 +16,15 @@
       {{ if eq $i 0 }}
       {{ partial "picture.html" (dict "src" $img "alt" $alt "class" "absolute inset-0 block h-full w-full object-cover" "priority" true "sizes" "100vw") }}
       {{ else }}
-      <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('{{ (replaceRE `\.(jpe?g|png|JPG)$` ".webp" $img) | relURL }}')" role="img" aria-label="{{ $alt }}"></div>
+      {{/* Same approach as the homepage hero: phones get the 1080px copy, and site.js adds
+           the class (so the download starts) only after the page has loaded. */}}
+      {{ $bg := replaceRE `\.(jpe?g|png|JPG)$` ".webp" $img }}
+      {{ $bg1080 := replaceRE `\.webp$` "-1080w.webp" $bg }}
+      <style>
+        .svc-bg-{{ $i }}{background-image:url('{{ $bg | relURL }}')}
+        {{ if fileExists (printf "static/%s" $bg1080) }}@media (max-width:1080px){.svc-bg-{{ $i }}{background-image:url('{{ $bg1080 | relURL }}')}}{{ end }}
+      </style>
+      <div class="absolute inset-0 bg-cover bg-center" data-bg-class="svc-bg-{{ $i }}" role="img" aria-label="{{ $alt }}"></div>
       {{ end }}
     </div>
     {{ end }}

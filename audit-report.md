@@ -56,6 +56,7 @@ Done 6 Sep. Added `<h1 class="sr-only">Glass, glazing and glazing repairs — Ke
 7 service pages run 70–90 words of body; About is one sentence. Fix is real depth (process, price bands, real jobs, FAQ, per-page proof) — that's writing, so it leaves this command. Do NOT pad to a word count.
 **Who:** you, via `/service-page` (×8)
 **26 Oct, in progress (retrofit first):** plan approved; new optional page sections built (answer, steps, tables, recent jobs, FAQ + FAQ schema); retrofit draft now has answer, steps, suitability table, "what affects the price" (no prices), 7-question FAQ + FAQ schema, from your facts (26 Oct). ~55 → ~550 words. Recent jobs: none supplied, section hidden. Lab mobile: 100 / 100 / 79 / 100. Awaiting your approval; not published.
+**27 Oct, showers:** draft built from your facts (all 4 types, repair/replacement, NZ standards, any finish, measure ~1 week, price factors only, 1-year workmanship warranty, 7-question FAQ + schema). ~60 → ~600 words. Existing 6 photos kept in the slideshow. Awaiting approval; not published.
 
 ### [x] 19. Google Business Profile · categories, services, description, service areas
 Done 25 Oct by you. Categories 5 → 10, "Glass Splash Back" duplicate removed, services added from the list (no town names), 670-character description written, service areas added (up to 20 towns, Kerikeri to Whangārei). Products and attributes moved to item 38. (Profile name: done 25 Oct.)
@@ -147,6 +148,9 @@ Done 26 Oct on your correction. Removed "or timber" from the retrofit page (meta
 
 ### [x] 45. Remove timber from the Google profile
 Done 26 Oct by you: description replaced (aluminium only), timber service/product removed.
+
+### [x] 46. Service page slideshows load hidden photos after the page
+Done 27 Oct. Same fix as the homepage hero (item 25), in `service-carousel.html`: hidden slides get a 1080px copy on phones and load after the page. Lab mobile, before → after: showers 94 → 100, balustrades 98 → 100, louvre roofs 96 → 98, splashbacks 99 → 100.
 
 ---
 
@@ -294,3 +298,11 @@ Remaining: accessibility = brand blue (item 33); best practices = Clarity cookie
 - Bullet: "Fits into your existing window and door frames — no reframing" → "Fits into your existing aluminium frames — usually no reframing"
 - First paragraph: "…a warmer, drier, healthier home without replacing a single frame." → "…a warmer, drier, healthier home, usually without replacing a single frame."
 Reason: reframing usually isn't needed but depends on the age of the joinery (owner, 26 Oct). Timing per owner: measure usually within a week; install time depends on size, complexity and distance.
+
+**27 Oct, showers page, your wording (fact correction: coating is Diamond Fusion, optional, extra cost):**
+- Bullet: "Toughened safety glass with easy-clean coating options" → "Toughened safety glass, with optional Diamond Fusion easy-clean coating"
+- Second paragraph: "Toughened safety glass and easy-clean coatings keep it looking sharp…" → "Toughened safety glass and an optional Diamond Fusion easy-clean coating keep it looking sharp…"
+- Meta: "…toughened safety glass, easy-clean coatings. Free quote." → "…toughened glass, optional easy-clean coating. Free quote." (157 chars)
+- 1-year workmanship warranty covers all work (owner, 27 Oct): added to showers + retrofit FAQs and llms.txt.
+
+Brand spelling per supplier (diamondfusion.co.nz): **Diamond Fusion**.

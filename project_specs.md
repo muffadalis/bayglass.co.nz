@@ -144,3 +144,58 @@ cold, damp or noisy rooms and existing **aluminium** windows and doors (we do no
 - Lighthouse mobile stays 100 performance / 100 accessibility on the page
 - Title stays "Retrofit Double Glazing, Northland | Bay Glass Kerikeri"; **no prices on the
   site, ever**; no invented jobs, numbers or claims
+
+---
+
+# Task: Frameless glass showers page, fuller version (26 Oct 2026)
+
+## What and why
+Same approach as the retrofit page (live 26 Oct): grow `/services/glass-showers/`
+from ~60 words into a page that answers what a Bay of Islands homeowner asks
+before booking. Search Console (last 6 months): the page averages position ~17
+with 76 views; most shower views come from Auckland suburbs (Albany, Northcote,
+Beach Haven) we don't serve, so the page needs a clearer local focus.
+
+**Who reads it:** Kerikeri / Bay of Islands / Northland homeowners renovating a
+bathroom or replacing an old shower.
+
+## Target searches
+- Main: **frameless glass showers** + Kerikeri / Bay of Islands / Northland
+- Also: glass shower screen, frameless shower panel, shower glass installers,
+  semi-frameless shower, shower glass replacement (only if we do it)
+
+## Page outline (same template look; sections only appear if filled)
+1. **What is a frameless glass shower?** — 40-60 word direct answer
+2. Existing intro paragraphs + bullet points (unchanged unless you correct a fact)
+3. **How it works** — steps from measure to install, with your real timing
+4. **Frameless or semi-frameless?** — small comparison table, only facts you give me
+5. **What affects the price?** — factors only, **no prices** (site rule)
+6. **Recent jobs / gallery** — the 5 shower photos already on the site (`showers.jpg`,
+   `showers1-4.jpg`, `cubicle_shower_pakiri-1080-2.jpg`), with a line each if you
+   can tell me the town or job; photos alone otherwise
+7. **FAQ** — 5-7 questions from your answers
+8. Existing "Get a quote" button
+
+## Tech changes
+None to templates: the sections built for the retrofit page are reused. Only
+`content/services/glass-showers.md` changes (front matter + any fact corrections).
+The photo carousel at the top can show all 5 shower photos (gallery field).
+
+## What I need from you (facts only; I write, you approve)
+1. Which do you do: frameless, semi-frameless, fully framed? Over-bath screens?
+   Shower glass/door **repair or replacement**?
+2. Glass: thickness options? Easy-clean coating (brand, if any)? Hardware finishes
+   (chrome, black, brushed)?
+3. Timing: how soon do you measure, and how long until it's installed?
+4. What changes the cost (no numbers)?
+5. Do you work with the customer's tiler/plumber? Who handles waterproofing / old
+   shower removal?
+6. After-sales: any warranty or follow-up you offer?
+7. Questions customers ask you most about showers
+8. OK to use the 5 shower photos on this page? Any town/job detail for them?
+
+## Done looks like
+- Drafted from your facts; **you approve the wording before it goes live**
+- `hugo` builds clean; `hugo server -D` no errors; phone + desktop checked
+- Lighthouse mobile stays 100 performance / 100 accessibility
+- No prices; no invented jobs, numbers or claims; title unchanged

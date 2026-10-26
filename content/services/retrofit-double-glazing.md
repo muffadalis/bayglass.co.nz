@@ -68,7 +68,7 @@ faq:
     - q: "Which areas do you cover?"
       a: "Kerikeri, the Bay of Islands and the rest of Northland, from our workshop at 40 Klinac Lane, Waipapa."
     - q: "Why choose Bay Glass Kerikeri?"
-      a: "Quality work from experienced staff, our own installation team, and after-sales service once the job is done. We're rated 4.9 from 57 Google reviews."
+      a: "Quality work from experienced staff, our own installation team, and a 1-year workmanship warranty on all our work. We're rated 4.9 from 57 Google reviews."
 ---
 Imagine the possibilities: a warmer, drier, healthier home, usually without
 replacing a single frame. Retrofit double glazing slots into your existing aluminium
