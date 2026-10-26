@@ -20,7 +20,8 @@
     </div>
     <div class="card card-hover p-6">
       <div class="eyebrow-xs mb-2">Address</div>
-      <p class="link-underline inline-block font-display font-medium text-heading">{{ site.Params.address }}</p>
+      <p><a href="{{ site.Params.directionsUrl | safeURL }}" target="_blank" rel="noopener" class="link-underline inline-block font-display font-medium text-heading">{{ site.Params.address }}</a></p>
+      <div class="mt-4">{{ partial "button.html" (dict "label" "Get directions" "href" (site.Params.directionsUrl | safeURL) "variant" "outline" "size" "sm" "newTab" true) }}</div>
     </div>
   </div>
 </div>

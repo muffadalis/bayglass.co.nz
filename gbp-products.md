@@ -104,6 +104,16 @@ Category: Screens · Photo: your photo
 Category: Outdoor rooms · Photo: `outdoor-rooms-louvre.jpg`
 > Opening louvre roofs for decks and patios: open for full sun, angle for shade or close flat in the rain, by remote or rain sensor. We supply and install Bask louvre roof systems.
 
+### Pergola roofs → https://bayglass.co.nz/services/pergola-roof/  (added 27 Oct)
+
+**20a. VelaSun Pergola Roof**
+Category: Outdoor rooms · Photo: `velasun-glass-roof-spa-pool.jpg`
+> Pergola roofs in Kerikeri and Northland: the Bask VelaSun fixed aluminium pergola roof, with a grey polycarbonate, glass or open roof. Year-round shelter from sun and rain, powder coated in a wide range of colours to suit your home, and custom-made in New Zealand. Measured and installed by our own team, with a 1-year workmanship warranty. Free measure and quote.
+
+**20b. Glass Pergola Roof** (optional)
+Category: Outdoor rooms · Photo: `velasun-glass-roof-sea-view.jpg`
+> Glass pergola roofs for decks and patios across the Bay of Islands and Northland. The Bask VelaSun with a flat glass roof lets diffused light through while blocking heat, on an aluminium frame powder coated to match your home. Custom-made in New Zealand. Free measure and quote.
+
 ---
 
 ## Extras (swap in if one above doesn't fit)

@@ -1,9 +1,10 @@
-{{/* Bayglass pill button. Params: label, href, variant (primary|accent|secondary|outline), size (sm|md|lg) */}}
+{{/* Bayglass pill button. Params: label, href, variant (primary|accent|secondary|outline), size (sm|md|lg),
+     newTab (bool, opens external links in a new tab) */}}
 {{ $variant := .variant | default "primary" }}
 {{ $size := .size | default "md" }}
 {{ $classes := printf "btn btn-%s btn-%s" $variant $size }}
 {{ if .submit }}
 <button type="submit" class="{{ $classes }}">{{ .label }}</button>
 {{ else }}
-<a href="{{ .href }}" class="{{ $classes }}">{{ .label }}</a>
+<a href="{{ .href }}" class="{{ $classes }}"{{ if .newTab }} target="_blank" rel="noopener"{{ end }}>{{ .label }}</a>
 {{ end }}

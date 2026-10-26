@@ -26,6 +26,7 @@
     "postalCode" $p.postalCode
     "addressCountry" $p.addressCountry)
   "geo" (dict "@type" "GeoCoordinates" "latitude" $p.latitude "longitude" $p.longitude)
+  "hasMap" $p.directionsUrl
   "areaServed" (slice
     (dict "@type" "AdministrativeArea" "name" "Northland, New Zealand")
     (dict "@type" "Place" "name" "Kerikeri")

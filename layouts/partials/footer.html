@@ -27,6 +27,6 @@
 
   <div class="flex flex-col sm:flex-row gap-2 justify-between items-start sm:items-center py-6 border-t border-hairline text-sm text-heading/55">
     <span>&copy; {{ now.Year }} Bay Glass Northland Ltd.</span>
-    <span><a href="{{ site.Params.phoneHref | safeURL }}" class="link-underline">{{ site.Params.phone }}</a> &middot; {{ site.Params.address }}</span>
+    <span><a href="{{ site.Params.phoneHref | safeURL }}" class="link-underline">{{ site.Params.phone }}</a> &middot; <a href="{{ site.Params.directionsUrl | safeURL }}" target="_blank" rel="noopener" class="link-underline" aria-label="Get directions to {{ site.Params.address }}">{{ site.Params.address }}</a></span>
   </div>
 </footer>
