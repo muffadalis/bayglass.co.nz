@@ -241,3 +241,50 @@ laundry, choosing between glass, tiles or other splashbacks.
 - Clean build, no server errors, phone + desktop checked
 - Lighthouse mobile 100 accessibility, performance 98+
 - No prices; no invented jobs, numbers or claims; title unchanged
+
+---
+
+# Task: Balustrades & pool fences page, fuller version (27 Oct 2026)
+
+## What and why
+Same approach as retrofit, showers and splashbacks (all live). `/services/balustrades-pool-fences/`
+has ~60 words. Search Console (last 6 months): 78 views, 1 click, average position ~12,
+the closest of our service pages to page one. Searches seen: pool fencing whangarei,
+balustrades for pools, pool balustrades.
+
+**Who reads it:** Northland homeowners and builders with a deck, balcony, stairs or
+pool that needs a balustrade, handrail or pool fence.
+
+**Extra care:** pool fencing and balustrades are Building Code / safety topics. The page
+states only what you confirm; no compliance claim goes in unless you confirm it.
+
+## Target searches
+- Main: **glass balustrades** + **pool fencing** with Kerikeri / Bay of Islands / Northland / Whangarei
+- Also: frameless glass balustrade, aluminium balustrade, deck balustrade, stair
+  handrail, glass pool fence, pool gates
+
+## Page outline (reuses existing sections; no template changes)
+1. **What is a glass balustrade?** — 40-60 word direct answer
+2. Existing intro paragraphs + bullet points (unchanged unless you correct a fact)
+3. **How it works** — measure → choose system and finish → made to fit → install
+4. **Which system is right for you?** — table of the types you do
+5. **What affects the price?** — factors only, **no prices**
+6. **FAQ** — from your answers; 1-year workmanship warranty included
+7. The 6 balustrade photos already on the site stay in the top slideshow
+
+## What I need from you (facts only)
+1. Types you do: frameless glass, glass with posts, aluminium (glass infill / pickets /
+   slats)? Inside stairs as well as outside? Handrails on their own?
+2. Pool fences: glass, aluminium or both? Self-closing, self-latching gates?
+3. Compliance: is all your work built to the NZ Building Code (pool fences to the pool
+   rules)? Do you help with council consent or inspections, or is that the owner's job?
+4. Aluminium finishes: any powder-coat colour, or a set range?
+5. What changes the cost (no numbers)? e.g. metres, glass vs aluminium, gates, fixing type
+6. Timing: same as other pages (measure usually within a week; install depends on size,
+   complexity, distance)?
+
+## Done looks like
+- Drafted from your facts; **you approve before it goes live**
+- Clean build, no server errors, phone + desktop checked
+- Lighthouse mobile 100 accessibility, performance 98+
+- No prices; no compliance claim you haven't confirmed; title unchanged
