@@ -109,6 +109,7 @@
       "footer-link",
       "gap-0.5",
       "gap-1",
+      "gap-10",
       "gap-2",
       "gap-3",
       "gap-4",
@@ -175,11 +176,17 @@
       "leading-relaxed",
       "left-1/2",
       "left-3",
+      "lg:gap-12",
+      "lg:grid-cols-1",
       "lg:grid-cols-3",
+      "lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]",
+      "lg:sticky",
+      "lg:top-28",
       "link-underline",
       "m-0",
       "max-h-[860px]",
       "max-w-2xl",
+      "max-w-6xl",
       "max-w-[18ch]",
       "max-w-[20ch]",
       "max-w-[32ch]",
@@ -360,7 +367,8 @@
       "mobile-menu-toggle",
       "site-header",
       "steps-heading",
-      "theme-toggle"
+      "theme-toggle",
+      "visit-heading"
     ]
   }
 }
