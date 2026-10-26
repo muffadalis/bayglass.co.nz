@@ -350,6 +350,8 @@
     "ids": [
       "cookie-banner",
       "cookie-banner-accept",
+      "enquiry",
+      "enquiry-heading",
       "faq-heading",
       "main",
       "mobile-menu-backdrop",

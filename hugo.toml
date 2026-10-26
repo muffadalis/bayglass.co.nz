@@ -33,6 +33,8 @@ disableHugoGeneratorInject = true
   addressCountry = "NZ"
   latitude = "-35.181"
   longitude = "173.928"
+  # Fergus enquiry form (goes straight into Fergus job management)
+  enquiryFormUrl = "https://my.fergus.com/contact/fe85836f-578f-4152-8116-00f6872f8c97"
   # Opens Google Maps directions to the workshop (contact page, footer, schema hasMap)
   directionsUrl = "https://www.google.com/maps/dir/?api=1&destination=Bay+Glass+Kerikeri,+40+Klinac+Lane,+Waipapa+0230"
   priceRange = "$$"

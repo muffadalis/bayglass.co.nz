@@ -318,3 +318,5 @@ Brand spelling per supplier (diamondfusion.co.nz): **Diamond Fusion**.
 **27 Oct, pergola photos:** you deleted 2 blurry Bask photos (louvre screens, backyard); references removed. Added 9 high-res photos from the ArchiPro VelaSun (Juralco) listing: 7 new + sharper copies of the spa pool and restaurant deck photos. Pergola slideshow now 11 photos; credit line names Bask and Juralco. Lab mobile: pergola 98-100, home 93.
 
 **27 Oct, approved by you:** glass & glazing, security & insect screens, louvre roof, pergola roofs published. Photo use (Bask / Juralco) confirmed. 8 unused original photo files deleted on your OK. Title "Louvre roofs & outdoor room" kept with capital L (your choice). Same-day wording on glass & glazing left as is.
+
+**28 Oct, contact page:** "Get directions" link + button (contact page, footer, schema hasMap). Fergus enquiry form embedded on the contact page (`enquiryFormUrl` in hugo.toml, full width, 1050px, lazy-loaded) with an open-in-new-tab fallback; submissions go straight to Fergus. Lab mobile contact page 100 / 100 / 79 / 100.
