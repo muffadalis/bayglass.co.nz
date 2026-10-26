@@ -199,3 +199,45 @@ The photo carousel at the top can show all 5 shower photos (gallery field).
 - `hugo` builds clean; `hugo server -D` no errors; phone + desktop checked
 - Lighthouse mobile stays 100 performance / 100 accessibility
 - No prices; no invented jobs, numbers or claims; title unchanged
+
+---
+
+# Task: Glass splashbacks page, fuller version (27 Oct 2026)
+
+## What and why
+Same approach as retrofit (live 26 Oct) and showers (live 27 Oct). `/services/splashbacks/`
+has ~60 words. Search Console (last 6 months): 203 views, **0 clicks**, average
+position ~15. Most views are other regions (Lower Hutt, Rotorua, Dunedin, Auckland),
+so the page needs a clear Kerikeri / Bay of Islands / Northland focus.
+
+**Who reads it:** Northland homeowners and builders doing a kitchen, bathroom or
+laundry, choosing between glass, tiles or other splashbacks.
+
+## Target searches
+- Main: **glass splashbacks** + Kerikeri / Bay of Islands / Northland
+- Also: coloured glass splashback, printed glass splashback, kitchen splashbacks,
+  toughened / tempered glass splashback
+
+## Page outline (reuses existing sections; no template changes)
+1. **What is a glass splashback?** — 40-60 word direct answer
+2. Existing intro paragraphs + bullet points (unchanged unless you correct a fact)
+3. **How it works** — measure → choose colour/print → made to fit → install
+4. **Coloured, clear or printed?** — table, only facts you give me
+5. **What affects the price?** — factors only, **no prices**
+6. **FAQ** — from your answers; 1-year workmanship warranty included
+7. The 5 splashback photos already on the site stay in the top slideshow
+
+## What I need from you (facts only)
+1. Rooms: kitchens, bathrooms, laundries, feature walls? Anything you don't do?
+2. Glass options: any colour? Colour-matched to paint (e.g. Resene)? Printed with
+   the customer's own photo? Clear, low-iron (extra clear), mirrored or metallic?
+3. Do you cut holes for power points and switches?
+4. When do you measure: after the benchtop is in? How soon, and lead time to install?
+5. What changes the cost (no numbers)?
+6. Can glass go over existing tiles, or does the wall need to be flat/bare?
+
+## Done looks like
+- Drafted from your facts; **you approve before it goes live**
+- Clean build, no server errors, phone + desktop checked
+- Lighthouse mobile 100 accessibility, performance 98+
+- No prices; no invented jobs, numbers or claims; title unchanged
