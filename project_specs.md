@@ -288,3 +288,35 @@ states only what you confirm; no compliance claim goes in unless you confirm it.
 - Clean build, no server errors, phone + desktop checked
 - Lighthouse mobile 100 accessibility, performance 98+
 - No prices; no compliance claim you haven't confirmed; title unchanged
+
+---
+
+# Task: Glass & glazing page, fuller version (27 Oct 2026)
+
+Same approach and sections as the four live pages; no template changes. Search Console
+shows this page near the top for "glazier near me" (1.6), "glass repair kerikeri" (2.2),
+"window repairs near me" (2.4), "kerikeri glass" (5.3), mostly without clicks.
+Owner facts (27 Oct): commercial and shopfront glass, board-ups of broken windows,
+glass cut to size for walk-in customers at the Waipapa workshop, mirrors and splashback
+glass for builders and trades, all **yes**; plus the general answers (measure usually
+within a week, install time depends on size/complexity/distance, NZ standards,
+1-year workmanship warranty, no prices, no after-hours claims).
+Done looks like: same checks as the other pages; owner approves before publishing.
+
+---
+
+# Task: Louvre roof page + new Pergola roofs service page (27 Oct 2026)
+
+**Louvre roof page** (`/services/outdoor-room-louvre-roofs/`): same approach as the other
+service pages. Facts from the owner (Bask only; rain sensors and remotes available; glass and
+louvre walls yes) and Bask's product pages + louvre roof FAQ (rewritten, not copied; council
+consent left out on the owner's instruction; snow question left out). Label "Outdoor living"
+changed to "louvre roof" (menu, footer, homepage card, page).
+
+**New page: Pergola roofs** (`/services/pergola-roof/`), owner request: a separate service for
+the Bask VelaSun fixed pergola roof. Text rewritten from Bask's VelaSun page (all facts kept:
+three roof styles, 4mm Italian polycarbonate, panel widths, powder coat colours, NZ-made, new
+build or existing home); the 7 VelaSun photos from Bask's page, credited. Appears automatically
+in the services menu, footer, services page, homepage cards and homepage slideshow.
+Same checks as other pages; **owner approves before publishing**, and confirms Bask allows
+dealers to use its photos.

@@ -1,0 +1,30 @@
+{{/* A self-contained product/feature section on a service page: heading, paragraphs,
+     bullet points and a photo grid. Params: id, eyebrow, heading, paragraphs (list),
+     points (list), images (list of {src, alt}), note. */}}
+<section class="mt-14"{{ with .id }} id="{{ . }}"{{ end }}>
+  {{ with .eyebrow }}<span class="eyebrow-xs">{{ . }}</span>{{ end }}
+  <h2 class="section-heading mt-2 text-2xl md:text-3xl">{{ .heading }}</h2>
+  {{ range .paragraphs }}
+  <p class="mt-4 mb-0 font-body text-lg leading-relaxed text-body">{{ . }}</p>
+  {{ end }}
+  {{ with .points }}
+  <ul class="mt-6 space-y-3">
+    {{ range . }}
+    <li class="flex gap-3 items-start">
+      <span class="mt-[0.55em] w-1.5 h-1.5 rounded-full bg-accent shrink-0" aria-hidden="true"></span>
+      <span class="text-body text-lg leading-relaxed">{{ . }}</span>
+    </li>
+    {{ end }}
+  </ul>
+  {{ end }}
+  {{ with .images }}
+  <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
+    {{ range . }}
+    <div class="media-frame aspect-[4/3]">
+      {{ partial "picture.html" (dict "src" .src "alt" .alt "class" "media-cover" "sizes" "(min-width: 640px) 22rem, 100vw") }}
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+  {{ with .note }}<p class="mt-3 font-body text-sm text-heading/70">{{ . }}</p>{{ end }}
+</section>

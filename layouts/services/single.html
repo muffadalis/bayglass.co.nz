@@ -36,6 +36,7 @@
     {{/* Optional deeper sections - each renders only when the page's front matter has it. */}}
     {{ with .Params.steps }}{{ partial "service-steps.html" . }}{{ end }}
     {{ range .Params.tables }}{{ partial "content-table.html" . }}{{ end }}
+    {{ range .Params.sections }}{{ partial "feature-section.html" . }}{{ end }}
     {{ with .Params.jobs }}{{ partial "service-jobs.html" . }}{{ end }}
     {{ with .Params.faq }}{{ partial "faq.html" . }}{{ end }}
     <div class="mt-10">
