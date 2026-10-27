@@ -52,7 +52,8 @@ Done 6 Sep. Site now uses "Bay Glass", `09 407 9035`, "40 Klinac Lane, Waipapa 0
 ### [x] 17. Add an H1 to the homepage · it had none
 Done 6 Sep. Added `<h1 class="sr-only">Glass, glazing and glazing repairs — Kerikeri & the Bay of Islands</h1>` at the top of `main`. Screen-reader / crawler only, so the cinematic hero is untouched. **This is the one new line of text — change the wording any time, or promote it to a visible heading via `/service-page`.**
 
-### [ ] 18. Route: thin service pages + empty About → `/service-page`
+### [ ] 18. Thin pages · service pages done 26-27 Oct, About still to do
+**28 Oct:** all 8 service pages now full (incl. new pergola page). Remaining: About page (one sentence). Needs your facts: history, team, what sets you apart, a team/workshop photo.
 7 service pages run 70–90 words of body; About is one sentence. Fix is real depth (process, price bands, real jobs, FAQ, per-page proof) — that's writing, so it leaves this command. Do NOT pad to a word count.
 **Who:** you, via `/service-page` (×8)
 **26 Oct, in progress (retrofit first):** plan approved; new optional page sections built (answer, steps, tables, recent jobs, FAQ + FAQ schema); retrofit draft now has answer, steps, suitability table, "what affects the price" (no prices), 7-question FAQ + FAQ schema, from your facts (26 Oct). ~55 → ~550 words. Recent jobs: none supplied, section hidden. Lab mobile: 100 / 100 / 79 / 100. Awaiting your approval; not published.
