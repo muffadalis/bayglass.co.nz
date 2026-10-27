@@ -1,6 +1,8 @@
 {{/* JSON-LD structured data. LocalBusiness on every page; Service on service pages;
      WebSite on the homepage; BreadcrumbList on every non-home page. Data is pulled
-     from site params so NAP stays consistent with the Google Business Profile. */}}
+     from site params so NAP stays consistent with the Google Business Profile.
+     No aggregateRating: Google ignores star ratings a business puts on its own site,
+     and copying Google reviews into markup is against its review-snippet rules. */}}
 {{ $p := site.Params }}
 {{ $orgId := printf "%s#business" site.BaseURL }}
 
@@ -9,7 +11,7 @@
 {{ with $p.social.googleProfile }}{{ $sameAs = $sameAs | append . }}{{ end }}
 
 {{ $business := dict
-  "@type" "Glazier"
+  "@type" "HomeAndConstructionBusiness"
   "@id" $orgId
   "name" $p.businessName
   "legalName" $p.legalName
@@ -32,10 +34,6 @@
     (dict "@type" "Place" "name" "Kerikeri")
     (dict "@type" "Place" "name" "Bay of Islands"))
   "sameAs" $sameAs
-  "aggregateRating" (dict
-    "@type" "AggregateRating"
-    "ratingValue" $p.reviewRating
-    "reviewCount" $p.reviewCount)
 }}
 
 {{ $hours := slice }}
