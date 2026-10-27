@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
+  // Measure this browser's scroll bar width (0 where scroll bars float, e.g. phones/Macs)
+  // and expose it as --sbw, so embedded forms can push their scroll bar out of view.
+  var probe = document.createElement('div');
+  probe.style.cssText = 'position:absolute;top:-9999px;width:100px;height:100px;overflow:scroll';
+  document.body.appendChild(probe);
+  document.documentElement.style.setProperty('--sbw', (probe.offsetWidth - probe.clientWidth) + 'px');
+  document.body.removeChild(probe);
+
   var header = document.getElementById('site-header');
   if (header) {
     var onScroll = function () {
