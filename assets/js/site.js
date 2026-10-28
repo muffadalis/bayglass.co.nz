@@ -205,13 +205,22 @@ document.addEventListener('DOMContentLoaded', function () {
   // The first click into the form is tracked as form_start. The real conversion (generate_lead)
   // fires on /thank-you/ once Fergus redirects there after a submission.
   var started = false;
-  window.addEventListener('blur', function () {
-    setTimeout(function () {
-      var f = document.activeElement;
-      if (!started && f && f.tagName === 'IFRAME' && f.title === 'Bay Glass enquiry form') {
-        started = true;
-        track('form_start', { form_name: 'enquiry' });
-      }
-    }, 0);
-  });
+  var watch = null;
+  function formFocused() {
+    var f = document.activeElement;
+    return f && f.tagName === 'IFRAME' && f.title === 'Bay Glass enquiry form';
+  }
+  function checkForm() {
+    if (!started && formFocused()) {
+      started = true;
+      track('form_start', { form_name: 'enquiry' });
+      if (watch) clearInterval(watch);
+    }
+  }
+  // Only the contact page has the form. Browsers differ on whether a click into a cross-site
+  // iframe fires blur on our window, so also check which element has focus twice a second.
+  if (document.querySelector('iframe[title="Bay Glass enquiry form"]')) {
+    window.addEventListener('blur', function () { setTimeout(checkForm, 0); });
+    watch = setInterval(checkForm, 500);
+  }
 })();
