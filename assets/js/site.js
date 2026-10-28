@@ -178,3 +178,40 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+// ---------- GA4 event tracking: phone clicks, email clicks, enquiry form ----------
+(function () {
+  function track(name, params) {
+    if (typeof window.gtag === 'function') {
+      params = params || {};
+      params.transport_type = 'beacon';
+      window.gtag('event', name, params);
+    }
+  }
+
+  // Phone and email links, anywhere on the site (header, footer, content, 404).
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a) return;
+    var href = (a.getAttribute('href') || '').toLowerCase();
+    if (href.indexOf('tel:') === 0) {
+      track('phone_click', { link_text: (a.textContent || '').trim().slice(0, 60), link_url: href });
+    } else if (href.indexOf('mailto:') === 0) {
+      track('email_click', { link_text: (a.textContent || '').trim().slice(0, 60), link_url: href });
+    }
+  }, true);
+
+  // Fergus enquiry form: the form is in a cross-site iframe, so we cannot see the submit itself.
+  // The first click into the form is tracked as form_start. The real conversion (generate_lead)
+  // fires on /thank-you/ once Fergus redirects there after a submission.
+  var started = false;
+  window.addEventListener('blur', function () {
+    setTimeout(function () {
+      var f = document.activeElement;
+      if (!started && f && f.tagName === 'IFRAME' && f.title === 'Bay Glass enquiry form') {
+        started = true;
+        track('form_start', { form_name: 'enquiry' });
+      }
+    }, 0);
+  });
+})();

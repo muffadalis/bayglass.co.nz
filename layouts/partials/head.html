@@ -10,6 +10,17 @@
 
   gtag('config', 'G-LZS9J2H27T');
 </script>
+{{ if .Params.leadConversion }}
+<script>
+  // Enquiry confirmed: Fergus sends people here after the form is submitted. Count once per visit.
+  try {
+    if (!sessionStorage.getItem('lead_sent')) {
+      sessionStorage.setItem('lead_sent', '1');
+      gtag('event', 'generate_lead', { form_name: 'enquiry' });
+    }
+  } catch (e) { gtag('event', 'generate_lead', { form_name: 'enquiry' }); }
+</script>
+{{ end }}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 {{/* ---------- Title ---------- */}}
@@ -29,7 +40,7 @@
 {{ with $desc }}<meta name="description" content="{{ . }}">{{ end }}
 
 {{/* ---------- Canonical / indexability ---------- */}}
-{{ if eq .Kind "404" }}<meta name="robots" content="noindex, follow">{{ end }}
+{{ if or (eq .Kind "404") .Params.noindex }}<meta name="robots" content="noindex, follow">{{ end }}
 <link rel="canonical" href="{{ .Permalink }}">
 
 {{/* ---------- Open Graph / Twitter ---------- */}}
