@@ -2,6 +2,7 @@
 title: "Balustrades & pool fences"
 aliases:
   - "/balustrades-handrails"
+  - "/balustrades-handrails/"
   - "/balustrades-handrails-pool-fences/"
   - "/content/balustrade-frameless"
   - "/content/balustrade-monanui"
