@@ -1,6 +1,15 @@
 {{/* Document head: meta, title, canonical, social, schema, Tailwind-compiled stylesheet. */}}
 <meta charset="utf-8">
 
+{{ if .Params.leadConversion }}
+<script>
+  // Fergus redirects here after an enquiry. The form sits in an iframe, so this page can load inside
+  // the contact page's form box. If so, reload it as the whole page (same site, so this is allowed).
+  if (window.self !== window.top) {
+    try { window.top.location.replace(window.location.href); } catch (e) {}
+  }
+</script>
+{{ end }}
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LZS9J2H27T"></script>
 <script>
@@ -13,7 +22,8 @@
 {{ if .Params.leadConversion }}
 <script>
   // Enquiry confirmed: Fergus sends people here after the form is submitted. Count once per visit.
-  try {
+  // Count only when shown as the whole page, not inside the form's iframe (see above).
+  if (window.self === window.top) try {
     if (!sessionStorage.getItem('lead_sent')) {
       sessionStorage.setItem('lead_sent', '1');
       gtag('event', 'generate_lead', { form_name: 'enquiry' });
