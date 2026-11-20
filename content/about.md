@@ -5,7 +5,7 @@ aliases:
   - "/content/your-right-choose"
   - "/author/med12mog/"
 seoTitle: "About Bay Glass Kerikeri — Glaziers in Waipapa, Northland"
-description: "Bay Glass is a family-run Kerikeri glazier serving the Bay of Islands and Northland, measured and installed by our own team. Rated 4.9 from 57 Google reviews."
+description: "Bay Glass is a family-run Kerikeri glazier serving the Bay of Islands and Northland, measured and installed by our own team. Rated 4.8 from 60 Google reviews."
 eyebrow: "Craftsmanship"
 summary: "Two decades glazing the Bay of Islands — from a single broken pane to a full frameless fit-out, measured, cut and installed by our own team."
 image: "images/cinema/bay-glass-waipapa-kerikeri2.jpg"

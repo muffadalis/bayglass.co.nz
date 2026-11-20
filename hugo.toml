@@ -40,8 +40,8 @@ disableHugoGeneratorInject = true
   priceRange = "$$"
   description = "Northland's glass specialists in Kerikeri — showers, splashbacks, balustrades, glazing and retrofit double glazing across the Bay of Islands. Get a free quote."
   ogImage = "images/cinema/intro-bayglass.jpg"
-  reviewCount = "57"
-  reviewRating = "4.9"
+  reviewCount = "60"
+  reviewRating = "4.8"
 
   [params.social]
     facebook = "https://www.facebook.com/bayglassnz"
